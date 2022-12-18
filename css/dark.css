@@ -574,6 +574,7 @@ pre code {
 
 
 /* Button */
+/* 
 button[data-mode] {
     display: flex;
     align-items: center;
@@ -598,6 +599,6 @@ button[data-mode] {
   
   body.dark-mode button[data-mode] img {
     fill: white;
-  }
+  } */
   
   

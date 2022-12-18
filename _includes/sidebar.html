@@ -52,38 +52,40 @@
     {% endfor %}
     {% endfor %}
     <!-- Add a toggle button to the page -->
-    <button data-mode="light">
-        <img src="images/sun-solid.svg" alt="Toggle light mode" class="light-icon">
-        <img src="images/moon-solid.svg" alt="Toggle dark mode" class="dark-icon">
-    </button>
-
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
 
     <!-- Include the light and dark mode stylesheets -->
     <link rel="stylesheet" href="/css/light.css" id="light-mode-stylesheet">
     <link rel="stylesheet" href="/css/dark.css" id="dark-mode-stylesheet">
 
     <script>
-        const toggle = document.querySelector('[data-mode]');
-        const body = document.querySelector('body');
-        const lightIcon = document.querySelector('.light-icon');
-        const darkIcon = document.querySelector('.dark-icon');
+        // Get a reference to the toggle button and the stylesheets
+        const toggleButton = document.getElementById('toggle-dark-mode');
+        const lightStylesheet = document.getElementById('light-mode-stylesheet');
+        const darkStylesheet = document.getElementById('dark-mode-stylesheet');
 
-        toggle.addEventListener('click', () => {
-            if (toggle.dataset.mode === 'light') {
-                toggle.dataset.mode = 'dark';
-                body.classList.add('dark-mode');
-                lightIcon.style.display = 'none';
-                darkIcon.style.display = 'block';
+        // Check the value stored in localStorage to determine the initial mode
+        const initialMode = localStorage.getItem('mode') || 'light';
+        if (initialMode === 'dark') {
+            darkStylesheet.disabled = false;
+            lightStylesheet.disabled = true;
+        } else {
+            darkStylesheet.disabled = true;
+            lightStylesheet.disabled = false;
+        }
+
+        // Add an event listener to the toggle button to switch between the light and dark modes
+        toggleButton.addEventListener('click', () => {
+            if (darkStylesheet.disabled) {
+                darkStylesheet.disabled = false;
+                lightStylesheet.disabled = true;
+                localStorage.setItem('mode', 'dark');
             } else {
-                toggle.dataset.mode = 'light';
-                body.classList.remove('dark-mode');
-                lightIcon.style.display = 'block';
-                darkIcon.style.display = 'none';
+                darkStylesheet.disabled = true;
+                lightStylesheet.disabled = false;
+                localStorage.setItem('mode', 'light');
             }
         });
-
-
-
     </script>
     <!-- if you aren't using the accordion, uncomment this block:
          <p class="external">
