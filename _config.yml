@@ -28,9 +28,9 @@ twitter_username: zoofytech
 github_username:  zoofytech
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+theme: dark
+# plugins:
+#   - jekyll-feed
 
 
 markdown: kramdown
