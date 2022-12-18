@@ -147,8 +147,8 @@ table > thead > tr > th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
     text-transform: none;
-    background-color: #777;
-    color: white;
+    background-color: #333;
+    color: #FFF;
     text-align: left;
 }
 table > caption + thead > tr:first-child > th,
@@ -162,6 +162,7 @@ table > thead:first-child > tr:first-child > td {
 
 table > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
+    color: #000;
 }
 
 table col[class*="col-"] {

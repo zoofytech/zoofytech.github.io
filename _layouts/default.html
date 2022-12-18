@@ -1,47 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     {% include head.html %}
-    <!-- Add a toggle button to the page -->
-    <button id="toggle-dark-mode">Toggle Dark Mode</button>
-
-    <!-- Include the light and dark mode stylesheets -->
-    <link rel="stylesheet" href="/css/light.css" id="light-mode-stylesheet">
-    <link rel="stylesheet" href="/css/dark.css" id="dark-mode-stylesheet">
-
     <script>
-        // Get a reference to the toggle button and the stylesheets
-        const toggleButton = document.getElementById('toggle-dark-mode');
-        const lightStylesheet = document.getElementById('light-mode-stylesheet');
-        const darkStylesheet = document.getElementById('dark-mode-stylesheet');
-
-        // Check the value stored in localStorage to determine the initial mode
-        const initialMode = localStorage.getItem('mode') || 'light';
-        if (initialMode === 'dark') {
-            darkStylesheet.disabled = false;
-            lightStylesheet.disabled = true;
-        } else {
-            darkStylesheet.disabled = true;
-            lightStylesheet.disabled = false;
-        }
-
-        // Add an event listener to the toggle button to switch between the light and dark modes
-        toggleButton.addEventListener('click', () => {
-            if (darkStylesheet.disabled) {
-                darkStylesheet.disabled = false;
-                lightStylesheet.disabled = true;
-                localStorage.setItem('mode', 'dark');
-            } else {
-                darkStylesheet.disabled = true;
-                lightStylesheet.disabled = false;
-                localStorage.setItem('mode', 'light');
-            }
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
@@ -59,12 +21,12 @@
                 }
             });
 
-            $("#collapseAll").click(function (e) {
+            $("#collapseAll").click(function(e) {
                 e.preventDefault();
                 $("#mysidebar").navgoco('toggle', false);
             });
 
-            $("#expandAll").click(function (e) {
+            $("#expandAll").click(function(e) {
                 e.preventDefault();
                 $("#mysidebar").navgoco('toggle', true);
             });
@@ -78,8 +40,8 @@
         })
     </script>
     <script>
-        $(document).ready(function () {
-            $("#tg-sb-link").click(function () {
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
                 $("#tg-sb-sidebar").toggle();
                 $("#tg-sb-content").toggleClass('col-md-9');
                 $("#tg-sb-content").toggleClass('col-md-12');
@@ -98,51 +60,49 @@
          Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
       -->
     <script>
-        $(document).ready(function () {
-            $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-            $('table.display').DataTable({
-                paging: true,
-                stateSave: true,
-                searching: true
-            });
-        });
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
     </script>
     {% endif %}
 
 </head>
-
 <body>
-    {% include topnav.html %}
-    <!-- Page Content -->
-    <div class="container">
-        <div id="main">
-            <!-- Content Row -->
-            <div class="row">
-                {% assign content_col_size = "col-md-12" %}
-                {% unless page.hide_sidebar %}
-                <!-- Sidebar Column -->
-                <div class="col-md-3" id="tg-sb-sidebar">
-                    {% include sidebar.html %}
-                </div>
-                {% assign content_col_size = "col-md-9" %}
-                {% endunless %}
-
-                <!-- Content Column -->
-                <div class="{{content_col_size}}" id="tg-sb-content">
-                    {{content}}
-                </div>
-                <!-- /.row -->
+{% include topnav.html %}
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        {% assign content_col_size = "col-md-12" %}
+        {% unless page.hide_sidebar %}
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                {% include sidebar.html %}
             </div>
-            <!-- /.container -->
+            {% assign content_col_size = "col-md-9" %}
+        {% endunless %}
+
+        <!-- Content Column -->
+        <div class="{{content_col_size}}" id="tg-sb-content">
+            {{content}}
         </div>
-        <!-- /#main -->
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
     </div>
 
 </body>
 {% if site.google_analytics %}
 {% include google_analytics.html %}
 {% endif %}
-
 </html>
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
