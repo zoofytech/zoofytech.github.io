@@ -11,7 +11,6 @@
       <span aria-hidden="true">{{ title }}</span>
     </a>
   {%- endfor -%}
-<br>
   {%- for item in site.external -%}
     {%- assign node = site.pages | where: "name", item.file | first -%}
     {%- assign url = item.url | default: node.url -%}
