@@ -1,147 +1,118 @@
-# (string) Title of your wiki
-title: 
-# (string) Description of your wiki
-description: 
-# (boolean) disable edit functionalities (edit/delete/add pages)
-disable_edit: false
-# (boolean) Enable/disable wiki page list in sidebar
-show_wiki_pages: true
-# (integer) Maximum number of wiki page to shown in sidebar
-show_wiki_pages_limit: 10
-# (boolean) Enable/disable blog feature
-blog_feature: true
-# (boolean) Enable/disable wiki posts list in sidebar (needs blog_feature enabled)
-show_wiki_posts: true
-# (integer) Maximum number of wiki posts to shown in sidebar
-show_wiki_posts_limit: 10
-# from jekyll (read jekyll doc)
-paginate: 5
-paginate_path: "assets/blog/page:num"
-permalink: /blog/posts/:year/:month/:day/:title:output_ext
-# (boolean) Enable/disable download buttons in sidebar
-show_downloads: true
-# (string) Specify branch rendered by gitpages allowing wiki tool buttons to work
-git_branch: "main"
-# (string) Url of logo image, it can be full, absolute or relative.
-logo_url: 
-# (string) The UA-XXXXX-Y code from google analytic to enable GA on your wiki
+repository: tomjoht/documentation-theme-jekyll
+
+output: web
+# this property is useful for conditional filtering of content that is separate from the PDF.
+
+topnav_title: Jekyll Documentation Theme
+# this appears on the top navigation bar next to the home button
+
+site_title: Jekyll theme for documentation
+# this appears in the html browser tab for the site title (seen mostly by search engines, not users)
+
+company_name: zoofytech
+# this appears in the footer
+
+github_editme_path: 
+# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+
+# gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
+# if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+
 google_analytics: 
-# (string) folder where wiki pages are stored, it's needed for tool buttons
-wiki_folder: "wiki"
-# (boolean) if you're using github wiki as submodule then this config
-# must be enabled to allow tool buttons to work properly
-use_github_wiki: false
-# (boolean) Enable "Edit with Prose.io" button in tools, it's a 3rd party
-# service to edit github markdown pages easily
-use_prose_io: true
-# Select search_engine component from:
-# - js: it uses a built in javascript component that uses generated js object
-# - js_rss: it uses a built in javascript component that uses generated  sitemap_full.xml to search inside your wiki with lunr library (slow and experimental)
-# - github : it uses internal github repository search
-# - google : it uses cse search bar, you need to configure google_cse_token
-#
-search_engine : "js"
-# Setting google custom search engine for google
-# cse search bar (https://cse.google.it/cse/)
-google_cse_token: 
+# if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-# (string) path of site root. Normally it's must be empty because _config.yml resides in the root of your repository.
-# If you have _config.yml and your site in a subfolder, then change this config accordly 
-site_root: 
+host: 127.0.0.1
+# the preview server used. Leave as is.
 
-#
-# Jekyll configurations
-#
+port: 4000
+# the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
 
-# You can customize it changing default layout for all pages
-# More info: https://jekyllrb.com/docs/configuration/
-#
-# git-wiki includes some internal themes that you can choose
-# check _layouts folder
-#
-markdown: kramdown
+exclude:
+  - .idea/
+  - .gitignore
+  - vendor
+# these are the files and directories that jekyll will exclude from the build
+
+feedback_subject_line: 
+
+feedback_email: 
+# used as a contact email for the Feedback link in the top navigation bar
+
+# feedback_disable: true
+# if you uncomment the previous line, the Feedback link gets removed
+
+# feedback_text: "Need help?"
+# if you uncomment the previous line, it changes the Feedback text
+
+# feedback_link: "http://helpy.io/"
+# if you uncomment the previous line, it changes where the feedback link points to
+
 highlighter: rouge
+# library used for syntax highlighting
+
+markdown: kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+
+collections:
+  tooltips:
+    output: false
+# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
 
 defaults:
- - 
-    scope:
-      path: "wiki"
-    values:
-      permalink: /:basename
- -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "git-wiki-default"
- -
+  -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "git-wiki-default"
- -
+      layout: "page"
+      comments: true
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: home_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: ""
+      type: "tooltips"
+    values:
+      layout: "page"
+      search: true
+      tooltip: true
+
+  -
     scope:
       path: ""
       type: "posts"
     values:
-      layout: "git-wiki-post"
- -
-    scope:
-      path: assets/blog
-    values:
-      layout: "git-wiki-blog"
-sass:
-    style: compressed
-plugins:
-  - jekyll-avatar
-  - jekyll-coffeescript
-  - jekyll-default-layout
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-mentions
-  - jekyll-optional-front-matter
-  - jekyll-readme-index
-  - jekyll-redirect-from
-  - jekyll-remote-theme
-  - jekyll-relative-links
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-titles-from-headings
-  - jemoji
+      layout: "post"
+      comments: true
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: home_sidebar
+      topnav: topnav
+
+# these are defaults used for the frontmatter for these file types
+
+sidebars:
+- home_sidebar
+- mydoc_sidebar
+- product1_sidebar
+- product2_sidebar
+- other
+
+description: ""
+# the description is used in the feed.xml file
+
+# needed for sitemap.xml file only
+# url: http://idratherbewriting.com
+# baseurl: /documentation-theme-jekyll
 
 
-#
-# INCLUDING HOOKS
-# They are optional, change them only if you need
-# Check wiki documentation to learn how they work
-#
+github: [metadata]
 
-inc_before_toc : 
-inc_after_toc : 
-inc_before_content : 
-inc_after_content : 
-inc_before_footer : 
-inc_after_footer : 
-inc_before_head : 
-inc_after_head : 
-inc_before_meta : 
-inc_after_meta : 
-inc_before_scripts : 
-inc_after_scripts : 
-inc_before_styles : 
-inc_after_styles : 
-inc_before_header : 
-inc_after_header : 
-inc_before_tail : 
-inc_after_tail : 
-inc_before_tools : 
-inc_after_tools : 
-
-inc_before_page_list :
-inc_after_page_list :
-inc_before_post_list :
-inc_after_post_list :

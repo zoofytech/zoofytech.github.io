@@ -1,0 +1,59 @@
+/* Define the dark text color */
+body {
+    color: #fff;
+  }
+  
+  /* Define the dark background color */
+  body {
+    background-color: #333;
+  }
+  
+  /* Define the dark link color */
+  a {
+    color: #0074d9;
+  }
+  
+  /* Define the dark hover color for links */
+  a:hover {
+    color: #0063aa;
+  }
+  
+  /* Define the dark color for headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+  
+  /* Define the dark color for blockquotes */
+  blockquote {
+    border-left: 5px solid #666;
+    color: #999;
+  }
+  
+  /* Define the dark color for preformatted text */
+  pre {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  /* Define the dark color for code blocks */
+  code {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  /* Define the dark color for inline code blocks */
+  code {
+    background-color: rgba(255,255,255,0.1);
+    color: #0366d6;
+  }
+  
+  /* Define the dark color for list items */
+  li {
+    color: #fff;
+  }
+  
+  /* Define the dark border color for tables */
+  table {
+    border-color: #666;
+  }
+  

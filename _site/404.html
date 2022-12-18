@@ -1,387 +1,393 @@
-
-
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  
- 
-  
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Page Not Found | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>404: Page not found</title>
-<meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="404: Page not found" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/404.html" />
-<meta property="og:url" content="http://localhost:4000/404.html" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="404: Page not found" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"404: Page not found","url":"http://localhost:4000/404.html"}</script>
-<!-- End Jekyll SEO tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
 
 
-<title>404.html - </title>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
 
-<meta property="og:title" content="404.html - ">
+<link rel="shortcut icon" href="images/favicon.ico">
 
-<meta property="og:description" content="
-        
-      ">
-
-
-<meta property="og:url"
-  content="http://localhost:4000/404.html" />
-
-
-
-
-
-  
-
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-<script src="/assets/js/checkLinks.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-<!-- dark mode -->
-<style>
-  body {
-    visibility: hidden;
-    opacity: 0;
-  }
-</style>
-<noscript>
-  <style>
-    body {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
-</noscript>
-<script>
-  function darkModeSetBodyBg() {
-    if (localStorage.getItem('darkmode')==="true") {
-      console.log("darkmode activated");
-      document.body.style.backgroundColor = "black !important";
-    } else {
-      document.body.style.backgroundColor = ""; // reset background color
-    }
-  }
-
-  function addDarkmodeWidget() {
-
-    const options = {
-        label: '🌓', // default: ''
-        time: '0s'
-    }
-
-    new Darkmode(options).showWidget();
-
-    document.body.style.visibility = 'visible';
-    document.body.style.opacity = 1;
-  }
-
-  $(document).ready(addDarkmodeWidget);
-</script>
-
-
-  
-
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=">
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
 
 
 
-  
-</head>
-
-<body style="background-color: black;" onload="darkModeSetBodyBg()">
-    <!-- dark mode -->
     <script>
-        darkModeSetBodyBg()
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
     </script>
     
-    <div class="wrapper">
-    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
-  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
-  <a href="/">
-    
-    
-  </a>
-</div>
-<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
-  <div>
-    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
-    
 
-    <div class="w3-hide-medium w3-hide-small">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Page Not Found page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Page Not Found">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
       
-      <h1></h1>
       
-    </div>
-
-
-    
-
-    
-    <ul class="git-wiki-downloads">
-    <li><a href="">Download <strong>ZIP File</strong></a></li>
-    <li><a href="">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="">View On <strong> Github  </strong></a></li>
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
 </ul>
 
-    
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
 
-    
-    <div class="git-wiki-page-list">
-    
 
-    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
-    <ul class="page-list">
-        
-        
-        
-        
-        
-        <li class="page-list-item">
+
+            </div>
             
-            <a href="/assets/katex/">README.md</a>
-        </li>
-        
         
 
-        
-        
-        
-
-        
-        
-        
-
-        
-        
-        
-
-        
-        
-        
-        <li class="page-list-item">
-            
-            <a href="/">Home</a>
-        </li>
-        
-        
-
-        
-        
-        
-        <li class="page-list-item">
-            
-            <a href="/main_page">main_page.md</a>
-        </li>
-        
-        
-
-        
-        
-        
-
-        
-        
-        
-
-        
-    </ul>
-
-    
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Page Not Found</h1>
 </div>
-    
+
+
+
+<div class="post-content">
+
+   
 
     
-    <div class="git-wiki-page-list">
     
-
-    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
-    <ul class="post-list">
-        
-        
-        
-        
-
-        
-        <li class="post-list-item">
-            <a href="/blog/posts/2017/02/01/markdown-examples.html">Markdown examples</a>
-        </li>
-        
-        
-
-        
-        
-
-        
-        <li class="post-list-item">
-            <a href="/blog/posts/2020/02/01/advanced-examples.html">Advanced examples</a>
-        </li>
-        
-        
-
-        
-        
-
-        
-        <li class="post-list-item">
-            <a href="/blog/posts/2022/02/01/test.html">Test examples</a>
-        </li>
-        
-        
-
-        
-    </ul>
-
-    <span class="post-list read-all"><a href="/blog/">Read all</a></span>
-
-    
-</div>
-    
-
-    
-  </div>
-</header>
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
-  function sidebar_toggle() {
-    var sidebar = document.getElementById("git-wiki-sidebar");
-    if (sidebar.style.display == "block") {
-      sidebar.style.display = "none";
-      sidebar.style.position = "inherit";
-    } else {
-      $(sidebar).attr('style', 'display: block;');
-    }
-  }
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
 </script>
 
-    <div class="git-wiki-page">
-  <section>
-
-    <div id="tools-buttons" style="width: 100%; text-align: right">
-    
-
-    <div class="git-wiki-tools">
-    
-
-    
-    <span class="tools-element"><a target="_blank" href="/new/master?filename=/wiki/">Add
-            new</a></span>
-    <span class="tools-element"><a target="_blank" href="/edit/master//404.html">Edit</a></span>
-
-    
-    <span class="tools-element"><a target="_blank" href="/delete/master//404.html">Delete</a></span>
-    
-
-    
-
-    <span class="tools-element"><a target="_blank" href="/commits/master//404.html">History</a></span>
-    <span class="tools-element"><a target="_blank" href="/blob/master//404.html">Source</a></span>
-    
-    <span class="tools-element"><a target="_blank" href="/new/master?filename=/_posts/">Add
-            new post</a></span>
-    
-    
-    <br>
-    Prose.io:
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#/new/master/wiki">Add
-            new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#/edit/master/404.html">Edit</a></span>
-    
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#/new/master/_posts/">Add
-            new post</a></span>
-    
-    
-    
-</div>
-
-
-    <div class="git-wiki-search">
-    
-
-    
-    
-    <div class="git-wiki-search-js">
-	<input type="text" id="search-input" placeholder="Search..">
-	<ul id="results-container"></ul>
-</div>
-<!-- script pointing to jekyll-search.js -->
-<script src="/assets/js/simple-jekyll-search.min.js"></script>
-<script async src="/assets/js/searchdata.js"></script>
-
-</div>
-
-    
-</div>
-
-    
-
-
-
-
-
+<div id="toc"></div>
 
 
 
     
 
-    <div id="git-wiki-content">
-      
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/404.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <p>Sorry, but the page you were trying to view does not exist. Try searching for it or looking at the URL to see if it looks correct.</p>
+
+
+    <div class="tags">
+        
     </div>
 
-    
-  </section>
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+
+
+
 </div>
-    <footer>
-    
 
-    
-    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.1</a> </p>
+<hr class="shaded"/>
 
-    
-
-
-    
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Copyright 2021 Google LLC. All rights reserved. <br />
+ Site last generated: Dec 18, 2022 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
 </footer>
+
+
+
+
+
+
+        </div>
+    <!-- /.row -->
 </div>
-
-    
-
-<script src="/assets/js/scale.fix.js"></script>
-
-
-
-
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/404.html,/archive.html,/blog/index.html,/,/main_page,/,/assets/katex/,".split(","));
-    });
-</script>
-
-
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
 
 </body>
 
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+
+
+
 </html>
+
+
