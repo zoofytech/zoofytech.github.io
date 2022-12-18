@@ -28,7 +28,7 @@ twitter_username: zoofytech
 github_username:  zoofytech
 
 # Build settings
-theme: dark
+# theme: dark
 # plugins:
 #   - jekyll-feed
 
