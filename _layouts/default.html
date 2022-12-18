@@ -29,6 +29,10 @@
 
 <header>
   <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
+  <form action="/search" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+  </form>  
   {% include menu.html menu=pages %}
 </header>
 

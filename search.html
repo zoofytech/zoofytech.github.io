@@ -1,0 +1,17 @@
+<form action="/search" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+  </form>
+  
+  <!-- search.html -->
+  
+  <h1>Search Results</h1>
+  
+  <ul>
+    {% for result in site.search %}
+      <li>
+        <a href="{{ result.url }}">{{ result.title }}</a>
+        {{ result.excerpt }}
+      </li>
+    {% endfor %}
+  </ul>  
