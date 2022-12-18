@@ -1,0 +1,9 @@
+I"¿<h2 id="embedded-content">Embedded content</h2>
+
+<p>You can also embed a lot of stuff, for example from YouTube, using the <code class="language-plaintext highlighter-rouge">embed.html</code> include.</p>
+
+<div style="position: relative; margin: 1.5em 0; padding-bottom: 56.25%;">
+  <iframe style="position: absolute;" src="https://www.youtube.com/embed/vGLBATCIwAw" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+:ET

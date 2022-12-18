@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "sidebar.css",
+	"sources": [
+		"sidebar.sass",
+		"_sass/index.sass"
+	],
+	"sourcesContent": [
+		"@import \"index\";\n\nhtml {\n  padding: 0; }\n\nbody {\n  font-size: 1.06em;\n  margin: 0 0 0 16.5em;\n  max-width: inherit;\n  overscroll-behavior: none; }\n\nbody > header, body > footer {\n  display: none; }\n\nbody > article {\n  margin: 0 5em;\n  padding: 2em 0;\n  max-width: 50em; }\n\naside {\n  display: block!important;\n  position: fixed;\n  overflow: auto;\n  background: darken($dark, 2%);\n  color: #fff;\n  padding: 2.25em;\n  width: 12em;\n  top: 0;\n  bottom: 0;\n  left: 0; }\n\narticle header h1 {\n  font-size: 2em; }\n\nnav {\n  margin: 0 -2.25em; }\n\nnav a {\n  display: block;\n  margin: 0;\n  padding: .5em 2.25em; }\n\nnav a:hover, nav a.selected {\n  background: lighten($dark, 2%);\n  text-decoration: inherit; }\n\n.icon {\n  margin-right: 1.2em;\n  color: inherit!important; }\n\n.description {\n  margin: 2em 0; }\n",
+		"$font-size: calc(0.8rem + 0.3vw) !default;\n$font-weight: 400 !default;\n$heading-weight: 600 !default;\n$line-height: 1.6 !default;\n$link-color: #68f !default;\n$dark: #212228 !default;\n$light: #ffffff !default;\n\n@function reduce ($percent) {\n  @return rgba(mix($dark, $light), $percent / 100); }\n"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,AAAC,CACH,OAAO,CAAE,CAAC,CAAG,AAEf,AAAA,IAAI,AAAC,CACH,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,YAAY,CACpB,SAAS,CAAE,OAAO,CAClB,mBAAmB,CAAE,IAAI,CAAG,AAE9B,AAAA,IAAI,CAAG,MAAM,CAAE,IAAI,CAAG,MAAM,AAAC,CAC3B,OAAO,CAAE,IAAI,CAAG,AAElB,AAAA,IAAI,CAAG,OAAO,AAAC,CACb,MAAM,CAAE,KAAK,CACb,OAAO,CAAE,KAAK,CACd,SAAS,CAAE,IAAI,CAAG,AAEpB,AAAA,KAAK,AAAC,CACJ,OAAO,CAAE,KAAK,CAAA,UAAU,CACxB,QAAQ,CAAE,KAAK,CACf,QAAQ,CAAE,IAAI,CACd,UAAU,CClBL,OAAO,CDmBZ,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,MAAM,CACf,KAAK,CAAE,IAAI,CACX,GAAG,CAAE,CAAC,CACN,MAAM,CAAE,CAAC,CACT,IAAI,CAAE,CAAC,CAAG,AAEZ,AAAA,OAAO,CAAC,MAAM,CAAC,EAAE,AAAC,CAChB,SAAS,CAAE,GAAG,CAAG,AAEnB,AAAA,GAAG,AAAC,CACF,MAAM,CAAE,SAAS,CAAG,AAEtB,AAAA,GAAG,CAAC,CAAC,AAAC,CACJ,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,WAAW,CAAG,AAEzB,AAAA,GAAG,CAAC,CAAC,CAAC,KAAK,CAAE,GAAG,CAAC,CAAC,AAAA,SAAS,AAAC,CAC1B,UAAU,CCtCL,OAAO,CDuCZ,eAAe,CAAE,OAAO,CAAG,AAE7B,AAAA,KAAK,AAAC,CACJ,YAAY,CAAE,KAAK,CACnB,KAAK,CAAE,OAAO,CAAA,UAAU,CAAG,AAE7B,AAAA,YAAY,AAAC,CACX,MAAM,CAAE,KAAK,CAAG"
+}

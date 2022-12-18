@@ -1,0 +1,491 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/assets/katex/" />
+<meta property="og:url" content="http://localhost:4000/assets/katex/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","url":"http://localhost:4000/assets/katex/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>README - </title>
+
+<meta property="og:title" content="README - ">
+
+<meta property="og:description" content="
+        
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/assets/katex/" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1></h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="">Download <strong>ZIP File</strong></a></li>
+    <li><a href="">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/assets/katex/">README.md</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/">Home</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/main_page">main_page.md</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+        
+
+        
+        <li class="post-list-item">
+            <a href="/blog/posts/2017/02/01/markdown-examples.html">Markdown examples</a>
+        </li>
+        
+        
+
+        
+        
+
+        
+        <li class="post-list-item">
+            <a href="/blog/posts/2020/02/01/advanced-examples.html">Advanced examples</a>
+        </li>
+        
+        
+
+        
+        
+
+        
+        <li class="post-list-item">
+            <a href="/blog/posts/2022/02/01/test.html">Test examples</a>
+        </li>
+        
+        
+
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+    <span class="tools-element"><a target="_blank" href="/new/master?filename=/wiki/">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="/edit/master//assets/katex/README.md">Edit</a></span>
+
+    
+    <span class="tools-element"><a target="_blank" href="/delete/master//assets/katex/README.md">Delete</a></span>
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="/commits/master//assets/katex/README.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="/blob/master//assets/katex/README.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="/new/master?filename=/_posts/">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#/edit/master/assets/katex/README.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#"></a>
+    <ol>
+      <li><a href="#getting-started">Getting started</a>
+        <ol>
+          <li><a href="#starter-template">Starter template</a></li>
+          <li><a href="#api">API</a></li>
+        </ol>
+      </li>
+      <li><a href="#demo-and-documentation">Demo and Documentation</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#license">License</a></li>
+    </ol>
+  </li>
+</ol>
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1><a href="https://katex.org/"><img src="https://katex.org/img/katex-logo-black.svg" width="130" alt="KaTeX" /></a></h1>
+<p><a href="https://www.npmjs.com/package/katex"><img src="https://img.shields.io/npm/v/katex.svg" alt="npm" /></a>
+<a href="https://github.com/KaTeX/KaTeX/actions?query=workflow%3ACI"><img src="https://github.com/KaTeX/KaTeX/workflows/CI/badge.svg?branch=master&amp;event=push" alt="CI" /></a>
+<a href="https://codecov.io/gh/KaTeX/KaTeX"><img src="https://codecov.io/gh/KaTeX/KaTeX/branch/master/graph/badge.svg" alt="codecov" /></a>
+<a href="https://github.com/KaTeX/KaTeX/discussions"><img src="https://img.shields.io/badge/Discussions-join-brightgreen" alt="Discussions" /></a>
+<a href="https://www.jsdelivr.com/package/npm/katex"><img src="https://data.jsdelivr.com/v1/package/npm/katex/badge?style=rounded" alt="jsDelivr" /></a>
+<img src="https://img.badgesize.io/https://unpkg.com/katex/dist/katex.min.js?compression=gzip" alt="katex.min.js size" />
+<a href="https://gitpod.io/#https://github.com/KaTeX/KaTeX"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" alt="Gitpod ready-to-code" /></a></p>
+
+<p>KaTeX is a fast, easy-to-use JavaScript library for TeX math rendering on the web.</p>
+
+<ul>
+  <li><strong>Fast:</strong> KaTeX renders its math synchronously and doesn’t need to reflow the page. See how it compares to a competitor in <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php">this speed test</a>.</li>
+  <li><strong>Print quality:</strong> KaTeX’s layout is based on Donald Knuth’s TeX, the gold standard for math typesetting.</li>
+  <li><strong>Self contained:</strong> KaTeX has no dependencies and can easily be bundled with your website resources.</li>
+  <li><strong>Server side rendering:</strong> KaTeX produces the same output regardless of browser or environment, so you can pre-render expressions using Node.js and send them as plain HTML.</li>
+</ul>
+
+<p>KaTeX is compatible with all major browsers, including Chrome, Safari, Firefox, Opera, Edge, and IE 11.</p>
+
+<p>KaTeX supports much (but not all) of LaTeX and many LaTeX packages. See the <a href="https://katex.org/docs/supported.html">list of supported functions</a>.</p>
+
+<p>Try out KaTeX <a href="https://katex.org/#demo">on the demo page</a>!</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3 id="starter-template">Starter template</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly --&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- The loading of KaTeX is deferred to speed up page rendering --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+    <span class="c">&lt;!-- To automatically render math in text elements, include the auto-render extension: --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span>
+        <span class="na">onload=</span><span class="s">"renderMathInElement(document.body);"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  ...
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>You can also <a href="https://github.com/KaTeX/KaTeX/releases">download KaTeX</a> and host it yourself.</p>
+
+<p>For details on how to configure auto-render extension, refer to <a href="https://katex.org/docs/autorender.html">the documentation</a>.</p>
+
+<h3 id="api">API</h3>
+
+<p>Call <code class="language-plaintext highlighter-rouge">katex.render</code> to render a TeX expression directly into a DOM element.
+For example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">katex</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="dl">"</span><span class="s2">c = </span><span class="se">\\</span><span class="s2">pm</span><span class="se">\\</span><span class="s2">sqrt{a^2 + b^2}</span><span class="dl">"</span><span class="p">,</span> <span class="nx">element</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">throwOnError</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Call <code class="language-plaintext highlighter-rouge">katex.renderToString</code> to generate an HTML string of the rendered math,
+e.g., for server-side rendering.  For example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">katex</span><span class="p">.</span><span class="nx">renderToString</span><span class="p">(</span><span class="dl">"</span><span class="s2">c = </span><span class="se">\\</span><span class="s2">pm</span><span class="se">\\</span><span class="s2">sqrt{a^2 + b^2}</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">throwOnError</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+<span class="c1">// '&lt;span class="katex"&gt;...&lt;/span&gt;'</span>
+</code></pre></div></div>
+
+<p>Make sure to include the CSS and font files in both cases.
+If you are doing all rendering on the server, there is no need to include the
+JavaScript on the client.</p>
+
+<p>The examples above use the <code class="language-plaintext highlighter-rouge">throwOnError: false</code> option, which renders invalid
+inputs as the TeX source code in red (by default), with the error message as
+hover text.  For other available options, see the
+<a href="https://katex.org/docs/api.html">API documentation</a>,
+<a href="https://katex.org/docs/options.html">options documentation</a>, and
+<a href="https://katex.org/docs/error.html">handling errors documentation</a>.</p>
+
+<h2 id="demo-and-documentation">Demo and Documentation</h2>
+
+<p>Learn more about using KaTeX <a href="https://katex.org">on the website</a>!</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+
+<h2 id="license">License</h2>
+
+<p>KaTeX is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.1</a> </p>
+
+    
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/404.html,/archive.html,/blog/index.html,/,/main_page,/,/assets/katex/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>
