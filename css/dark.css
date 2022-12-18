@@ -1,0 +1,53 @@
+body {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  a {
+    color: #00f;
+  }
+  
+  a:hover {
+    color: #ccf;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+  
+  code {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  pre {
+    background-color: #333;
+    color: #fff;
+  }
+  body.dark-theme {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  body.dark-theme a {
+    color: #00f;
+  }
+  
+  body.dark-theme a:hover {
+    color: #ccf;
+  }
+  
+  body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 {
+    color: #fff;
+  }
+  
+  body.dark-theme code {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  body.dark-theme pre {
+    background-color: #333;
+    color: #fff;
+  }
+  
