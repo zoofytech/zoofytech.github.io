@@ -1,8 +1,9 @@
 name: Sync changes to prod
 
 on:
-  schedule:
-    - cron: '0 7 * * *'
+ push:
+    branches:
+      - main
 
 jobs:
   sync:
