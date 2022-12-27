@@ -21,6 +21,11 @@ jobs:
         repository: ${{ env.DEV_REPO }}
         token: ${{ secrets.GH_TOKEN }}
 
+    - name: Add global git user and email
+      run: |
+        git config --global user.email "sxcdennis@gmail.com"
+        git config --global user.name "zoofytech"
+
     - name: Check for changes
       run: |
        if [ ! "$(git diff HEAD HEAD~1)" ]; then
