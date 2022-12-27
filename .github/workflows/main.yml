@@ -1,8 +1,9 @@
 name: Sync changes to prod
 
 on:
-  schedule:
-    - cron: '0 7 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   sync:
@@ -21,6 +22,7 @@ jobs:
     - name: Check for changes
       run: |
         if ! git diff --exit-code HEAD HEAD~1; then
+          echo "There have been no changes..Exiting"
           exit 0
         fi
 
