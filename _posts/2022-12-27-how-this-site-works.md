@@ -23,8 +23,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     env:
-      DEV_REPO: "dev.zoofytech.github.io"
-      PROD_REPO: "zoofytech.github.io"
+      DEV_REPO: "zoofytech/dev.zoofytech.github.io"
+      PROD_REPO: "zoofytech/zoofytech.github.io"
+      PROD_REPO_NAME: "zoofytech.github.io"
       USERNAME: "zoofytech"
     steps:
     - name: Checkout repository
@@ -42,8 +43,8 @@ jobs:
 
     - name: Push changes to prod repository
       run: |
-        git remote add {{ env.PROD_REPO }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.USERNAME }}/{{ env.PROD_REPO }}.git
-        git diff --name-only HEAD HEAD~1 | xargs -I{} git push {{ env.PROD_REPO }} HEAD:{} -f
+        git remote add {{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.USERNAME }}/{{ env.PROD_REPO }}.git
+        git diff --name-only HEAD HEAD~1 | xargs -I{} git push {{ env.PROD_REPO_NAME }} HEAD:{} -f
         git log -1 --pretty=%B > commit-message.txt
         git commit --amend -F commit-message.txt
 ```
