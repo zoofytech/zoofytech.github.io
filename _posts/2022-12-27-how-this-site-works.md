@@ -44,10 +44,10 @@ jobs:
           exit 0
         fi
 
-    - name: Push changes to prod repository
+    - name: Push changes to other repository
       run: |
         git remote add ${{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}.git
-        git diff --name-only HEAD~1 HEAD | xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} -f
+        git diff --name-only| xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} --force-with-lease
         git log -1 --pretty=%B > commit-message.txt
         git commit --amend -F commit-message.txt
 ```
