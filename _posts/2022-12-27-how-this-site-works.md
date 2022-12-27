@@ -16,9 +16,12 @@ Below is an example code on how this is done:
 name: Sync changes to prod
 
 on:
+#  push:
+#     branches:
+#       - main
   schedule:
     - cron: '0 7 * * *'
-
+    
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -43,8 +46,8 @@ jobs:
 
     - name: Push changes to prod repository
       run: |
-        git remote add {{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.USERNAME }}/{{ env.PROD_REPO }}.git
-        git diff --name-only HEAD HEAD~1 | xargs -I{} git push {{ env.PROD_REPO_NAME }} HEAD:{} -f
+        git remote add ${{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}.git
+        git diff --name-only HEAD HEAD~1 | xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} -f
         git log -1 --pretty=%B > commit-message.txt
         git commit --amend -F commit-message.txt
 ```
