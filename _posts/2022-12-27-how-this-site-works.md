@@ -39,7 +39,7 @@ jobs:
 
     - name: Check for changes
       run: |
-        if ! git diff --exit-code HEAD~1 HEAD; then
+        if ! git diff HEAD~1 HEAD; then
           echo "There have been no changes..exiting"
           exit 0
         fi
