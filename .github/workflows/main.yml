@@ -1,0 +1,32 @@
+name: Sync changes to prod
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      DEV_REPO: "dev.zoofytech.github.io"
+      PROD_REPO: "zoofytech.github.io"
+      USERNAME: "zoofytech"
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ env.DEV_REPO }}
+        token: ${{ secrets.GH_TOKEN }}
+
+    - name: Check for changes
+      run: |
+        if ! git diff --exit-code HEAD HEAD~1; then
+          exit 0
+        fi
+
+    - name: Push changes to other repository
+      run: |
+        git remote add other-repo https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.USERNAME }}/{{ env.PROD_REPO }}.git
+        git diff --name-only HEAD HEAD~1 | xargs -I{} git push other-repo HEAD:{} -f
+        git log -1 --pretty=%B > commit-message.txt
+        git commit --amend -F commit-message.txt
