@@ -21,7 +21,7 @@ on:
 #       - main
   schedule:
     - cron: '0 7 * * *'
-    
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
 
     - name: Check for changes
       run: |
-        if ! git diff --exit-code HEAD HEAD~1; then
+        if ! git diff --exit-code HEAD~1 HEAD; then
           echo "There have been no changes..exiting"
           exit 0
         fi
@@ -47,7 +47,7 @@ jobs:
     - name: Push changes to prod repository
       run: |
         git remote add ${{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}.git
-        git diff --name-only HEAD HEAD~1 | xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} -f
+        git diff --name-only HEAD~1 HEAD | xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} -f
         git log -1 --pretty=%B > commit-message.txt
         git commit --amend -F commit-message.txt
 ```
