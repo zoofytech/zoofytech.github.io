@@ -23,7 +23,7 @@ jobs:
 
     - name: Check for changes
       run: |
-        if [ ! git diff HEAD HEAD~1 ]; then
+       if [ ! "$(git diff HEAD HEAD~1)" ]; then
           echo "There have been no changes..exiting"
           exit 0
         fi
