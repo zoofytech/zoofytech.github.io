@@ -16,12 +16,11 @@ Below is an example code on how this is done:
 name: Sync changes to prod
 
 on:
-#  push:
-#     branches:
-#       - main
-  schedule:
-    - cron: '0 7 * * *'
-
+ push:
+    branches:
+      - main
+  # schedule:
+  #   - cron: '0 7 * * *'
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -31,23 +30,11 @@ jobs:
       PROD_REPO_NAME: "zoofytech.github.io"
       USERNAME: "zoofytech"
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: git-sync
+      uses: wei/git-sync@v3
       with:
-        repository: ${{ env.DEV_REPO }}
-        token: ${{ secrets.GH_TOKEN }}
-
-    - name: Check for changes
-      run: |
-        if ! git diff HEAD~1 HEAD; then
-          echo "There have been no changes..exiting"
-          exit 0
-        fi
-
-    - name: Push changes to other repository
-      run: |
-        git remote add ${{ env.PROD_REPO_NAME }} https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}.git
-        git diff --name-only| xargs -I{} git push ${{ env.PROD_REPO_NAME }} HEAD:{} --force-with-lease
-        git log -1 --pretty=%B > commit-message.txt
-        git commit --amend -F commit-message.txt
+          source_repo: "https://${{ env.USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.DEV_REPO }}"
+          source_branch: "main"
+          destination_repo: "https://${{ env.USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}"
+          destination_branch: "main"
 ```

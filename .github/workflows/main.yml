@@ -15,29 +15,10 @@ jobs:
       PROD_REPO_NAME: "zoofytech.github.io"
       USERNAME: "zoofytech"
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: git-sync
+      uses: wei/git-sync@v3
       with:
-        repository: ${{ env.DEV_REPO }}
-        token: ${{ secrets.GH_TOKEN }}
-        ref: main
-
-
-    - name: Add global git user and email
-      run: |
-        git config --global user.email "sxcdennis@gmail.com"
-        git config --global user.name "zoofytech"
-
-    - name: Check for changes
-      run: |
-       if [ ! "$(git diff HEAD HEAD~1)" ]; then
-          echo "There have been no changes..exiting"
-          exit 0
-        fi
-
-    - name: Push changes to other repository
-      run: |
-        git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}.git
-        git diff --name-only HEAD HEAD~1 | xargs -I{} git push origin HEAD:{} --force-with-lease
-        git log -1 --pretty=%B > commit-message.txt
-        git commit --amend -F commit-message.txt
+          source_repo: "https://${{ env.USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.DEV_REPO }}"
+          source_branch: "main"
+          destination_repo: "https://${{ env.USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.PROD_REPO }}"
+          destination_branch: "main"
