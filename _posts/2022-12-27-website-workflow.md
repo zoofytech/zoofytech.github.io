@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [how site works, website, first post]
+tags: [how-site-works, website, first-post]
 ---
 
 This post will go over how this website's workflow  
@@ -30,8 +30,14 @@ jobs:
     - name: git-sync
       uses: wei/git-sync@v3
       with:
-          source_repo: "https://${ env.USERNAME }:${ secrets.GH_TOKEN }@github.com/${ env.DEV_REPO }"
+          source_repo: "https://${\
+          { env.USERNAME }}:${\
+          { secrets.GH_TOKEN }}@github.com/${\
+          { env.DEV_REPO }}"
           source_branch: "main"
-          destination_repo: "https://${ env.USERNAME }:${ secrets.GH_TOKEN }@github.com/${ env.PROD_REPO }"
+          destination_repo: "https://${\ 
+          { env.USERNAME }}:${\
+          { secrets.GH_TOKEN }}@github.com/${\
+          { env.PROD_REPO }}"
           destination_branch: "main"
 ```

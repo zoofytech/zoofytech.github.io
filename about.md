@@ -2,13 +2,7 @@
 layout: default
 title: About
 ---
-# Title
-This is an example page!
-
-Actually, it has the same layout of a post...
-```
-test
-```
+# Testing embedded videos  
 
 {% raw %}
 <iframe width="640" height="360" src="https://www.youtube.com/embed/mXWeWuBrWUY" frameborder="0" allowfullscreen></iframe>

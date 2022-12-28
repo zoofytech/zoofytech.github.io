@@ -1,4 +1,4 @@
-I"Q<p>This post will go over how this website’s workflow<br />
+I"�<p>This post will go over how this website’s workflow<br />
 The workflow for the website is fairly simple<br />
 There are two repos <code class="language-plaintext highlighter-rouge">dev</code> and <code class="language-plaintext highlighter-rouge">prod</code> <br />
 GitHub Actions is setup on the <code class="language-plaintext highlighter-rouge">dev</code> repository so when there are changes it would <code class="language-plaintext highlighter-rouge">push</code> to production at 12:00AM PDT</p>
@@ -23,9 +23,9 @@ Below is an example code on how this is done:</p>
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">git-sync</span>
       <span class="na">uses</span><span class="pi">:</span> <span class="s">wei/git-sync@v3</span>
       <span class="na">with</span><span class="pi">:</span>
-          <span class="na">source_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://$:$@github.com/$"</span>
+          <span class="na">source_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://$</span><span class="err">\</span><span class="s">:$@github.com/$"</span>
           <span class="na">source_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">main"</span>
-          <span class="na">destination_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://${</span><span class="err">\</span><span class="s">/{</span><span class="nv"> </span><span class="s">env.USERNAME</span><span class="nv"> </span><span class="s">}}:$@github.com/$"</span>
+          <span class="na">destination_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://$:$@github.com/$"</span>
           <span class="na">destination_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">main"</span>
 </code></pre></div></div>
 :ET
