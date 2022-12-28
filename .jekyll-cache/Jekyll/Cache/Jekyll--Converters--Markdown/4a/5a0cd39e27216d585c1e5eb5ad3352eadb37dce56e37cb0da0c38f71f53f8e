@@ -1,7 +1,0 @@
-I"/<p>This post will go over how this website’s workflow<br />
-The workflow for the website is fairly simple<br />
-There are two repos <code class="language-plaintext highlighter-rouge">dev</code> and <code class="language-plaintext highlighter-rouge">prod</code> <br />
-GitHub Actions is setup on the <code class="language-plaintext highlighter-rouge">dev</code> repository so when there are changes it would push to production at 12:00AM PDT<br />
-<img src="../images/website-workflow.jpg" alt="workflow" />
-Below is an example code on how this is done:</p>
-:ET

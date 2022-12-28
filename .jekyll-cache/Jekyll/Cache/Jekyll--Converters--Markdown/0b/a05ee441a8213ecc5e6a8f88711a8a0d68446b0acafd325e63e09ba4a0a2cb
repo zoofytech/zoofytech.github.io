@@ -1,0 +1,5 @@
+I"ù<p>This post will go over how this websiteâ€™s workflow<br />
+The workflow for the website is fairly simple<br />
+There are two repos <code class="language-plaintext highlighter-rouge">dev</code> and <code class="language-plaintext highlighter-rouge">prod</code> <br />
+GitHub Actions is setup on the <code class="language-plaintext highlighter-rouge">dev</code> repository so when there are changes it would <code class="language-plaintext highlighter-rouge">push</code> to production at 12:00AM PDT</p>
+:ET

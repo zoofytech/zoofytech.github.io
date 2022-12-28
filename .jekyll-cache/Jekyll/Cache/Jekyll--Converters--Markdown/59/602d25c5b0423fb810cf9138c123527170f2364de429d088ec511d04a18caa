@@ -1,0 +1,31 @@
+I"<p>This post will go over how this website’s workflow<br />
+The workflow for the website is fairly simple<br />
+There are two repos <code class="language-plaintext highlighter-rouge">dev</code> and <code class="language-plaintext highlighter-rouge">prod</code> <br />
+GitHub Actions is setup on the <code class="language-plaintext highlighter-rouge">dev</code> repository so when there are changes it would <code class="language-plaintext highlighter-rouge">push</code> to production at 12:00AM PDT</p>
+
+<p><img src="../images/website-workflow.jpg" alt="workflow" />
+Below is an example code on how this is done:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Sync changes to prod
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      DEV_REPO: "zoofytech/dev.zoofytech.github.io"
+      PROD_REPO: "zoofytech/zoofytech.github.io"
+      PROD_REPO_NAME: "zoofytech.github.io"
+      USERNAME: "zoofytech"
+    steps:
+    - name: git-sync
+      uses: wei/git-sync@v3
+      with:
+          source_repo: "https://$:$@github.com/$"
+          source_branch: "main"
+          destination_repo: "https://$:$@github.com/$"
+          destination_branch: "main"
+</code></pre></div></div>
+:ET
