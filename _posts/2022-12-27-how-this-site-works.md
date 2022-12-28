@@ -6,7 +6,7 @@ tags: [how site works, website, first post]
 This post will go over how this website's workflow  
 The workflow for the website is fairly simple  
 There are two repos `dev` and `prod`   
-GitHub Actions is setup on the `dev` repository so when there are changes it would push to production at 12:00AM PDT  
+GitHub Actions is setup on the `dev` repository so when there are changes it would `push` to production at 12:00AM PDT  
 
 
 ![workflow](../images/website-workflow.jpg)
@@ -16,11 +16,8 @@ Below is an example code on how this is done:
 name: Sync changes to prod
 
 on:
- push:
-    branches:
-      - main
-  # schedule:
-  #   - cron: '0 7 * * *'
+  schedule:
+    - cron: '0 7 * * *'
 jobs:
   sync:
     runs-on: ubuntu-latest
