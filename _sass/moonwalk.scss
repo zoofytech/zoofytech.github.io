@@ -215,6 +215,12 @@ p code, li code {
 }
 
 // sidebar
+@media screen and (max-width: 480px) {
+  #sidebar {
+    display: none;
+  }
+}
+
 #sidebar {
   position: fixed;
   top: 0;
