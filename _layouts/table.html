@@ -10,20 +10,20 @@
     <div class="w">
       <header>
         {% if site.theme_config.show_navbar == true %}
-          {% include horizontal_list.html collection=site.data.home.navbar_entries %}
-          <div class="dashed"></div>
+        {% include horizontal_list.html collection=site.data.home.navbar_entries %}
+        <div class="dashed"></div>
         {% endif %}
-        </header>
-              <!-- sidebar -->
-      <!-- <script>
+      </header>
+      <!-- sidebar -->
+      <script>
         // get the sidebar element
         var sidebar = document.getElementById("sidebar");
-      
+
         // get the top position of the sidebar
         var top = sidebar.offsetTop;
-      
+
         // add an event listener for the scroll event
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
           // if the sidebar is below the top of the window, fix it to the top
           if (window.pageYOffset > top) {
             sidebar.classList.add("fixed");
@@ -32,14 +32,14 @@
           }
         });
       </script>
-      
+
       <div id="sidebar">
         <div id="toc">
           {% toc %}{% include toc.html html=content %}
-          
+
         </div>
-      </div> -->
-    <!-- end sidebar -->
+      </div>
+      <!-- end sidebar -->
       {{ content }}
       {% if site.theme_config.appearance_toggle %}
       {% include toggle_theme_button.html %}
@@ -57,12 +57,12 @@
         {%- if site.theme_config.show_copyright == true -%}
         &copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp;{{site.author}}
         &nbsp;
-        
+
         &nbsp;
         {%- endif -%}
         {%- if site.soopr -%}
         &nbsp;
-        
+
         &nbsp;
         {%- endif -%}
       </div>

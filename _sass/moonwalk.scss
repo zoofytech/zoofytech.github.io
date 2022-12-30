@@ -213,3 +213,41 @@ p code, li code {
   text-transform: lowercase;
   //border: 1px solid var(--text-secondary);
 }
+
+// sidebar
+#sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  overflow-y: auto;
+}
+
+#toc {
+  margin: 20px;
+}
+
+#toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toc li {
+  margin: 8px 0;
+}
+
+#toc a {
+  text-decoration: none;
+}
+
+#toc a:hover {
+  text-decoration: underline;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+// End sidebar

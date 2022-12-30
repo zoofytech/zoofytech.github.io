@@ -27,7 +27,7 @@
 <meta name="twitter:site" content="@zoofytech" />
 <meta name="twitter:creator" content="@zoofy" />
 <script type="application/ld+json">
-{"headline":"python-basics","url":"http://localhost:4000/python-basics","author":{"@type":"Person","name":"zoofy"},"description":"This site was created to go over several topics within the SRE/DevOps realm","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/python-basics","headline":"python-basics","author":{"@type":"Person","name":"zoofy"},"description":"This site was created to go over several topics within the SRE/DevOps realm","@type":"WebPage","@context":"https://schema.org"}</script>
 <script async defer data-soopr-token="" src="https://sdk.soopr.co/soopr.js"  ></script>
 <!-- End Jekyll SEO tag -->
 
@@ -90,7 +90,7 @@
     <div class="w">
       <header>
         
-          <ul class="horizontal-list">
+        <ul class="horizontal-list">
   
     <li>
       <a href="/">
@@ -122,191 +122,38 @@
   
 </ul>
 
-          <div class="dashed"></div>
+        <div class="dashed"></div>
         
-        </header>
-      <h1 id="python-basics-">Python Basics <!-- omit in toc --></h1>
+      </header>
+      <!-- sidebar -->
+      <script>
+        // get the sidebar element
+        var sidebar = document.getElementById("sidebar");
+
+        // get the top position of the sidebar
+        var top = sidebar.offsetTop;
+
+        // add an event listener for the scroll event
+        window.addEventListener("scroll", function () {
+          // if the sidebar is below the top of the window, fix it to the top
+          if (window.pageYOffset > top) {
+            sidebar.classList.add("fixed");
+          } else {
+            sidebar.classList.remove("fixed");
+          }
+        });
+      </script>
+
+      <div id="sidebar">
+        <div id="toc">
+          <ul><li><a href="#python-basics">Python Basics</a><ul><li><a href="#download-python">Download Python</a></li><li><a href="#install-ide">Install IDE</a></li><li><a href="#basics">Basics</a><ul><li><a href="#print-function">Print function</a></li><li><a href="#execute-scripts">Execute Scripts</a></li><li><a href="#variables">Variables</a></li><li><a href="#strings">Strings</a></li><li><a href="#numbers">Numbers</a></li><li><a href="#lists">Lists</a></li><li><a href="#replace">Replace</a></li><li><a href="#join">Join</a></li><li><a href="#string-find">String find</a></li><li><a href="#split">Split</a></li><li><a href="#read-input">Read input</a></li></ul></li><li><a href="#flow-control">Flow Control</a><ul><li><a href="#if-statements">if statements</a></li><li><a href="#for-loops">for loops</a></li><li><a href="#while-loops">while loops</a></li><li><a href="#range-function">range function</a></li><li><a href="#break-and-continue-statements">break and continue statements</a></li><li><a href="#pass-statements">pass Statements</a></li><li><a href="#match-statements">match Statements</a></li><li><a href="#defining-functions">Defining Functions</a></li><li><a href="#more-on-defining-functions">More on Defining Functions</a></li><li><a href="#default-argument-values">Default Argument Values</a></li><li><a href="#keyword-arguments">Keyword Arguments</a></li><li><a href="#special-parameters">Special parameters</a></li><li><a href="#positional-or-keyword-arguments">Positional-or-Keyword Arguments</a></li><li><a href="#positional-only-parameters">Positional-Only Parameters</a></li><li><a href="#keyword-only-arguments">Keyword-Only Arguments</a></li><li><a href="#function-examples">Function Examples</a></li><li><a href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li><li><a href="#unpacking-argument-lists">Unpacking Argument Lists</a></li><li><a href="#lambda-expressions">Lambda Expressions</a></li><li><a href="#documentation-strings">Documentation Strings</a></li><li><a href="#function-annotations">Function Annotations</a></li></ul></li><li><a href="#data-structures">Data Structures</a><ul><li><a href="#more-on-lists">More on Lists</a></li><li><a href="#using-lists-as-stacks">Using Lists as Stacks</a></li><li><a href="#using-lists-as-queues">Using Lists as Queues</a></li><li><a href="#list-comprehensions">List Comprehensions</a></li><li><a href="#nested-list-comprehensions">Nested List Comprehensions</a></li><li><a href="#the-del-statement">The del statement</a></li><li><a href="#tuples-and-sequences">Tuples and Sequences</a></li><li><a href="#sets">Sets</a></li><li><a href="#dictionaries">Dictionaries</a></li><li><a href="#looping-techniques">Looping Techniques</a></li><li><a href="#more-on-conditions">More on Conditions</a></li><li><a href="#comparing-sequences-and-other-types">Comparing Sequences and Other Types</a></li></ul></li><li><a href="#modules">Modules</a><ul><li><a href="#more-on-modules">More on Modules</a></li><li><a href="#executing-modules-as-scripts">Executing modules as scripts</a></li><li><a href="#the-module-search-path">The Module Search Path</a></li><li><a href="#compiled-python-files">“Compiled” Python files</a></li><li><a href="#standard-modules">Standard Modules</a></li><li><a href="#the-dir-function">The dir() Function</a></li><li><a href="#packages">Packages</a></li><li><a href="#importing--from-a-package">Importing * From a Package</a></li><li><a href="#intra-package-references">Intra-package References</a></li><li><a href="#packages-in-multiple-directories">Packages in Multiple Directories</a></li></ul></li><li><a href="#input-and-output">Input and Output</a><ul><li><a href="#fancier-output-formatting">Fancier Output Formatting</a></li><li><a href="#formatted-string-literals">Formatted String Literals</a></li><li><a href="#the-string-format-method">The String format() Method</a></li><li><a href="#manual-string-formatting">Manual String Formatting</a></li><li><a href="#old-string-formatting">Old string formatting</a></li><li><a href="#reading-and-writing-files">Reading and Writing Files</a></li><li><a href="#methods-of-file-objects">Methods of File Objects</a></li><li><a href="#saving-structured-data-with-json">Saving structured data with json</a></li></ul></li><li><a href="#errors-and-exceptions">Errors and Exceptions</a><ul><li><a href="#syntax-errors">Syntax Errors</a></li><li><a href="#exceptions">Exceptions</a></li><li><a href="#handling-exceptions">Handling Exceptions</a></li><li><a href="#raising-exceptions">Raising Exceptions</a></li><li><a href="#exception-chaining">Exception Chaining</a></li><li><a href="#user-defined-exceptions">User-defined Exceptions</a></li><li><a href="#defining-clean-up-actions">Defining Clean-up Actions</a></li><li><a href="#predefined-clean-up-actions">Predefined Clean-up Actions</a></li><li><a href="#raising-and-handling-multiple-unrelated-exceptions">Raising and Handling Multiple Unrelated Exceptions</a></li><li><a href="#enriching-exceptions-with-notes">Enriching Exceptions with Notes</a></li></ul></li><li><a href="#classes">Classes</a><ul><li><a href="#a-word-about-names-and-objects">A Word About Names and Objects</a></li><li><a href="#python-scopes-and-namespaces">Python Scopes and Namespaces</a></li><li><a href="#scopes-and-namespaces-example">Scopes and Namespaces Example</a></li><li><a href="#a-first-look-at-classes">A First Look at Classes</a></li><li><a href="#class-definition-syntax">Class Definition Syntax</a></li><li><a href="#class-objects">Class Objects</a></li><li><a href="#instance-objects">Instance Objects</a></li><li><a href="#method-objects">Method Objects</a></li><li><a href="#class-and-instance-variables">Class and Instance Variables</a></li><li><a href="#random-remarks">Random Remarks</a></li><li><a href="#inheritance">Inheritance</a></li><li><a href="#multiple-inheritance">Multiple Inheritance</a></li><li><a href="#private-variables">Private Variables</a></li><li><a href="#odds-and-ends">Odds and Ends</a></li><li><a href="#iterators">Iterators</a></li><li><a href="#generators">Generators</a></li><li><a href="#generator-expressions">Generator Expressions</a></li></ul></li><li><a href="#brief-tour-of-the-standard-library">Brief Tour of the Standard Library</a><ul><li><a href="#operating-system-interface">Operating System Interface</a></li><li><a href="#file-wildcards">File Wildcards</a></li><li><a href="#command-line-arguments">Command Line Arguments</a></li><li><a href="#error-output-redirection-and-program-termination">Error Output Redirection and Program Termination</a></li><li><a href="#string-pattern-matching">String Pattern Matching</a></li><li><a href="#mathematics">Mathematics</a></li><li><a href="#internet-access">Internet Access</a></li><li><a href="#dates-and-times">Dates and Times</a></li><li><a href="#data-compression">Data Compression</a></li><li><a href="#performance-measurement">Performance Measurement</a></li><li><a href="#quality-control">Quality Control</a></li><li><a href="#batteries-included">Batteries Included</a></li></ul></li><li><a href="#brief-tour-of-the-standard-library--part-ii">Brief Tour of the Standard Library — Part II</a><ul><li><a href="#output-formatting">Output Formatting</a></li><li><a href="#templating">Templating</a></li><li><a href="#working-with-binary-data-record-layouts">Working with Binary Data Record Layouts</a></li><li><a href="#multi-threading">Multi-threading</a></li><li><a href="#logging">Logging</a></li><li><a href="#weak-references">Weak References</a></li><li><a href="#tools-for-working-with-lists">Tools for Working with Lists</a></li><li><a href="#decimal-floating-point-arithmetic">Decimal Floating Point Arithmetic</a></li></ul></li><li><a href="#virtual-environments-and-packages">Virtual Environments and Packages</a><ul><li><a href="#introduction">Introduction</a></li><li><a href="#creating-virtual-environments">Creating Virtual Environments</a></li><li><a href="#managing-packages-with-pip">Managing Packages with pip</a></li></ul></li><li><a href="#what-now">What Now?</a></li><li><a href="#interactive-input-editing-and-history-substitution">Interactive Input Editing and History Substitution</a><ul><li><a href="#tab-completion-and-history-editing">Tab Completion and History Editing</a></li><li><a href="#alternatives-to-the-interactive-interpreter">Alternatives to the Interactive Interpreter</a></li></ul></li><li><a href="#floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</a><ul><li><a href="#representation-error">Representation Error</a></li></ul></li><li><a href="#appendix">Appendix</a><ul><li><a href="#interactive-mode">Interactive Mode</a></li><li><a href="#error-handling">Error Handling</a></li><li><a href="#executable-python-scripts">Executable Python Scripts</a></li><li><a href="#the-interactive-startup-file">The Interactive Startup File</a></li><li><a href="#the-customization-modules">The Customization Modules</a></li></ul></li></ul></li></ul>
+
+        </div>
+      </div>
+      <!-- end sidebar -->
+      <h1 id="python-basics">Python Basics</h1>
 <p>This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
 This tutorial will go over Python 3+ as it is the most recent one.</p>
-
-<h1 id="table-of-contents-">Table of contents <!-- omit in toc --></h1>
-<ul>
-  <li><a href="#download-python">Download Python</a></li>
-  <li><a href="#install-ide">Install IDE</a></li>
-  <li><a href="#basics">Basics</a>
-    <ul>
-      <li><a href="#print-function">Print function</a></li>
-      <li><a href="#execute-scripts">Execute Scripts</a></li>
-      <li><a href="#variables">Variables</a></li>
-      <li><a href="#strings">Strings</a></li>
-      <li><a href="#numbers">Numbers</a></li>
-      <li><a href="#lists">Lists</a></li>
-      <li><a href="#replace">Replace</a></li>
-      <li><a href="#join">Join</a></li>
-      <li><a href="#string-find">String find</a></li>
-      <li><a href="#split">Split</a></li>
-      <li><a href="#read-input">Read input</a></li>
-    </ul>
-  </li>
-  <li><a href="#flow-control">Flow Control</a>
-    <ul>
-      <li><a href="#if-statements">if statements</a></li>
-      <li><a href="#for-loops">for loops</a></li>
-      <li><a href="#while-loops">while loops</a></li>
-      <li><a href="#range-function">range function</a></li>
-      <li><a href="#break-and-continue-statements">break and continue statements</a></li>
-      <li><a href="#pass-statements">pass Statements</a></li>
-      <li><a href="#match-statements">match Statements</a></li>
-      <li><a href="#defining-functions">Defining Functions</a></li>
-      <li><a href="#more-on-defining-functions">More on Defining Functions</a></li>
-      <li><a href="#default-argument-values">Default Argument Values</a></li>
-      <li><a href="#keyword-arguments">Keyword Arguments</a></li>
-      <li><a href="#special-parameters">Special parameters</a></li>
-      <li><a href="#positional-or-keyword-arguments">Positional-or-Keyword Arguments</a></li>
-      <li><a href="#positional-only-parameters">Positional-Only Parameters</a></li>
-      <li><a href="#keyword-only-arguments">Keyword-Only Arguments</a></li>
-      <li><a href="#function-examples">Function Examples</a></li>
-      <li><a href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li>
-      <li><a href="#unpacking-argument-lists">Unpacking Argument Lists</a></li>
-      <li><a href="#lambda-expressions">Lambda Expressions</a></li>
-      <li><a href="#documentation-strings">Documentation Strings</a></li>
-      <li><a href="#function-annotations">Function Annotations</a></li>
-    </ul>
-  </li>
-  <li><a href="#data-structures">Data Structures</a>
-    <ul>
-      <li><a href="#more-on-lists">More on Lists</a></li>
-      <li><a href="#using-lists-as-stacks">Using Lists as Stacks</a></li>
-      <li><a href="#using-lists-as-queues">Using Lists as Queues</a></li>
-      <li><a href="#list-comprehensions">List Comprehensions</a></li>
-      <li><a href="#nested-list-comprehensions">Nested List Comprehensions</a></li>
-      <li><a href="#the-del-statement">The del statement</a></li>
-      <li><a href="#tuples-and-sequences">Tuples and Sequences</a></li>
-      <li><a href="#sets">Sets</a></li>
-      <li><a href="#dictionaries">Dictionaries</a></li>
-      <li><a href="#looping-techniques">Looping Techniques</a></li>
-      <li><a href="#more-on-conditions">More on Conditions</a></li>
-      <li><a href="#comparing-sequences-and-other-types">Comparing Sequences and Other Types</a></li>
-    </ul>
-  </li>
-  <li><a href="#modules">Modules</a>
-    <ul>
-      <li><a href="#more-on-modules">More on Modules</a></li>
-      <li><a href="#executing-modules-as-scripts">Executing modules as scripts</a></li>
-      <li><a href="#the-module-search-path">The Module Search Path</a></li>
-      <li><a href="#compiled-python-files">“Compiled” Python files</a></li>
-      <li><a href="#standard-modules">Standard Modules</a></li>
-      <li><a href="#the-dir-function">The dir() Function</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#importing--from-a-package">Importing * From a Package</a></li>
-      <li><a href="#intra-package-references">Intra-package References</a></li>
-      <li><a href="#packages-in-multiple-directories">Packages in Multiple Directories</a></li>
-    </ul>
-  </li>
-  <li><a href="#input-and-output">Input and Output</a>
-    <ul>
-      <li><a href="#fancier-output-formatting">Fancier Output Formatting</a></li>
-      <li><a href="#formatted-string-literals">Formatted String Literals</a></li>
-      <li><a href="#the-string-format-method">The String format() Method</a></li>
-      <li><a href="#manual-string-formatting">Manual String Formatting</a></li>
-      <li><a href="#old-string-formatting">Old string formatting</a></li>
-      <li><a href="#reading-and-writing-files">Reading and Writing Files</a></li>
-      <li><a href="#methods-of-file-objects">Methods of File Objects</a></li>
-      <li><a href="#saving-structured-data-with-json">Saving structured data with json</a></li>
-    </ul>
-  </li>
-  <li><a href="#errors-and-exceptions">Errors and Exceptions</a>
-    <ul>
-      <li><a href="#syntax-errors">Syntax Errors</a></li>
-      <li><a href="#exceptions">Exceptions</a></li>
-      <li><a href="#handling-exceptions">Handling Exceptions</a></li>
-      <li><a href="#raising-exceptions">Raising Exceptions</a></li>
-      <li><a href="#exception-chaining">Exception Chaining</a></li>
-      <li><a href="#user-defined-exceptions">User-defined Exceptions</a></li>
-      <li><a href="#defining-clean-up-actions">Defining Clean-up Actions</a></li>
-      <li><a href="#predefined-clean-up-actions">Predefined Clean-up Actions</a></li>
-      <li><a href="#raising-and-handling-multiple-unrelated-exceptions">Raising and Handling Multiple Unrelated Exceptions</a></li>
-      <li><a href="#enriching-exceptions-with-notes">Enriching Exceptions with Notes</a></li>
-    </ul>
-  </li>
-  <li><a href="#classes">Classes</a>
-    <ul>
-      <li><a href="#a-word-about-names-and-objects">A Word About Names and Objects</a></li>
-      <li><a href="#python-scopes-and-namespaces">Python Scopes and Namespaces</a></li>
-      <li><a href="#scopes-and-namespaces-example">Scopes and Namespaces Example</a></li>
-      <li><a href="#a-first-look-at-classes">A First Look at Classes</a></li>
-      <li><a href="#class-definition-syntax">Class Definition Syntax</a></li>
-      <li><a href="#class-objects">Class Objects</a></li>
-      <li><a href="#instance-objects">Instance Objects</a></li>
-      <li><a href="#method-objects">Method Objects</a></li>
-      <li><a href="#class-and-instance-variables">Class and Instance Variables</a></li>
-      <li><a href="#random-remarks">Random Remarks</a></li>
-      <li><a href="#inheritance">Inheritance</a></li>
-      <li><a href="#multiple-inheritance">Multiple Inheritance</a></li>
-      <li><a href="#private-variables">Private Variables</a></li>
-      <li><a href="#odds-and-ends">Odds and Ends</a></li>
-      <li><a href="#iterators">Iterators</a></li>
-      <li><a href="#generators">Generators</a></li>
-      <li><a href="#generator-expressions">Generator Expressions</a></li>
-    </ul>
-  </li>
-  <li><a href="#brief-tour-of-the-standard-library">Brief Tour of the Standard Library</a>
-    <ul>
-      <li><a href="#operating-system-interface">Operating System Interface</a></li>
-      <li><a href="#file-wildcards">File Wildcards</a></li>
-      <li><a href="#command-line-arguments">Command Line Arguments</a></li>
-      <li><a href="#error-output-redirection-and-program-termination">Error Output Redirection and Program Termination</a></li>
-      <li><a href="#string-pattern-matching">String Pattern Matching</a></li>
-      <li><a href="#mathematics">Mathematics</a></li>
-      <li><a href="#internet-access">Internet Access</a></li>
-      <li><a href="#dates-and-times">Dates and Times</a></li>
-      <li><a href="#data-compression">Data Compression</a></li>
-      <li><a href="#performance-measurement">Performance Measurement</a></li>
-      <li><a href="#quality-control">Quality Control</a></li>
-      <li><a href="#batteries-included">Batteries Included</a></li>
-    </ul>
-  </li>
-  <li><a href="#brief-tour-of-the-standard-library--part-ii">Brief Tour of the Standard Library — Part II</a>
-    <ul>
-      <li><a href="#output-formatting">Output Formatting</a></li>
-      <li><a href="#templating">Templating</a></li>
-      <li><a href="#working-with-binary-data-record-layouts">Working with Binary Data Record Layouts</a></li>
-      <li><a href="#multi-threading">Multi-threading</a></li>
-      <li><a href="#logging">Logging</a></li>
-      <li><a href="#weak-references">Weak References</a></li>
-      <li><a href="#tools-for-working-with-lists">Tools for Working with Lists</a></li>
-      <li><a href="#decimal-floating-point-arithmetic">Decimal Floating Point Arithmetic</a></li>
-    </ul>
-  </li>
-  <li><a href="#virtual-environments-and-packages">Virtual Environments and Packages</a>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#creating-virtual-environments">Creating Virtual Environments</a></li>
-      <li><a href="#managing-packages-with-pip">Managing Packages with pip</a></li>
-    </ul>
-  </li>
-  <li><a href="#what-now">What Now?</a></li>
-  <li><a href="#interactive-input-editing-and-history-substitution">Interactive Input Editing and History Substitution</a>
-    <ul>
-      <li><a href="#tab-completion-and-history-editing">Tab Completion and History Editing</a></li>
-      <li><a href="#alternatives-to-the-interactive-interpreter">Alternatives to the Interactive Interpreter</a></li>
-    </ul>
-  </li>
-  <li><a href="#floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</a>
-    <ul>
-      <li><a href="#representation-error">Representation Error</a></li>
-    </ul>
-  </li>
-  <li><a href="#appendix">Appendix</a>
-    <ul>
-      <li><a href="#interactive-mode">Interactive Mode</a></li>
-      <li><a href="#error-handling">Error Handling</a></li>
-      <li><a href="#executable-python-scripts">Executable Python Scripts</a></li>
-      <li><a href="#the-interactive-startup-file">The Interactive Startup File</a></li>
-      <li><a href="#the-customization-modules">The Customization Modules</a></li>
-    </ul>
-  </li>
-</ul>
 
 <h2 id="download-python">Download Python</h2>
 <p>To download python go to https://www.python.org/downloads/ and download the version for your OS
@@ -796,6 +643,7 @@ This is great for breaking long strings:</p>
 </button>
 
       
+
       
 
 
@@ -836,7 +684,7 @@ This is great for breaking long strings:</p>
       </footer>
       
       <div class="credits">&nbsp;
-        
+
         &nbsp;</div>
     </div>
   </main><script async defer src="https://sdk.soopr.co/soopr.js"></script></body>

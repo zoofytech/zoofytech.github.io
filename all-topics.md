@@ -1,41 +1,8 @@
 ---
-layout: default
+layout: table
 title: all-topics
 ---
-# All topics <!-- omit in toc -->
-
-## Table of contents<!-- omit in toc -->
-- [Programming](#programming)
-  - [Python](#python)
-  - [Go (Golang)](#go-golang)
-  - [Shell scripting](#shell-scripting)
-- [Linux](#linux)
-  - [Boot Process](#boot-process)
-  - [Filesystem](#filesystem)
-  - [Kernel](#kernel)
-  - [Troubleshooting](#troubleshooting)
-- [Monitoring](#monitoring)
-- [Processes](#processes)
-- [Networking](#networking)
-- [Infrastructure as code / Configuration management](#infrastructure-as-code--configuration-management)
-- [CI/CD](#cicd)
-- [Clouds](#clouds)
-- [Databases](#databases)
-- [Interview Prep](#interview-prep)
-  - [Big O Notation, Algorithms and Data Structures](#big-o-notation-algorithms-and-data-structures)
-  - [System design](#system-design)
-  - [SRE interview process](#sre-interview-process)
-  - [Interview Questions](#interview-questions)
-  - [Blogposts](#blogposts)
-  - [Resume](#resume)
-- [Books](#books)
-  - [SRE books](#sre-books)
-  - [Linux](#linux-1)
-  - [Networking](#networking-1)
-  - [Troubleshooting and Performance](#troubleshooting-and-performance)
-- [Courses](#courses)
-
-
+# All topics 
 
 ## Programming
 <details><summary>About Programming</summary><p>Programming is essential to your role as an engineer
@@ -76,9 +43,6 @@ The following are some useful examples:</p>
 
 ### Shell scripting 
 - [Shell Scripting Tutorial](https://www.shellscript.sh/)
-
-
-
 
 ## Linux
 <details><summary>About Linux</summary>

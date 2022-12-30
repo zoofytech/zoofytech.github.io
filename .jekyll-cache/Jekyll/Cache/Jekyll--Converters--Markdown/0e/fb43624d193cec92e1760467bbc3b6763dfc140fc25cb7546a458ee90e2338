@@ -1,4 +1,4 @@
-I"ã^<h1 id="python-basics-">Python Basics <!-- omit in toc --></h1>
+I"’<h1 id="python-basics-">Python Basics <!-- omit in toc --></h1>
 <p>This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
 This tutorial will go over Python 3+ as it is the most recent one.</p>
 
@@ -200,17 +200,17 @@ This tutorial will go over Python 3+ as it is the most recent one.</p>
 <p><strong>Examples:</strong></p>
 
 <p><strong>Input</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print ("HELLO ZOOFYTECH")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span> <span class="p">(</span><span class="s">"HELLO ZOOFYTECH"</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>Output</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HELLO ZOOFYTECH
 </code></pre></div></div>
 
 <p><strong>Input</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("ABC")
-print("123")
-print("xyz")
-print("890")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"ABC"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"123"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"xyz"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"890"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><strong>Output</strong></p>
@@ -221,7 +221,7 @@ xyz
 </code></pre></div></div>
 
 <p><strong>Input</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print ("Hello\nWorld")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span> <span class="p">(</span><span class="s">"Hello</span><span class="se">\n</span><span class="s">World"</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The <code class="language-plaintext highlighter-rouge">\n</code> will put a new line
 <strong>Output</strong></p>
@@ -240,44 +240,44 @@ A program can be one or more Python files. Code files can include other files or
   <li>Execute the file using <code class="language-plaintext highlighter-rouge">python</code> command on terminal
 <code class="language-plaintext highlighter-rouge">python hello.py</code></li>
   <li>If the file has a shebang on the first line to call the python interpreter such as <code class="language-plaintext highlighter-rouge">#!/usr/bin/env python3</code> or <code class="language-plaintext highlighter-rouge">#!/usr/bin/python3</code> then you can run the script by just typing in the file name as long as it is executable. To make it executable first run <code class="language-plaintext highlighter-rouge">chmod +x hello.py</code> then run <code class="language-plaintext highlighter-rouge">hello.py</code></li>
-  <li>Run on from IDE. On the IDE you can run the program. On vscode right click the file you are in and run it in interactive mode(this will require install of jupyter notebook)
-    <h3 id="variables">Variables</h3>
-    <p>A Python variable is a reserved memory location to store values. 
+  <li>Run on from IDE. On the IDE you can run the program. On vscode right click the file you are in and run it in interactive mode(this will require install of jupyter notebook)</li>
+</ol>
+
+<h3 id="variables">Variables</h3>
+<p>A Python variable is a reserved memory location to store values. 
 Every value in Python has a datatype. The following are the different types:  integers (numbers), float (decimal numbers), booleans (true or false) and strings (text).
 Variables in Python can be declared by any name or even alphabets like a, aa, abc, etc.</p>
-  </li>
-</ol>
 
 <p>Below are some examples of variables. Please try them out on your IDE</p>
 
 <p><strong>Example 1</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is a comment 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a comment 
 # a is the variable 
-a=900
-print (a)
+</span><span class="n">a</span><span class="o">=</span><span class="mi">900</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><strong>Example 2</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b=2
-print(b)
-# re-declaring the var to 3 and printing it
-b=3
-print(b)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="o">=</span><span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="c1"># re-declaring the var to 3 and printing it
+</span><span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><strong>Example 3</strong><br />
 Concatenation is only possible if you use the same type of datatype.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=100
-b="cool people"
-# This will fail
-print a+b
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">b</span><span class="o">=</span><span class="s">"cool people"</span>
+<span class="c1"># This will fail
+</span><span class="k">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </code></pre></div></div>
 <p>One can change the integer to a string by putting a <code class="language-plaintext highlighter-rouge">str</code> before it</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=100
-b="cool people"
-print(str(a)+b)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">b</span><span class="o">=</span><span class="s">"cool people"</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 <p><strong>Example 4</strong><br />
 There are two types of variables in Python, Global variable and Local variable. When you want to use the same variable for the entire program or module you declare it as a global variable.</p>
@@ -286,36 +286,117 @@ There are two types of variables in Python, Global variable and Local variable. 
 <blockquote>
   <blockquote>
     <p><strong>Note:</strong><br />
-For best practices, people tend to set global variables using all capitol letters</p>
+For best practices, people tend to set global variables using all capital letters</p>
   </blockquote>
 </blockquote>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GLOBAL_VAR=200
-print(GLOBAL_VAR)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GLOBAL_VAR</span><span class="o">=</span><span class="mi">200</span>
+<span class="k">print</span><span class="p">(</span><span class="n">GLOBAL_VAR</span><span class="p">)</span>
 
-# Create function called funFunction 
-def funFunction():
-    print(GLOBAL_VAR)
+<span class="c1"># Create function called funFunction 
+</span><span class="k">def</span> <span class="nf">funFunction</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">GLOBAL_VAR</span><span class="p">)</span>
 
-# Call the function
-funFunction()
+<span class="c1"># Call the function
+</span><span class="n">funFunction</span><span class="p">()</span>
 </code></pre></div></div>
 <p><strong>Example 5</strong> <br />
 To change a global variable inside a function use the <code class="language-plaintext highlighter-rouge">global</code> keyword</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GLOBAL_VAR=200
-print(GLOBAL_VAR)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GLOBAL_VAR</span><span class="o">=</span><span class="mi">200</span>
+<span class="k">print</span><span class="p">(</span><span class="n">GLOBAL_VAR</span><span class="p">)</span>
 
-# Create function called funFunction 
-def funFunction():
-    global GLOBAL_VAR
-    GLOBAL_VAR="new global var"
-    print(GLOBAL_VAR)
+<span class="c1"># Create function called funFunction 
+</span><span class="k">def</span> <span class="nf">funFunction</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">GLOBAL_VAR</span>
+    <span class="n">GLOBAL_VAR</span><span class="o">=</span><span class="s">"new global var"</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">GLOBAL_VAR</span><span class="p">)</span>
 
-# Call the function
-funFunction()
+<span class="c1"># Call the function
+</span><span class="n">funFunction</span><span class="p">()</span>
 </code></pre></div></div>
+<p><strong>Example 6</strong><br />
+You can also delete variables using the <code class="language-plaintext highlighter-rouge">del</code> command</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span><span class="mi">11</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">l</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The above should output <code class="language-plaintext highlighter-rouge">NameError: name 'l' is not defined</code></p>
 
 <h3 id="strings">Strings</h3>
+<p>Python can manipulate strings which can be expressed in several ways. Strings can be enclosed in single quotes <code class="language-plaintext highlighter-rouge">'..'</code> or double quotes <code class="language-plaintext highlighter-rouge">".."</code> and <code class="language-plaintext highlighter-rouge">\</code> can be used to escape special characters such as quotes</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span> <span class="c1">#single quote
+</span><span class="k">print</span><span class="p">(</span><span class="s">"world"</span><span class="p">)</span> <span class="c1"># Double quote
+</span><span class="k">print</span><span class="p">(</span><span class="s">'it doesn</span><span class="se">\'</span><span class="s">t have to be this fun'</span><span class="p">)</span> <span class="c1"># use \ to escape quote
+</span><span class="k">print</span><span class="p">(</span><span class="s">"it doesn't have to be this fun"</span> <span class="c1"># or just use double quotes instead)
+</span><span class="k">print</span><span class="p">(</span><span class="s">'"No," yes!'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Strings prefixed with <code class="language-plaintext highlighter-rouge">r</code> or <code class="language-plaintext highlighter-rouge">R</code>, such as <code class="language-plaintext highlighter-rouge">r'...' </code>and <code class="language-plaintext highlighter-rouge">r"..."</code>, are called raw strings and treat backslashes <code class="language-plaintext highlighter-rouge">\</code> as literal characters. In raw strings, escape sequences are not treated specially.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">r'a\tb\nA\tB'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'a</span><span class="se">\t</span><span class="s">b</span><span class="se">\n</span><span class="s">A</span><span class="se">\t</span><span class="s">B'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can also use triple quotes for multiple lines such as <code class="language-plaintext highlighter-rouge">"""..."""</code> <code class="language-plaintext highlighter-rouge">'''...'''</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"""
+Usage: [OPTIONS]
+     -h                        Display this usage message
+     -H hostname               Hostname to connect to
+"""</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Strings can be concatenated (glued together) with the <code class="language-plaintext highlighter-rouge">+</code> operator, and repeated with <code class="language-plaintext highlighter-rouge">*</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="s">'hi'</span><span class="p">)</span> <span class="c1"># 3 times hi
+</span><span class="k">print</span><span class="p">(</span><span class="s">"hello"</span> <span class="o">+</span> <span class="s">"man"</span><span class="p">)</span> <span class="c1"># print helloman
+</span></code></pre></div></div>
+<p>Two or more string literals next to each other are automatically concatenated 
+This is great for breaking long strings:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">long_string</span><span class="o">=</span> <span class="p">(</span><span class="s">'lets put some very long strings in different lines '</span> 
+<span class="s">'but put them together by concatenation'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">long_string</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It only works for two literals though not variables. If you want to concatenate variables or a variable and literal then you can use the <code class="language-plaintext highlighter-rouge">+</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="o">=</span><span class="s">'cats'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="s">" and dogs"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Strings can be indexed with the first character having an index of <code class="language-plaintext highlighter-rouge">0</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span><span class="o">=</span><span class="s">"verylongword"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># can go negative for the last character
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">])</span> <span class="c1"># print the first character
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># print 2nd to last character
+</span></code></pre></div></div>
+
+<p>Strings can also be sliced. While indexing is used to get individual characters, <code class="language-plaintext highlighter-rouge">slicing</code> allows you to get multiple strings:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span><span class="o">=</span><span class="s">"verylongword"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># prints positions 0-2
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># prints positions 2-5
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># prints positions from beginning to position 2(excluded)
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span><span class="c1"># prints position 3 until end(included)
+</span><span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span> <span class="c1"># prints positions second to last until end 
+</span></code></pre></div></div>
+<p>Note how the start is always included, and the end always excluded. This makes sure that <code class="language-plaintext highlighter-rouge">s[:i] + s[i:]</code> is always equal to <code class="language-plaintext highlighter-rouge">s</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span><span class="o">=</span><span class="s">"verylongword"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+</code></pre></div></div>
+
+<p>Strings cannot be changed as they are immutable. Therefore, assigning to an indexed position in the string results in an error:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s">'J'</span> <span class="c1">#this will fail
+</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">=</span><span class="s">'test'</span> <span class="c1">#this will also fail 
+</span></code></pre></div></div>
+
+<p>The built in function <code class="language-plaintext highlighter-rouge">len</code> returns the length of a string</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span><span class="o">=</span><span class="s">'verylongword'</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="numbers">Numbers</h3>
 
