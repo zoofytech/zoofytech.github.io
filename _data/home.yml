@@ -2,8 +2,11 @@ navbar_entries:
   - title: home
     url: /
 
-  - title: about
-    url: about
+  - title: all-topics
+    url: all-topics
+
+  - title: python-basics
+    url: python-basics
 
   - title: blog
     url: blog

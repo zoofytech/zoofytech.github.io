@@ -1,0 +1,577 @@
+I"�^<h1 id="python-basics-">Python Basics <!-- omit in toc --></h1>
+<p>This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
+This tutorial will go over Python 3+ as it is the most recent one.</p>
+
+<h1 id="table-of-contents-">Table of contents <!-- omit in toc --></h1>
+<ul>
+  <li><a href="#download-python">Download Python</a></li>
+  <li><a href="#install-ide">Install IDE</a></li>
+  <li><a href="#basics">Basics</a>
+    <ul>
+      <li><a href="#print-function">Print function</a></li>
+      <li><a href="#execute-scripts">Execute Scripts</a></li>
+      <li><a href="#variables">Variables</a></li>
+      <li><a href="#strings">Strings</a></li>
+      <li><a href="#numbers">Numbers</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#replace">Replace</a></li>
+      <li><a href="#join">Join</a></li>
+      <li><a href="#string-find">String find</a></li>
+      <li><a href="#split">Split</a></li>
+      <li><a href="#read-input">Read input</a></li>
+    </ul>
+  </li>
+  <li><a href="#flow-control">Flow Control</a>
+    <ul>
+      <li><a href="#if-statements">if statements</a></li>
+      <li><a href="#for-loops">for loops</a></li>
+      <li><a href="#while-loops">while loops</a></li>
+      <li><a href="#range-function">range function</a></li>
+      <li><a href="#break-and-continue-statements">break and continue statements</a></li>
+      <li><a href="#pass-statements">pass Statements</a></li>
+      <li><a href="#match-statements">match Statements</a></li>
+      <li><a href="#defining-functions">Defining Functions</a></li>
+      <li><a href="#more-on-defining-functions">More on Defining Functions</a></li>
+      <li><a href="#default-argument-values">Default Argument Values</a></li>
+      <li><a href="#keyword-arguments">Keyword Arguments</a></li>
+      <li><a href="#special-parameters">Special parameters</a></li>
+      <li><a href="#positional-or-keyword-arguments">Positional-or-Keyword Arguments</a></li>
+      <li><a href="#positional-only-parameters">Positional-Only Parameters</a></li>
+      <li><a href="#keyword-only-arguments">Keyword-Only Arguments</a></li>
+      <li><a href="#function-examples">Function Examples</a></li>
+      <li><a href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li>
+      <li><a href="#unpacking-argument-lists">Unpacking Argument Lists</a></li>
+      <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+      <li><a href="#documentation-strings">Documentation Strings</a></li>
+      <li><a href="#function-annotations">Function Annotations</a></li>
+    </ul>
+  </li>
+  <li><a href="#data-structures">Data Structures</a>
+    <ul>
+      <li><a href="#more-on-lists">More on Lists</a></li>
+      <li><a href="#using-lists-as-stacks">Using Lists as Stacks</a></li>
+      <li><a href="#using-lists-as-queues">Using Lists as Queues</a></li>
+      <li><a href="#list-comprehensions">List Comprehensions</a></li>
+      <li><a href="#nested-list-comprehensions">Nested List Comprehensions</a></li>
+      <li><a href="#the-del-statement">The del statement</a></li>
+      <li><a href="#tuples-and-sequences">Tuples and Sequences</a></li>
+      <li><a href="#sets">Sets</a></li>
+      <li><a href="#dictionaries">Dictionaries</a></li>
+      <li><a href="#looping-techniques">Looping Techniques</a></li>
+      <li><a href="#more-on-conditions">More on Conditions</a></li>
+      <li><a href="#comparing-sequences-and-other-types">Comparing Sequences and Other Types</a></li>
+    </ul>
+  </li>
+  <li><a href="#modules">Modules</a>
+    <ul>
+      <li><a href="#more-on-modules">More on Modules</a></li>
+      <li><a href="#executing-modules-as-scripts">Executing modules as scripts</a></li>
+      <li><a href="#the-module-search-path">The Module Search Path</a></li>
+      <li><a href="#compiled-python-files">“Compiled” Python files</a></li>
+      <li><a href="#standard-modules">Standard Modules</a></li>
+      <li><a href="#the-dir-function">The dir() Function</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#importing--from-a-package">Importing * From a Package</a></li>
+      <li><a href="#intra-package-references">Intra-package References</a></li>
+      <li><a href="#packages-in-multiple-directories">Packages in Multiple Directories</a></li>
+    </ul>
+  </li>
+  <li><a href="#input-and-output">Input and Output</a>
+    <ul>
+      <li><a href="#fancier-output-formatting">Fancier Output Formatting</a></li>
+      <li><a href="#formatted-string-literals">Formatted String Literals</a></li>
+      <li><a href="#the-string-format-method">The String format() Method</a></li>
+      <li><a href="#manual-string-formatting">Manual String Formatting</a></li>
+      <li><a href="#old-string-formatting">Old string formatting</a></li>
+      <li><a href="#reading-and-writing-files">Reading and Writing Files</a></li>
+      <li><a href="#methods-of-file-objects">Methods of File Objects</a></li>
+      <li><a href="#saving-structured-data-with-json">Saving structured data with json</a></li>
+    </ul>
+  </li>
+  <li><a href="#errors-and-exceptions">Errors and Exceptions</a>
+    <ul>
+      <li><a href="#syntax-errors">Syntax Errors</a></li>
+      <li><a href="#exceptions">Exceptions</a></li>
+      <li><a href="#handling-exceptions">Handling Exceptions</a></li>
+      <li><a href="#raising-exceptions">Raising Exceptions</a></li>
+      <li><a href="#exception-chaining">Exception Chaining</a></li>
+      <li><a href="#user-defined-exceptions">User-defined Exceptions</a></li>
+      <li><a href="#defining-clean-up-actions">Defining Clean-up Actions</a></li>
+      <li><a href="#predefined-clean-up-actions">Predefined Clean-up Actions</a></li>
+      <li><a href="#raising-and-handling-multiple-unrelated-exceptions">Raising and Handling Multiple Unrelated Exceptions</a></li>
+      <li><a href="#enriching-exceptions-with-notes">Enriching Exceptions with Notes</a></li>
+    </ul>
+  </li>
+  <li><a href="#classes">Classes</a>
+    <ul>
+      <li><a href="#a-word-about-names-and-objects">A Word About Names and Objects</a></li>
+      <li><a href="#python-scopes-and-namespaces">Python Scopes and Namespaces</a></li>
+      <li><a href="#scopes-and-namespaces-example">Scopes and Namespaces Example</a></li>
+      <li><a href="#a-first-look-at-classes">A First Look at Classes</a></li>
+      <li><a href="#class-definition-syntax">Class Definition Syntax</a></li>
+      <li><a href="#class-objects">Class Objects</a></li>
+      <li><a href="#instance-objects">Instance Objects</a></li>
+      <li><a href="#method-objects">Method Objects</a></li>
+      <li><a href="#class-and-instance-variables">Class and Instance Variables</a></li>
+      <li><a href="#random-remarks">Random Remarks</a></li>
+      <li><a href="#inheritance">Inheritance</a></li>
+      <li><a href="#multiple-inheritance">Multiple Inheritance</a></li>
+      <li><a href="#private-variables">Private Variables</a></li>
+      <li><a href="#odds-and-ends">Odds and Ends</a></li>
+      <li><a href="#iterators">Iterators</a></li>
+      <li><a href="#generators">Generators</a></li>
+      <li><a href="#generator-expressions">Generator Expressions</a></li>
+    </ul>
+  </li>
+  <li><a href="#brief-tour-of-the-standard-library">Brief Tour of the Standard Library</a>
+    <ul>
+      <li><a href="#operating-system-interface">Operating System Interface</a></li>
+      <li><a href="#file-wildcards">File Wildcards</a></li>
+      <li><a href="#command-line-arguments">Command Line Arguments</a></li>
+      <li><a href="#error-output-redirection-and-program-termination">Error Output Redirection and Program Termination</a></li>
+      <li><a href="#string-pattern-matching">String Pattern Matching</a></li>
+      <li><a href="#mathematics">Mathematics</a></li>
+      <li><a href="#internet-access">Internet Access</a></li>
+      <li><a href="#dates-and-times">Dates and Times</a></li>
+      <li><a href="#data-compression">Data Compression</a></li>
+      <li><a href="#performance-measurement">Performance Measurement</a></li>
+      <li><a href="#quality-control">Quality Control</a></li>
+      <li><a href="#batteries-included">Batteries Included</a></li>
+    </ul>
+  </li>
+  <li><a href="#brief-tour-of-the-standard-library--part-ii">Brief Tour of the Standard Library — Part II</a>
+    <ul>
+      <li><a href="#output-formatting">Output Formatting</a></li>
+      <li><a href="#templating">Templating</a></li>
+      <li><a href="#working-with-binary-data-record-layouts">Working with Binary Data Record Layouts</a></li>
+      <li><a href="#multi-threading">Multi-threading</a></li>
+      <li><a href="#logging">Logging</a></li>
+      <li><a href="#weak-references">Weak References</a></li>
+      <li><a href="#tools-for-working-with-lists">Tools for Working with Lists</a></li>
+      <li><a href="#decimal-floating-point-arithmetic">Decimal Floating Point Arithmetic</a></li>
+    </ul>
+  </li>
+  <li><a href="#virtual-environments-and-packages">Virtual Environments and Packages</a>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#creating-virtual-environments">Creating Virtual Environments</a></li>
+      <li><a href="#managing-packages-with-pip">Managing Packages with pip</a></li>
+    </ul>
+  </li>
+  <li><a href="#what-now">What Now?</a></li>
+  <li><a href="#interactive-input-editing-and-history-substitution">Interactive Input Editing and History Substitution</a>
+    <ul>
+      <li><a href="#tab-completion-and-history-editing">Tab Completion and History Editing</a></li>
+      <li><a href="#alternatives-to-the-interactive-interpreter">Alternatives to the Interactive Interpreter</a></li>
+    </ul>
+  </li>
+  <li><a href="#floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</a>
+    <ul>
+      <li><a href="#representation-error">Representation Error</a></li>
+    </ul>
+  </li>
+  <li><a href="#appendix">Appendix</a>
+    <ul>
+      <li><a href="#interactive-mode">Interactive Mode</a></li>
+      <li><a href="#error-handling">Error Handling</a></li>
+      <li><a href="#executable-python-scripts">Executable Python Scripts</a></li>
+      <li><a href="#the-interactive-startup-file">The Interactive Startup File</a></li>
+      <li><a href="#the-customization-modules">The Customization Modules</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="download-python">Download Python</h2>
+<p>To download python go to https://www.python.org/downloads/ and download the version for your OS
+<img src="images/python-download.jpg" alt="execute-python" /></p>
+<h2 id="install-ide">Install IDE</h2>
+<p>There are several different types of IDE’s for python:</p>
+<ul>
+  <li><a href="https://www.jetbrains.com/pycharm/download/">Pycharm</a></li>
+  <li><a href="https://code.visualstudio.com/download">VSCode</a></li>
+</ul>
+
+<p>We use VSCode for this tutorial as it has functions for multiple other languages and is not only for python</p>
+
+<h2 id="basics">Basics</h2>
+<h3 id="print-function">Print function</h3>
+<p>The <code class="language-plaintext highlighter-rouge">print()</code> function in python is used to print specified message on the screen. It can print strings or objects which are then converted to a string while on the screen</p>
+
+<p><strong>Examples:</strong></p>
+
+<p><strong>Input</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print ("HELLO ZOOFYTECH")
+</code></pre></div></div>
+<p><strong>Output</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HELLO ZOOFYTECH
+</code></pre></div></div>
+
+<p><strong>Input</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("ABC")
+print("123")
+print("xyz")
+print("890")
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ABC
+123
+xyz
+890
+</code></pre></div></div>
+
+<p><strong>Input</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print ("Hello\nWorld")
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">\n</code> will put a new line
+<strong>Output</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello
+World
+</code></pre></div></div>
+
+<h3 id="execute-scripts">Execute Scripts</h3>
+<p>To run Python programs, you will need the Python interpreter and possibly an editor(IDE).
+A Python interpreter executes Python code (sometimes called programs).
+A program can be one or more Python files. Code files can include other files or modules. To run a program, you need to specify a parameter when executing Python.
+<img src="images/python-interpreter.png" alt="execute-python" /></p>
+
+<p>There are several ways to execute a python file.</p>
+<ol>
+  <li>Execute the file using <code class="language-plaintext highlighter-rouge">python</code> command on terminal
+<code class="language-plaintext highlighter-rouge">python hello.py</code></li>
+  <li>If the file has a shebang on the first line to call the python interpreter such as <code class="language-plaintext highlighter-rouge">#!/usr/bin/env python3</code> or <code class="language-plaintext highlighter-rouge">#!/usr/bin/python3</code> then you can run the script by just typing in the file name as long as it is executable. To make it executable first run <code class="language-plaintext highlighter-rouge">chmod +x hello.py</code> then run <code class="language-plaintext highlighter-rouge">hello.py</code></li>
+  <li>Run on from IDE. On the IDE you can run the program. On vscode right click the file you are in and run it in interactive mode(this will require install of jupyter notebook)
+    <h3 id="variables">Variables</h3>
+    <p>A Python variable is a reserved memory location to store values. 
+Every value in Python has a datatype. The following are the different types:  integers (numbers), float (decimal numbers), booleans (true or false) and strings (text).
+Variables in Python can be declared by any name or even alphabets like a, aa, abc, etc.</p>
+  </li>
+</ol>
+
+<p>Below are some examples of variables. Please try them out on your IDE</p>
+
+<p><strong>Example 1</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is a comment 
+# a is the variable 
+a=900
+print (a)
+</code></pre></div></div>
+
+<p><strong>Example 2</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b=2
+print(b)
+# re-declaring the var to 3 and printing it
+b=3
+print(b)
+</code></pre></div></div>
+
+<p><strong>Example 3</strong>
+Concatenation is only possible if you use the same type of datatype.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=100
+b="cool people"
+# This will fail
+print a+b
+</code></pre></div></div>
+<p>One can change the integer to a string by putting a <code class="language-plaintext highlighter-rouge">str</code> before it</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=100
+b="cool people"
+print(str(a)+b)
+</code></pre></div></div>
+<p><strong>Example 4</strong>
+There are two types of variables in Python, Global variable and Local variable. When you want to use the same variable for the entire program or module you declare it as a global variable.</p>
+
+<p>To set a global variable, it must be outside of a function. We’ll talk more about functions later</p>
+<blockquote>
+  <blockquote>
+    <p><strong>Note:</strong><br />
+For best practices, people tend to set global variables using all capitol letters</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GLOBAL_VAR=200
+print(GLOBAL_VAR)
+
+# Create function called funFunction 
+def funFunction():
+    print(GLOBAL_VAR)
+
+# Call the function
+funFunction()
+</code></pre></div></div>
+<p><strong>Example 5</strong>
+To change a global variable inside a function use the <code class="language-plaintext highlighter-rouge">global</code> keyword</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GLOBAL_VAR=200
+print(GLOBAL_VAR)
+
+# Create function called funFunction 
+def funFunction():
+    global GLOBAL_VAR
+    GLOBAL_VAR="new global var"
+    print(GLOBAL_VAR)
+
+# Call the function
+funFunction()
+</code></pre></div></div>
+
+<h3 id="strings">Strings</h3>
+
+<h3 id="numbers">Numbers</h3>
+
+<h3 id="lists">Lists</h3>
+
+<h3 id="replace">Replace</h3>
+
+<h3 id="join">Join</h3>
+
+<h3 id="string-find">String find</h3>
+
+<h3 id="split">Split</h3>
+
+<h3 id="read-input">Read input</h3>
+
+<h2 id="flow-control">Flow Control</h2>
+
+<h3 id="if-statements">if statements</h3>
+
+<h3 id="for-loops">for loops</h3>
+
+<h3 id="while-loops">while loops</h3>
+
+<h3 id="range-function">range function</h3>
+
+<h3 id="break-and-continue-statements">break and continue statements</h3>
+
+<h3 id="pass-statements">pass Statements</h3>
+
+<h3 id="match-statements">match Statements</h3>
+
+<h3 id="defining-functions">Defining Functions</h3>
+
+<h3 id="more-on-defining-functions">More on Defining Functions</h3>
+
+<h3 id="default-argument-values">Default Argument Values</h3>
+
+<h3 id="keyword-arguments">Keyword Arguments</h3>
+
+<h3 id="special-parameters">Special parameters</h3>
+
+<h3 id="positional-or-keyword-arguments">Positional-or-Keyword Arguments</h3>
+
+<h3 id="positional-only-parameters">Positional-Only Parameters</h3>
+
+<h3 id="keyword-only-arguments">Keyword-Only Arguments</h3>
+
+<h3 id="function-examples">Function Examples</h3>
+
+<h3 id="arbitrary-argument-lists">Arbitrary Argument Lists</h3>
+
+<h3 id="unpacking-argument-lists">Unpacking Argument Lists</h3>
+
+<h3 id="lambda-expressions">Lambda Expressions</h3>
+
+<h3 id="documentation-strings">Documentation Strings</h3>
+
+<h3 id="function-annotations">Function Annotations</h3>
+
+<h2 id="data-structures">Data Structures</h2>
+
+<h3 id="more-on-lists">More on Lists</h3>
+
+<h3 id="using-lists-as-stacks">Using Lists as Stacks</h3>
+
+<h3 id="using-lists-as-queues">Using Lists as Queues</h3>
+
+<h3 id="list-comprehensions">List Comprehensions</h3>
+
+<h3 id="nested-list-comprehensions">Nested List Comprehensions</h3>
+
+<h3 id="the-del-statement">The del statement</h3>
+
+<h3 id="tuples-and-sequences">Tuples and Sequences</h3>
+
+<h3 id="sets">Sets</h3>
+
+<h3 id="dictionaries">Dictionaries</h3>
+
+<h3 id="looping-techniques">Looping Techniques</h3>
+
+<h3 id="more-on-conditions">More on Conditions</h3>
+
+<h3 id="comparing-sequences-and-other-types">Comparing Sequences and Other Types</h3>
+
+<h2 id="modules">Modules</h2>
+
+<h3 id="more-on-modules">More on Modules</h3>
+
+<h3 id="executing-modules-as-scripts">Executing modules as scripts</h3>
+
+<h3 id="the-module-search-path">The Module Search Path</h3>
+
+<h3 id="compiled-python-files">“Compiled” Python files</h3>
+
+<h3 id="standard-modules">Standard Modules</h3>
+
+<h3 id="the-dir-function">The dir() Function</h3>
+
+<h3 id="packages">Packages</h3>
+
+<h3 id="importing--from-a-package">Importing * From a Package</h3>
+
+<h3 id="intra-package-references">Intra-package References</h3>
+
+<h3 id="packages-in-multiple-directories">Packages in Multiple Directories</h3>
+
+<h2 id="input-and-output">Input and Output</h2>
+
+<h3 id="fancier-output-formatting">Fancier Output Formatting</h3>
+
+<h3 id="formatted-string-literals">Formatted String Literals</h3>
+
+<h3 id="the-string-format-method">The String format() Method</h3>
+
+<h3 id="manual-string-formatting">Manual String Formatting</h3>
+
+<h3 id="old-string-formatting">Old string formatting</h3>
+
+<h3 id="reading-and-writing-files">Reading and Writing Files</h3>
+
+<h3 id="methods-of-file-objects">Methods of File Objects</h3>
+
+<h3 id="saving-structured-data-with-json">Saving structured data with json</h3>
+
+<h2 id="errors-and-exceptions">Errors and Exceptions</h2>
+
+<h3 id="syntax-errors">Syntax Errors</h3>
+
+<h3 id="exceptions">Exceptions</h3>
+
+<h3 id="handling-exceptions">Handling Exceptions</h3>
+
+<h3 id="raising-exceptions">Raising Exceptions</h3>
+
+<h3 id="exception-chaining">Exception Chaining</h3>
+
+<h3 id="user-defined-exceptions">User-defined Exceptions</h3>
+
+<h3 id="defining-clean-up-actions">Defining Clean-up Actions</h3>
+
+<h3 id="predefined-clean-up-actions">Predefined Clean-up Actions</h3>
+
+<h3 id="raising-and-handling-multiple-unrelated-exceptions">Raising and Handling Multiple Unrelated Exceptions</h3>
+
+<h3 id="enriching-exceptions-with-notes">Enriching Exceptions with Notes</h3>
+
+<h2 id="classes">Classes</h2>
+
+<h3 id="a-word-about-names-and-objects">A Word About Names and Objects</h3>
+
+<h3 id="python-scopes-and-namespaces">Python Scopes and Namespaces</h3>
+
+<h3 id="scopes-and-namespaces-example">Scopes and Namespaces Example</h3>
+
+<h3 id="a-first-look-at-classes">A First Look at Classes</h3>
+
+<h3 id="class-definition-syntax">Class Definition Syntax</h3>
+
+<h3 id="class-objects">Class Objects</h3>
+
+<h3 id="instance-objects">Instance Objects</h3>
+
+<h3 id="method-objects">Method Objects</h3>
+
+<h3 id="class-and-instance-variables">Class and Instance Variables</h3>
+
+<h3 id="random-remarks">Random Remarks</h3>
+
+<h3 id="inheritance">Inheritance</h3>
+
+<h3 id="multiple-inheritance">Multiple Inheritance</h3>
+
+<h3 id="private-variables">Private Variables</h3>
+
+<h3 id="odds-and-ends">Odds and Ends</h3>
+
+<h3 id="iterators">Iterators</h3>
+
+<h3 id="generators">Generators</h3>
+
+<h3 id="generator-expressions">Generator Expressions</h3>
+
+<h2 id="brief-tour-of-the-standard-library">Brief Tour of the Standard Library</h2>
+
+<h3 id="operating-system-interface">Operating System Interface</h3>
+
+<h3 id="file-wildcards">File Wildcards</h3>
+
+<h3 id="command-line-arguments">Command Line Arguments</h3>
+
+<h3 id="error-output-redirection-and-program-termination">Error Output Redirection and Program Termination</h3>
+
+<h3 id="string-pattern-matching">String Pattern Matching</h3>
+
+<h3 id="mathematics">Mathematics</h3>
+
+<h3 id="internet-access">Internet Access</h3>
+
+<h3 id="dates-and-times">Dates and Times</h3>
+
+<h3 id="data-compression">Data Compression</h3>
+
+<h3 id="performance-measurement">Performance Measurement</h3>
+
+<h3 id="quality-control">Quality Control</h3>
+
+<h3 id="batteries-included">Batteries Included</h3>
+
+<h2 id="brief-tour-of-the-standard-library--part-ii">Brief Tour of the Standard Library — Part II</h2>
+
+<h3 id="output-formatting">Output Formatting</h3>
+
+<h3 id="templating">Templating</h3>
+
+<h3 id="working-with-binary-data-record-layouts">Working with Binary Data Record Layouts</h3>
+
+<h3 id="multi-threading">Multi-threading</h3>
+
+<h3 id="logging">Logging</h3>
+
+<h3 id="weak-references">Weak References</h3>
+
+<h3 id="tools-for-working-with-lists">Tools for Working with Lists</h3>
+
+<h3 id="decimal-floating-point-arithmetic">Decimal Floating Point Arithmetic</h3>
+
+<h2 id="virtual-environments-and-packages">Virtual Environments and Packages</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<h3 id="creating-virtual-environments">Creating Virtual Environments</h3>
+
+<h3 id="managing-packages-with-pip">Managing Packages with pip</h3>
+
+<h2 id="what-now">What Now?</h2>
+
+<h2 id="interactive-input-editing-and-history-substitution">Interactive Input Editing and History Substitution</h2>
+
+<h3 id="tab-completion-and-history-editing">Tab Completion and History Editing</h3>
+
+<h3 id="alternatives-to-the-interactive-interpreter">Alternatives to the Interactive Interpreter</h3>
+
+<h2 id="floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</h2>
+
+<h3 id="representation-error">Representation Error</h3>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="interactive-mode">Interactive Mode</h3>
+
+<h3 id="error-handling">Error Handling</h3>
+
+<h3 id="executable-python-scripts">Executable Python Scripts</h3>
+
+<h3 id="the-interactive-startup-file">The Interactive Startup File</h3>
+
+<h3 id="the-customization-modules">The Customization Modules</h3>
+:ET
