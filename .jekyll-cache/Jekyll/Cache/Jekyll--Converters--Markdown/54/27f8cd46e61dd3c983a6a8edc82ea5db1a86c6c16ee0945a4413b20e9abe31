@@ -1,4 +1,4 @@
-I"�j<h1 id="python-basics">Python Basics</h1>
+I"��<h1 class="no_toc" id="python-basics">Python Basics</h1>
 <p>This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
 This tutorial will go over Python 3+ as it is the most recent one.</p>
 
@@ -220,7 +220,69 @@ This is great for breaking long strings:</p>
 </code></pre></div></div>
 
 <h3 id="numbers">Numbers</h3>
+<p>There are three numeric types in Python:</p>
 
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int</code> Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</li>
+  <li><code class="language-plaintext highlighter-rouge">float</code> Float, or “floating point number” is a number, positive or negative, containing one or more decimals. Float can also be scientific numbers with an “e” to indicate the power of 10.</li>
+  <li><code class="language-plaintext highlighter-rouge">complex</code> Complex numbers are written with a “j” as the imaginary part:</li>
+</ul>
+
+<p>Variables of numeric types are created when you assign a value to them:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>    <span class="c1"># int
+</span><span class="n">b</span> <span class="o">=</span> <span class="mf">9.28</span>  <span class="c1"># float
+</span><span class="n">c</span> <span class="o">=</span> <span class="mf">5j</span>   <span class="c1"># complex
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># Use type to see what type it is
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>Converting</strong>
+You can convert from one type of number to another with <code class="language-plaintext highlighter-rouge">int()</code>, <code class="language-plaintext highlighter-rouge">float()</code>, and <code class="language-plaintext highlighter-rouge">complex()</code> methods:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>    <span class="c1"># int
+</span><span class="n">b</span> <span class="o">=</span> <span class="mf">9.28</span>  <span class="c1"># float
+</span><span class="n">c</span> <span class="o">=</span> <span class="mf">5j</span>   <span class="c1"># complex
+</span>
+<span class="c1">#convert from int to float:
+</span><span class="n">d</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1">#convert from float to int:
+</span><span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1">#convert from int to complex:
+</span><span class="n">f</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> 
+</code></pre></div></div>
+
+<p>Python also has a module called <code class="language-plaintext highlighter-rouge">random</code> that can be used to make random numbers</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Python also has a built in simple calculator. You can use expressions of operators like <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">((</span><span class="mi">50</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>There is also floor division where it rounds down the numbers instead of having a float</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">15</span><span class="o">//</span><span class="mi">4</span><span class="p">)</span> <span class="c1">## floor division 
+</span><span class="k">print</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="c1">## regular division 
+</span></code></pre></div></div>
+
+<p>It is also possible to calculate power by using <code class="language-plaintext highlighter-rouge">**</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+
+</code></pre></div></div>
 <h3 id="lists">Lists</h3>
 
 <h3 id="replace">Replace</h3>

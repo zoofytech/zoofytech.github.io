@@ -1,51 +1,6 @@
-I"}L<h1 id="all-topics-">All topics <!-- omit in toc --></h1>
+I"lE<h1 class="no_toc" id="all-topics">All topics</h1>
 
-<h2 id="table-of-contents">Table of contents<!-- omit in toc --></h2>
-<ul>
-  <li><a href="#programming">Programming</a>
-    <ul>
-      <li><a href="#python">Python</a></li>
-      <li><a href="#go-golang">Go (Golang)</a></li>
-      <li><a href="#shell-scripting">Shell scripting</a></li>
-    </ul>
-  </li>
-  <li><a href="#linux">Linux</a>
-    <ul>
-      <li><a href="#boot-process">Boot Process</a></li>
-      <li><a href="#filesystem">Filesystem</a></li>
-      <li><a href="#kernel">Kernel</a></li>
-      <li><a href="#troubleshooting">Troubleshooting</a></li>
-    </ul>
-  </li>
-  <li><a href="#monitoring">Monitoring</a></li>
-  <li><a href="#processes">Processes</a></li>
-  <li><a href="#networking">Networking</a></li>
-  <li><a href="#infrastructure-as-code--configuration-management">Infrastructure as code / Configuration management</a></li>
-  <li><a href="#cicd">CI/CD</a></li>
-  <li><a href="#clouds">Clouds</a></li>
-  <li><a href="#databases">Databases</a></li>
-  <li><a href="#interview-prep">Interview Prep</a>
-    <ul>
-      <li><a href="#big-o-notation-algorithms-and-data-structures">Big O Notation, Algorithms and Data Structures</a></li>
-      <li><a href="#system-design">System design</a></li>
-      <li><a href="#sre-interview-process">SRE interview process</a></li>
-      <li><a href="#interview-questions">Interview Questions</a></li>
-      <li><a href="#blogposts">Blogposts</a></li>
-      <li><a href="#resume">Resume</a></li>
-    </ul>
-  </li>
-  <li><a href="#books">Books</a>
-    <ul>
-      <li><a href="#sre-books">SRE books</a></li>
-      <li><a href="#linux-1">Linux</a></li>
-      <li><a href="#networking-1">Networking</a></li>
-      <li><a href="#troubleshooting-and-performance">Troubleshooting and Performance</a></li>
-    </ul>
-  </li>
-  <li><a href="#courses">Courses</a></li>
-</ul>
-
-<h2 id="programming">Programming</h2>
+<h2 class="no_toc" id="programming">Programming</h2>
 <details><summary>About Programming</summary><p>Programming is essential to your role as an engineer
 Python and Shell scripting is a must whereas Golang can be learned later</p>
 <p>Python is very useful in several cases for automating daily tasks. Some examples are such as:</p>

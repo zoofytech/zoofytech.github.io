@@ -4,11 +4,12 @@ title: python-basics
 ---
 
 # Python Basics 
+{:.no_toc}
 This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
 This tutorial will go over Python 3+ as it is the most recent one.  
 
 ## Download Python
-To download python go to https://www.python.org/downloads/ and download the version for your OS
+To download python go to [Download](https://www.python.org/downloads/) and download the version for your OS
 ![execute-python](images/python-download.jpg)
 ## Install IDE
 There are several different types of IDE's for python:
@@ -242,7 +243,74 @@ len(word)
 ```
 
 ### Numbers
+There are three numeric types in Python:
 
+- `int` Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.
+- `float` Float, or "floating point number" is a number, positive or negative, containing one or more decimals. Float can also be scientific numbers with an "e" to indicate the power of 10.
+- `complex` Complex numbers are written with a "j" as the imaginary part:
+
+
+Variables of numeric types are created when you assign a value to them:
+```python
+a = 6    # int
+b = 9.28  # float
+c = 5j   # complex
+print(type(a)) # Use type to see what type it is
+print(type(b))
+print(type(c))
+```
+
+**Converting**
+You can convert from one type of number to another with `int()`, `float()`, and `complex()` methods:
+
+```python
+a = 6    # int
+b = 9.28  # float
+c = 5j   # complex
+
+#convert from int to float:
+d = float(a)
+
+#convert from float to int:
+e = int(b)
+
+#convert from int to complex:
+f = complex(c)
+
+print(d)
+print(e)
+print(f)
+
+print(type(d))
+print(type(e))
+print(type(f)) 
+```
+
+Python also has a module called `random` that can be used to make random numbers
+```python
+import random
+print(random.randrange(1,10))
+```
+
+Python also has a built in simple calculator. You can use expressions of operators like `+`, `-`, `*`, `/`
+```python
+print(2+2)
+print((50 -5*5)/4)
+print(5/2)
+```
+
+There is also floor division where it rounds down the numbers instead of having a float 
+```python
+print(15//4) ## floor division 
+print(15/4) ## regular division 
+```
+
+It is also possible to calculate power by using `**`
+```python
+print(5 ** 2) 
+print(10 ** 2) 
+
+```
 ### Lists
 
 ### Replace

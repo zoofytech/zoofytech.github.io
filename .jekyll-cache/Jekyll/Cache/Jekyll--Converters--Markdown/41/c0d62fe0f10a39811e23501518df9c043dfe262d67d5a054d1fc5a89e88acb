@@ -1,188 +1,9 @@
-I"�<h1 id="python-basics-">Python Basics <!-- omit in toc --></h1>
+I"��<h1 class="no_toc" id="python-basics">Python Basics</h1>
 <p>This page will go over the basics of python. It is meant to be quick and getting your feet wet. If you are interested in more details of topics feel free to use Google. This should be enough information here to start out doing some easy leetcode questions
 This tutorial will go over Python 3+ as it is the most recent one.</p>
 
-<h1 id="table-of-contents-">Table of contents <!-- omit in toc --></h1>
-<ul>
-  <li><a href="#download-python">Download Python</a></li>
-  <li><a href="#install-ide">Install IDE</a></li>
-  <li><a href="#basics">Basics</a>
-    <ul>
-      <li><a href="#print-function">Print function</a></li>
-      <li><a href="#execute-scripts">Execute Scripts</a></li>
-      <li><a href="#variables">Variables</a></li>
-      <li><a href="#strings">Strings</a></li>
-      <li><a href="#numbers">Numbers</a></li>
-      <li><a href="#lists">Lists</a></li>
-      <li><a href="#replace">Replace</a></li>
-      <li><a href="#join">Join</a></li>
-      <li><a href="#string-find">String find</a></li>
-      <li><a href="#split">Split</a></li>
-      <li><a href="#read-input">Read input</a></li>
-    </ul>
-  </li>
-  <li><a href="#flow-control">Flow Control</a>
-    <ul>
-      <li><a href="#if-statements">if statements</a></li>
-      <li><a href="#for-loops">for loops</a></li>
-      <li><a href="#while-loops">while loops</a></li>
-      <li><a href="#range-function">range function</a></li>
-      <li><a href="#break-and-continue-statements">break and continue statements</a></li>
-      <li><a href="#pass-statements">pass Statements</a></li>
-      <li><a href="#match-statements">match Statements</a></li>
-      <li><a href="#defining-functions">Defining Functions</a></li>
-      <li><a href="#more-on-defining-functions">More on Defining Functions</a></li>
-      <li><a href="#default-argument-values">Default Argument Values</a></li>
-      <li><a href="#keyword-arguments">Keyword Arguments</a></li>
-      <li><a href="#special-parameters">Special parameters</a></li>
-      <li><a href="#positional-or-keyword-arguments">Positional-or-Keyword Arguments</a></li>
-      <li><a href="#positional-only-parameters">Positional-Only Parameters</a></li>
-      <li><a href="#keyword-only-arguments">Keyword-Only Arguments</a></li>
-      <li><a href="#function-examples">Function Examples</a></li>
-      <li><a href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li>
-      <li><a href="#unpacking-argument-lists">Unpacking Argument Lists</a></li>
-      <li><a href="#lambda-expressions">Lambda Expressions</a></li>
-      <li><a href="#documentation-strings">Documentation Strings</a></li>
-      <li><a href="#function-annotations">Function Annotations</a></li>
-    </ul>
-  </li>
-  <li><a href="#data-structures">Data Structures</a>
-    <ul>
-      <li><a href="#more-on-lists">More on Lists</a></li>
-      <li><a href="#using-lists-as-stacks">Using Lists as Stacks</a></li>
-      <li><a href="#using-lists-as-queues">Using Lists as Queues</a></li>
-      <li><a href="#list-comprehensions">List Comprehensions</a></li>
-      <li><a href="#nested-list-comprehensions">Nested List Comprehensions</a></li>
-      <li><a href="#the-del-statement">The del statement</a></li>
-      <li><a href="#tuples-and-sequences">Tuples and Sequences</a></li>
-      <li><a href="#sets">Sets</a></li>
-      <li><a href="#dictionaries">Dictionaries</a></li>
-      <li><a href="#looping-techniques">Looping Techniques</a></li>
-      <li><a href="#more-on-conditions">More on Conditions</a></li>
-      <li><a href="#comparing-sequences-and-other-types">Comparing Sequences and Other Types</a></li>
-    </ul>
-  </li>
-  <li><a href="#modules">Modules</a>
-    <ul>
-      <li><a href="#more-on-modules">More on Modules</a></li>
-      <li><a href="#executing-modules-as-scripts">Executing modules as scripts</a></li>
-      <li><a href="#the-module-search-path">The Module Search Path</a></li>
-      <li><a href="#compiled-python-files">“Compiled” Python files</a></li>
-      <li><a href="#standard-modules">Standard Modules</a></li>
-      <li><a href="#the-dir-function">The dir() Function</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#importing--from-a-package">Importing * From a Package</a></li>
-      <li><a href="#intra-package-references">Intra-package References</a></li>
-      <li><a href="#packages-in-multiple-directories">Packages in Multiple Directories</a></li>
-    </ul>
-  </li>
-  <li><a href="#input-and-output">Input and Output</a>
-    <ul>
-      <li><a href="#fancier-output-formatting">Fancier Output Formatting</a></li>
-      <li><a href="#formatted-string-literals">Formatted String Literals</a></li>
-      <li><a href="#the-string-format-method">The String format() Method</a></li>
-      <li><a href="#manual-string-formatting">Manual String Formatting</a></li>
-      <li><a href="#old-string-formatting">Old string formatting</a></li>
-      <li><a href="#reading-and-writing-files">Reading and Writing Files</a></li>
-      <li><a href="#methods-of-file-objects">Methods of File Objects</a></li>
-      <li><a href="#saving-structured-data-with-json">Saving structured data with json</a></li>
-    </ul>
-  </li>
-  <li><a href="#errors-and-exceptions">Errors and Exceptions</a>
-    <ul>
-      <li><a href="#syntax-errors">Syntax Errors</a></li>
-      <li><a href="#exceptions">Exceptions</a></li>
-      <li><a href="#handling-exceptions">Handling Exceptions</a></li>
-      <li><a href="#raising-exceptions">Raising Exceptions</a></li>
-      <li><a href="#exception-chaining">Exception Chaining</a></li>
-      <li><a href="#user-defined-exceptions">User-defined Exceptions</a></li>
-      <li><a href="#defining-clean-up-actions">Defining Clean-up Actions</a></li>
-      <li><a href="#predefined-clean-up-actions">Predefined Clean-up Actions</a></li>
-      <li><a href="#raising-and-handling-multiple-unrelated-exceptions">Raising and Handling Multiple Unrelated Exceptions</a></li>
-      <li><a href="#enriching-exceptions-with-notes">Enriching Exceptions with Notes</a></li>
-    </ul>
-  </li>
-  <li><a href="#classes">Classes</a>
-    <ul>
-      <li><a href="#a-word-about-names-and-objects">A Word About Names and Objects</a></li>
-      <li><a href="#python-scopes-and-namespaces">Python Scopes and Namespaces</a></li>
-      <li><a href="#scopes-and-namespaces-example">Scopes and Namespaces Example</a></li>
-      <li><a href="#a-first-look-at-classes">A First Look at Classes</a></li>
-      <li><a href="#class-definition-syntax">Class Definition Syntax</a></li>
-      <li><a href="#class-objects">Class Objects</a></li>
-      <li><a href="#instance-objects">Instance Objects</a></li>
-      <li><a href="#method-objects">Method Objects</a></li>
-      <li><a href="#class-and-instance-variables">Class and Instance Variables</a></li>
-      <li><a href="#random-remarks">Random Remarks</a></li>
-      <li><a href="#inheritance">Inheritance</a></li>
-      <li><a href="#multiple-inheritance">Multiple Inheritance</a></li>
-      <li><a href="#private-variables">Private Variables</a></li>
-      <li><a href="#odds-and-ends">Odds and Ends</a></li>
-      <li><a href="#iterators">Iterators</a></li>
-      <li><a href="#generators">Generators</a></li>
-      <li><a href="#generator-expressions">Generator Expressions</a></li>
-    </ul>
-  </li>
-  <li><a href="#brief-tour-of-the-standard-library">Brief Tour of the Standard Library</a>
-    <ul>
-      <li><a href="#operating-system-interface">Operating System Interface</a></li>
-      <li><a href="#file-wildcards">File Wildcards</a></li>
-      <li><a href="#command-line-arguments">Command Line Arguments</a></li>
-      <li><a href="#error-output-redirection-and-program-termination">Error Output Redirection and Program Termination</a></li>
-      <li><a href="#string-pattern-matching">String Pattern Matching</a></li>
-      <li><a href="#mathematics">Mathematics</a></li>
-      <li><a href="#internet-access">Internet Access</a></li>
-      <li><a href="#dates-and-times">Dates and Times</a></li>
-      <li><a href="#data-compression">Data Compression</a></li>
-      <li><a href="#performance-measurement">Performance Measurement</a></li>
-      <li><a href="#quality-control">Quality Control</a></li>
-      <li><a href="#batteries-included">Batteries Included</a></li>
-    </ul>
-  </li>
-  <li><a href="#brief-tour-of-the-standard-library--part-ii">Brief Tour of the Standard Library — Part II</a>
-    <ul>
-      <li><a href="#output-formatting">Output Formatting</a></li>
-      <li><a href="#templating">Templating</a></li>
-      <li><a href="#working-with-binary-data-record-layouts">Working with Binary Data Record Layouts</a></li>
-      <li><a href="#multi-threading">Multi-threading</a></li>
-      <li><a href="#logging">Logging</a></li>
-      <li><a href="#weak-references">Weak References</a></li>
-      <li><a href="#tools-for-working-with-lists">Tools for Working with Lists</a></li>
-      <li><a href="#decimal-floating-point-arithmetic">Decimal Floating Point Arithmetic</a></li>
-    </ul>
-  </li>
-  <li><a href="#virtual-environments-and-packages">Virtual Environments and Packages</a>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#creating-virtual-environments">Creating Virtual Environments</a></li>
-      <li><a href="#managing-packages-with-pip">Managing Packages with pip</a></li>
-    </ul>
-  </li>
-  <li><a href="#what-now">What Now?</a></li>
-  <li><a href="#interactive-input-editing-and-history-substitution">Interactive Input Editing and History Substitution</a>
-    <ul>
-      <li><a href="#tab-completion-and-history-editing">Tab Completion and History Editing</a></li>
-      <li><a href="#alternatives-to-the-interactive-interpreter">Alternatives to the Interactive Interpreter</a></li>
-    </ul>
-  </li>
-  <li><a href="#floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</a>
-    <ul>
-      <li><a href="#representation-error">Representation Error</a></li>
-    </ul>
-  </li>
-  <li><a href="#appendix">Appendix</a>
-    <ul>
-      <li><a href="#interactive-mode">Interactive Mode</a></li>
-      <li><a href="#error-handling">Error Handling</a></li>
-      <li><a href="#executable-python-scripts">Executable Python Scripts</a></li>
-      <li><a href="#the-interactive-startup-file">The Interactive Startup File</a></li>
-      <li><a href="#the-customization-modules">The Customization Modules</a></li>
-    </ul>
-  </li>
-</ul>
-
 <h2 id="download-python">Download Python</h2>
-<p>To download python go to https://www.python.org/downloads/ and download the version for your OS
+<p>To download python go to <a href="https://www.python.org/downloads/">Download</a> and download the version for your OS
 <img src="images/python-download.jpg" alt="execute-python" /></p>
 <h2 id="install-ide">Install IDE</h2>
 <p>There are several different types of IDE’s for python:</p>
@@ -399,7 +220,69 @@ This is great for breaking long strings:</p>
 </code></pre></div></div>
 
 <h3 id="numbers">Numbers</h3>
+<p>There are three numeric types in Python:</p>
 
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int</code> Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</li>
+  <li><code class="language-plaintext highlighter-rouge">float</code> Float, or “floating point number” is a number, positive or negative, containing one or more decimals. Float can also be scientific numbers with an “e” to indicate the power of 10.</li>
+  <li><code class="language-plaintext highlighter-rouge">complex</code> Complex numbers are written with a “j” as the imaginary part:</li>
+</ul>
+
+<p>Variables of numeric types are created when you assign a value to them:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>    <span class="c1"># int
+</span><span class="n">b</span> <span class="o">=</span> <span class="mf">9.28</span>  <span class="c1"># float
+</span><span class="n">c</span> <span class="o">=</span> <span class="mf">5j</span>   <span class="c1"># complex
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># Use type to see what type it is
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>Converting</strong>
+You can convert from one type of number to another with <code class="language-plaintext highlighter-rouge">int()</code>, <code class="language-plaintext highlighter-rouge">float()</code>, and <code class="language-plaintext highlighter-rouge">complex()</code> methods:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>    <span class="c1"># int
+</span><span class="n">b</span> <span class="o">=</span> <span class="mf">9.28</span>  <span class="c1"># float
+</span><span class="n">c</span> <span class="o">=</span> <span class="mf">5j</span>   <span class="c1"># complex
+</span>
+<span class="c1">#convert from int to float:
+</span><span class="n">d</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1">#convert from float to int:
+</span><span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1">#convert from int to complex:
+</span><span class="n">f</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> 
+</code></pre></div></div>
+
+<p>Python also has a module called <code class="language-plaintext highlighter-rouge">random</code> that can be used to make random numbers</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Python also has a built in simple calculator. You can use expressions of operators like <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">((</span><span class="mi">50</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>There is also floor division where it rounds down the numbers instead of having a float</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">15</span><span class="o">//</span><span class="mi">4</span><span class="p">)</span> <span class="c1">## floor division 
+</span><span class="k">print</span><span class="p">(</span><span class="mi">15</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="c1">## regular division 
+</span></code></pre></div></div>
+
+<p>It is also possible to calculate power by using <code class="language-plaintext highlighter-rouge">**</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+
+</code></pre></div></div>
 <h3 id="lists">Lists</h3>
 
 <h3 id="replace">Replace</h3>
