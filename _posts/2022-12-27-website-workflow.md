@@ -11,7 +11,7 @@ GitHub Actions is setup on the `dev` repository so when there are changes it wou
 
 ![workflow](../images/website-workflow.jpg)
 Below is an example code on how this is done:  
-
+{% raw %}
 ```yaml
 name: Sync changes to prod
 
@@ -31,8 +31,7 @@ jobs:
       uses: wei/git-sync@v3
       with:
           source_repo: "https://${\
-          { env.USERNAME }}:${\
-          { secrets.GH_TOKEN }}@github.com/${\
+          { env.USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${\
           { env.DEV_REPO }}"
           source_branch: "main"
           destination_repo: "https://${\ 
@@ -41,3 +40,4 @@ jobs:
           { env.PROD_REPO }}"
           destination_branch: "main"
 ```
+{% endraw %}

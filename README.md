@@ -21,8 +21,15 @@ This snippet is highly customizable. Here are the available parameters to change
 | `anchor_class`  | string | ''     | add custom class(es) for each anchor element |
 | `skip_no_ids`   | bool   | false  | skip headers that do not have an `id` attribute |
 
-Exclude specific headings:
+## Exclude specific headings:
 ```
 # Heading 1 <= this heading will be ignored
 {:.no_toc}
+```
+
+## Use double curly braces
+```
+{% raw %}
+This is some text with {{double curly braces}} in it.
+{% endraw %}
 ```

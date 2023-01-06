@@ -223,7 +223,7 @@
 
   
   
-  (70 Words, 
+  (66 Words, 
   1 Minutes)
   
 
@@ -262,8 +262,7 @@ Below is an example code on how this is done:</p>
       <span class="na">uses</span><span class="pi">:</span> <span class="s">wei/git-sync@v3</span>
       <span class="na">with</span><span class="pi">:</span>
           <span class="na">source_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://${</span><span class="se">\
-</span>          <span class="s">{</span><span class="nv"> </span><span class="s">env.USERNAME</span><span class="nv"> </span><span class="s">}}:${</span><span class="se">\
-</span>          <span class="s">{</span><span class="nv"> </span><span class="s">secrets.GH_TOKEN</span><span class="nv"> </span><span class="s">}}@github.com/${</span><span class="se">\
+</span>          <span class="s">{</span><span class="nv"> </span><span class="s">env.USERNAME</span><span class="nv"> </span><span class="s">}}:${{</span><span class="nv"> </span><span class="s">secrets.GH_TOKEN</span><span class="nv"> </span><span class="s">}}@github.com/${</span><span class="se">\
 </span>          <span class="s">{</span><span class="nv"> </span><span class="s">env.DEV_REPO</span><span class="nv"> </span><span class="s">}}"</span>
           <span class="na">source_branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">main"</span>
           <span class="na">destination_repo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://${</span><span class="se">\ </span>
