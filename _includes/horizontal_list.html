@@ -1,9 +1,14 @@
 <ul class="horizontal-list">
   {% for item in include.collection %}
-    <li>
-      <a href="{{ item.url }}">
-        {{ item.title }}
-      </a>
+    <li class="dropdown">
+      {% if item.entries %}
+        <a class="dropbtn" href="{{ item.url }}">{{ item.title }}</a>
+        <div class="dropdown-content">
+          {% include vertical_list.html collection=item.entries %}
+        </div>
+      {% else %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% endif %}
       &nbsp;&nbsp;
     </li>
   {% endfor %}
