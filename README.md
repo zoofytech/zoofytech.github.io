@@ -33,3 +33,22 @@ This snippet is highly customizable. Here are the available parameters to change
 This is some text with {{double curly braces}} in it.
 {% endraw %}
 ```
+
+## Adding sub-links to nav
+**home.yml**
+```
+navbar_entries:
+  - title: home
+    url: /
+
+  - title: all-topics
+    url: all-topics
+    entries:
+      - title: python-basics
+        url: python-basics
+      - title: python-basics
+        url: python-basics  
+  - title: python-basics
+    url: python-basics
+
+```
