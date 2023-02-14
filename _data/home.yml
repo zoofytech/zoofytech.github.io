@@ -4,7 +4,11 @@ navbar_entries:
 
   - title: all-topics
     url: all-topics
-
+  #   entries:
+  #     - title: python-basics
+  #       url: python-basics
+  #     - title: python-basics
+  #       url: python-basics  
   - title: python-basics
     url: python-basics
 

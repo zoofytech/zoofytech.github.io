@@ -312,16 +312,28 @@ print(10 ** 2)
 
 ```
 ### Lists
+Lists are a way to store multiple items in a single variable  
+Lists are one of the 4 built in data types for Python used to store collections of data. The other 3 are Tuple, Set, and Dictionary 
+Lists are created using square brackets `[]` with comma separated values 
 
+```python
+names = [john, amy, george ]
+print(names)
+```
 ### Replace
+
 
 ### Join
 
+
 ### String find 
+
 
 ### Split
 
+
 ### Read input 
+
 
 ## Flow Control
 
