@@ -320,31 +320,461 @@ Lists are created using square brackets `[]` with comma separated values
 names = [john, amy, george ]
 print(names)
 ```
-### Replace
 
+In python, lists are very flexible you can do things like concatenation, replace, append, slice and much more..
+
+**concatenation**
+```python
+numbers = [1,2,3,4]
+connums = numbers + [5,6,7,8]
+print(connums)
+```
+**replace**
+```python
+odd_nums = [1,2,5,7,9]
+odd_nums[1] = 3
+print(odd_nums)
+```
+
+**append**
+```python
+odd_nums = [1,2,5,7,9]
+odd_nums[1] = 3
+print(odd_nums)
+odd_nums.append(11)
+odd_nums.append(13)
+print(odd_nums)
+```
+
+**slice**
+```python
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+# replace some values
+letters[2:5] = ['C', 'D', 'E']
+print(letters)
+# now remove them
+letters[2:5] = []
+print(letters)
+#clear all except first letter
+letters[0:] = []
+print(letters)
+```
+
+### Replace
+Python has a built in support for string replacement. A string is variable that contains text data. To replace a string call the string.replace(old,new) method using the string object
+
+
+```python
+a = "Hello World"
+s = s.replace("World", "Universe")
+print(s)
+```
+
+An optional parameter is the number of items that will be replaced. By default it is all
+```python
+a = "Hello World World World"
+s = s.replace("World", "Universe", 1)
+print(s)
+```
 
 ### Join
+The join method joins elements and returns them combined as a string. 
+```python
+firstname = "John"
+lastname = "Doe"
+sequence = (lastname,firstname)
+name = " ".join(sequence)
+print(name)
+```
 
+It can also join a list of words as well:
+```python
+list = ["cat","dog","bunny","rabbit"]
+animals= ' '.join(list)
+print(animals)
 
+```
 ### String find 
+The find() method searches for query string and returns the character position if found. If no string is found, it returns -1.
 
+You can add a string index and end index: `find(query,start,end), but these parameters are optional
 
+**Example:**
+```python
+s = "Today is a good day"
+index = s.find("good")
+print(index)
+```
+
+You can also use `_in_` to search for strings
+```python
+s = "Today is a good day"
+if "good" in s:
+    print("query found")
+```
 ### Split
+A string can be split into substrings using the `split(param)` method. This method is part of the string object. The parameter is optional, but you can split on a specific string or character.
 
+If you have a string, you can subdivide it into several strings. The string needs to have at least one separating character, which may be a space.
 
-### Read input 
+By default the split method will use space as separator. Calling the method will return a list of all the substrings.
 
+```python
+s = "Split this sentence"
+words = s.split()
+print(words)
+```
+
+if you want to split a word into characters, use the list method:
+
+```python
+word = "word"
+x = list(word)
+print(x)
+```
+
+### Read input
+The input function will ask for keyboard input from the user. The functions read input from the keyboard, converts it to a string and removes the newline(Enter)
+
+```python
+name = input('What is your name? ')
+print('Hello ' + name)
+
+job = input('What is your job? ')
+print('Your job is ' + job)
+
+num = input('Give me a number? ')
+print('You said: ' + str(num))
+```
 
 ## Flow Control
 
 ### if statements 
+In Python the if statement is used for conditional execution or branching. An if statement is one of the control structures. (A control structure controls the flow of the program.)
 
+The if statement may be combined with certain operator such as equal `(==)`, greater than `(>=)`, less than `(<=)` and not equal `(!=)`. Conditions may be combined using the keywords `or` and `and`.
+
+A basic statement should look like this:
+
+```python
+if <condition>:
+    <statement>
+```
+
+- is the condition evaluated as a Boolean, it can either be True or False.
+- if it is one more lines of code. Each of those lines must indented with four spaces.
+
+**Examples**:
+```python
+x = 4
+if x < 10:
+    print('x is less than ten')
+
+if x > 10:
+    print('x is greater than ten')
+
+if x > 1 and x < 5:
+    print('x is in greater than 1 and less than 5')
+```
+
+**multiple statements**
+An if statement doesn’t need to have a single statement, it can have a block. A block is more than one statement. In python blocks are defined by indentations.
+
+```python
+if <condition>:
+    <statement>
+    <statement>
+    <statement>
+
+<statement>  # not in block
+```
+
+**Example**
+
+```python
+x=10
+if x < 11:
+    print("x is less than 11")
+    print("this means it's not equal to 11 either")
+    print("x is an integer")
+```
+
+**If-Else**
+The `else` keyword is used typically when all other cases are done.
+```python
+num = input("Pick a number 1-10 \n")
+if num <= "10" and num >= "1":
+    print("Your number is " + num)
+else:
+    print("Please choose a number between 1-10")
+
+```
+
+**elif**
+If you want to evaluate several cases, you can use the `elif` clause. `elif` is short for else if. Unlike `else`, with elif you can add an expression.
+That way instead of writing if over and over again, you can evaluate all cases quickly
+
+```python
+x=1
+if x == 2:
+    print('two')
+elif x == 1:
+    print('one')
+elif x == 4:
+    print('four')
+else:
+    print('x is equal to ' + x)
+```
+
+It all boils down to how people read things because the above is the same as the example below
+```python
+x=1
+if x == 2:
+    print('two')
+if x == 1:
+    print('one')
+if x == 4:
+    print('four')
+else:
+    print('x is equal to ' + x)
+```
 ### for loops
+A for loop repeats an action that can have 1 or more instructions. In python for loops iterates over the items of any sequences(lists, strings, dictionaries) in the order that they appear in the sequence. 
 
+
+```python
+city= ['New York', 'San Francisco', 'Hong Kong']
+print ('Cities : ')
+for i in city:
+    print('City: ' + i)
+# Create a sample collection
+users = {'John': 'active', 'Rob': 'inactive', 'Ken': 'active'}
+active_users = {}
+for user, status in users.items():
+    if status == 'active':
+        print(user+ ":" + status)
+```
 ### while loops
+While loops are used to repeat execution as long as the expression is true
+```python
+while_stmt ::=  "while" assignment_expression ":" suite
+                ["else" ":" suite]
+```
+This repeatedly tests the expression and if it is true, executes the first suite; if the expression is false the suite of the `else` clause,if present is executed and loop is terminated. A `break` statement executed in the first suite terminates the loop without executing the else clause's suite. A `continue` statement executed in the first suite skips the rest of the suite and goes back to the testing expression
 
-### range function
+```python
+x = 4
+while x < 10:
+    print(x)
+    x = x + 1
+# This will loop through the numbers until it reaches 10 but excludes 10
+```
 
+### Nested loops
+A loop can contain one or more other loops. You can create a loop inside a loop. This principle is known as nested loops. Nested loops can get a bit confusing especially if it goes over 3 deep
+
+**example**
+```python
+people = [ "John", "Jim", "Peter", "Jason" ]
+restaurants = [ "Japanese", "American", "Mexican", "Chinese" ]
+for person in people:
+    for restaurant in restaurants:
+        print(person + "eats " + restaurant)
+```
+## exceptions
+Python has built-in exceptions which can output an error. If an error occurs while running the program, it’s called an exception. 
+
+If an exception occurs, the type of exception is shown. Exceptions needs to be dealt with or the program will crash. To handle exceptions, the `try-catch` block is used.
+
+All exceptions in Python inherit from the class BaseException. If you open the Python interactive shell and type the following statement it will list all built-in exceptions:
+
+```python
+dir(builtins)
+```
+
+### except
+
+The idea of the try-except clause is to handle exceptions (errors at runtime). The syntax of the try-except block is:
+```python
+try:
+    <do something>
+except Exception:
+    <handle the error>
+```
+- **try:** the code with the exception(s) to catch. If an exception is raised, it jumps to the except block.
+- **except:** this code is only executed if an exception occurred in the `try` block even if it contains only the pass statement 
+
+it can also be combined with the `else` and `finally` keywords.
+- **else:** Code in the else block is only executed if no exceptions were raised in the try block.
+- **finally:** The code in the finally block is always executed, regardless of if an exception was raised or not
+
+### try
+The try-except block can handle exceptions. This prevents the program from crashing and exiting in errors. 
+```python
+try: 
+    1 / 0
+except ZeroDivisionError: 
+    print('One divide by zero')
+
+print('This should still print')
+```
+
+After the except block, the program continues. Without a try-except block, the last line would not print and crash.
+
+You can also write different logic for each type of exception that happens:
+
+```python
+try: 
+    # your code here
+except FileNotFoundError: 
+    # handle exception 
+except IsADirectoryError:
+    # handle exception
+except:
+    # all other types of exceptions
+
+print('This should still print')
+```
+
+### finally
+A try-except block can have the finally clause. The finally clause is always executed
+
+```python
+try:
+    <do something>
+except Exception:
+    <handle the error>
+finally:
+    <cleanup>
+```
+
+Say if you'd want to open a file then close it.
+```python
+try: 
+    f = open("test.txt")
+except: 
+    print('Could not open file')
+finally:
+    f.close()
+
+print('This should still print')
+```
+### else
+The else clause is executed if and only if no exception is raised. This is different from the finally clause that’s always executed.
+
+```python
+try:
+    x = 10
+except:
+    print('Failed to set x')
+else:
+    print('No exception occurred')
+finally:
+    print('This will always print')
+```
+
+### raise
+Exceptions are raised when an error occurs, but in python you can also force an exception to occur using `raise`
+
+```python
+raise MemoryError("Out of memory")
+raise ValueError("Wrong value")
+```
+
+### built in exceptions
+
+```
+Exception 	Cause of Error
+
+AssertionError 	if assert statement fails.
+AttributeError 	if attribute assignment or reference fails.
+EOFError 	if the input() functions hits end-of-file condition.
+FloatingPointError 	if a floating point operation fails.
+GeneratorExit 	Raise if a generator's close() method is called.
+ImportError 	if the imported module is not found.
+IndexError 	if index of a sequence is out of range.
+KeyError 	if a key is not found in a dictionary.
+KeyboardInterrupt 	if the user hits interrupt key (Ctrl+c or delete).
+MemoryError 	if an operation runs out of memory.
+NameError 	if a variable is not found in local or global scope.
+NotImplementedError 	by abstract methods.
+OSError 	if system operation causes system related error.
+OverflowError 	if result of an arithmetic operation is too large to be represented.
+ReferenceError 	if a weak reference proxy is used to access a garbage collected referent.
+RuntimeError 	if an error does not fall under any other category.
+StopIteration 	by next() function to indicate that there is no further item to be returned by iterator.
+SyntaxError 	by parser if syntax error is encountered.
+IndentationError 	if there is incorrect indentation.
+TabError 	if indentation consists of inconsistent tabs and spaces.
+SystemError 	if interpreter detects internal error.
+SystemExit 	by sys.exit() function.
+TypeError 	if a function or operation is applied to an object of incorrect type.
+UnboundLocalError 	if a reference is made to a local variable in a function or method, but no value has been bound to that variable.
+UnicodeError 	if a Unicode-related encoding or decoding error occurs.
+UnicodeEncodeError 	if a Unicode-related error occurs during encoding.
+UnicodeDecodeError 	if a Unicode-related error occurs during decoding.
+UnicodeTranslateError 	if a Unicode-related error occurs during translating.
+ValueError 	if a function gets argument of correct type but improper value.
+ZeroDivisionError 	if second operand of division or modulo operation is zero.
+```
+
+### User-defined exceptions
+As mentioned earlier, there are many types of exceptions built in exceptions, but it might not fit your needs. You can program your own type of exceptions if needed.
+To create a user-defined exception, you have to create a class that inherits from Exception.
+
+**Examples:**
+```python
+class BathroomError(Exception):
+    pass
+
+raise BathroomError("Programmer went to the bathroom")
+```
+
+```python
+class NoMoneyException(Exception):
+    pass
+
+class OutOfBudget(Exception):
+    pass
+
+balance = int(input("Enter a balance: "))
+if balance < 1000:
+    raise NoMoneyException
+elif balance > 10000:
+    raise OutOfBudget
+```
+## More flow control
+### range
+If you need to iterate over a sequence of numbers, the built in function range comes in handy.
+range has the following parameters
+```python
+range(start, stop[, step])
+```
+
+**start**
+    The value of the start parameter (or 0 if the parameter was not supplied)
+
+**stop**
+
+    The value of the stop parameter
+
+**step**
+
+    The value of the step parameter (or 1 if the parameter was not supplied)
+
+
+For a positive `step`, the contents of a range r are determined by the formula `r[i] = start + step*i` where `i >= 0 and r[i] < stop`
+
+For a negative step, the contents of the range are still determined by the formula `r[i] = start + step*i`, but the constraints are `i >= 0 and r[i] > stop`
+```python
+for i in range(5):
+    print(i)
+```
+
+It is also possible to set the range to start at another number
+```python
+list(range(5,10))
+```
 ### break and continue statements
 
 ### pass Statements
@@ -368,6 +798,8 @@ print(names)
 ### Keyword-Only Arguments
 
 ### Function Examples
+
+### range function
 
 ### Arbitrary Argument Lists
 
