@@ -774,14 +774,31 @@ for i in range(5):
 It is also possible to set the range to start at another number
 ```python
 list(range(5,10))
+list(range(0,10,3))
+list(range(-10,-100,-30))
 ```
-### break and continue statements
+### loop statements
 
-### pass Statements
+### break statements
+The `break` statement breaks out of the innermost enclosing for or while loop
+break is used to terminate loops when it is encountered
 
-### match Statements
+**Example:**
+```python
+for i in range(3):
+    if i == 2:
+        break
+    print(i)
+```
+In the above example, when `i` is equal to 2, the break statement terminates the loop. You will notice that the output of this does not include `2`
+### continue statements 
 
-### Defining Functions
+ 
+### pass statements
+
+### match statements
+
+### defining functions
 
 ### More on Defining Functions
 
