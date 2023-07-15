@@ -777,7 +777,6 @@ list(range(5,10))
 list(range(0,10,3))
 list(range(-10,-100,-30))
 ```
-### loop statements
 
 ### break statements
 The `break` statement breaks out of the innermost enclosing for or while loop
@@ -792,47 +791,417 @@ for i in range(3):
 ```
 In the above example, when `i` is equal to 2, the break statement terminates the loop. You will notice that the output of this does not include `2`
 ### continue statements 
+The `continue` statement will continue the iteration of a loop. This will work for both while loops and for loops.
 
+**Example:**
+```python
+for letter in 'python':     
+   if letter == 'p':
+      continue
+   print 'Letter :', letter
+
+var = 20                 
+while var > 0:              
+   var = var -1
+   if var == 10:
+      continue
+   print 'Current var:', var
+print "Done"
+```
  
 ### pass statements
+The pass statement is a null operations; nothing happens when it executes. It is useful in places where your code will eventually go but has not been written yet. 
 
-### match statements
+**Example:**
+```python
+for letter in 'python':
+    if letter == 'o':
+        pass
+        print 'The pass was used above'
+    print 'cur letter :', letter
+print "Done"
+```
 
-### defining functions
+When executed, notice how the `pass` does not do anything. If  the `pass` is not used along with the `print` statement, then it would just throw an error:
 
-### More on Defining Functions
+```python
+for letter in 'python':
+    if letter == 'o':
+    print 'cur letter :', letter
+print "Done"
+```
+### match case statements
+`match case` was added in Python 3.10 >
+
+The `match case` statement has a similar functionality as an `if` statement. If you're familiar with bash, it is similar to a `case` statement as well. 
+The pseudocode for `match case` would look like the following:
+
+```python
+parameter=""
+
+match parameter:
+
+	case first:
+		do_something(first)
+	
+	case second:
+		do_something(second)
+		
+	case third:
+		do_something(third)
+		.............
+		............
+	case n:
+		do_something(n)
+	case _:
+		nothing_matched()
+```
+
+**Example:**
+
+```python
+
+param='world, hello!'
+
+match param:
+    case 'world, hello!':
+        print('world hello too!')
+    case 'hello world!':
+        print('hello to you too!')
+    case _:
+        print('no match found')
+```
+
+The above example should only match one case and would print out `world hello too!` 
+
+### functions
+A function is a block of code which only runs when it is called. You can pass data also known as `parameters` or `arguments` into a function. 
+
+To define a function the keyword `def` is used.  
+```python
+def function1():
+    print('hello function1')
+```
+
+To call a function, use the function name followed by parenthesis`()`:
+```python
+def function1():
+    print('hello function1')
+function1()
+```
+
+Information can be passed into functions as `arguments` also known as `parameters` or `args`. Arguments are specified after the function name inside the parentheses. You can add as many arguments as you want by separating them with a comma. 
+```python
+def function1(first_name):
+    print(first_name + " lastname")
+function1("Bob")
+function1("Josh")
+function1("Jack")
+```
+**Multiple Arguments**
+As stated earlier, you can have multiple arguments by using a comma:
+```python
+def function1(first_name, last_name):
+    print(first_name + " middle name " + last_name)
+function1("Bob", "Richard")
+function1("Josh", "Lee")
+function1("Jack", "Ma")
+```
+
+**Arbitrary Arguments/`*args`**
+If you do not know how many arguments will be passed to your function, you can add a `*` before the  parameter name:
+
+```python
+def func1(*name):
+    print("His name is " + name[0] + " " + name[2])
+func1("Jackie", "middlename", "Chan")
+```
+
+**Keyword Arguments**
+ You can also send arguments with `key= value` syntax. In this context, the order of arguments do not matter
+ ```python
+ def function1(name1, name3, name2):
+    print("The third name is" + name3)
+function1(name1 = "Heather", name2 = "Johnny", name3 = "Richard")
+ ```
+
+**Arbitrary Keyword Arguments, `**kwargs`**
+If you have a unknown amount of keyboard arguments(kwargs), just add two asterisks`**` before the parameter name in the function definition. 
+```python
+def function1(**name):
+    print("His name is " + name["first_name"] + " " + name["last_name"])
+function1(first_name="Bruce", last_name="Lee")
+
+```
 
 ### Default Argument Values
+You can set a default value to an argument by using the `=`.
+```python
+def function1(food = "Pizza"):
+    print("I like to eat " + food)
+function1("Oranges")
+function1("Apples")
+function1("Burgers")
+function1()
+function1("Pasta")
+```
 
-### Keyword Arguments
+### Data type arguments 
+You can send any data types of arguments to a function(sets, tuples, lists, dictionaries)
+Using the built in `type` function, you can determine what type of data it outputs
 
-### Special parameters
+**Lists**
+```python
+def function1(food):
+    for x in food:
+        print(x)
 
-###  Positional-or-Keyword Arguments
+fruits = ["apple", "oranges", "bananas"]
+function1(fruits)
+print(type(fruits))
+```
+**tuple**
+```python
+def function1(num):
+    for x in num:
+        print(x)
 
-### Positional-Only Parameters
+odd = 1,3,5
+function1(odd)
+print(type(odd))
+```
+**set**
+```python
+def function1(num):
+    for x in num:
+        print(x)
 
-### Keyword-Only Arguments
+even = {"2", "4", "6"}
+function1(even)
+print(type(even))
+```
 
-### Function Examples
+**dictionary**
+```python
+def function1(car):
+    for x in dict:
+        print(f"{x}: {dict[x]}")
 
+dict = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": "1999"
+}
+function1(dict)
+print(type(dict))
+```
+**return**
+To return a function value, use `return` statement
+```python
+def function1(x):
+    return 10 * x
+print(function1(1))
+print(function1(2))
+print(function1(3))
+
+```
 ### range function
+As seen earlier there are built in functions for python such as a the `range` function
+If you need to iterate over a sequence of numbers this function comes in handy.
+The syntax for range function works as the following:
+`range(start,stop,[step])`
+```
 
-### Arbitrary Argument Lists
+start
+    The value of the start parameter (or 0 if the parameter was not supplied)
 
-### Unpacking Argument Lists
+stop
+    The value of the stop parameter
 
-### Lambda Expressions
+step
+    The value of the step parameter (or 1 if the parameter was not supplied)
 
-### Documentation Strings
+```
+**Examples:**
+```python
+for i in range(10):
+    print(i)
+```
 
-### Function Annotations
+```python
+for i in range(5,10):
+    print(i)
+```
+
+```python
+for i in range(5,10,2):
+    print(i)
+```
+
+**recursion**
+python also accepts function recursion, which means a defined function can call itself.
+
+```python
+
+def countdown(x):
+    print(x)
+    if x == 0:
+        print("x reached 0")
+    else:
+        countdown(x - 1)
+countdown(10)
+```
+The above example counts down from 10 and once it reaches 0 then it stops.
+
+Another way to express the above example:
+```python
+def countdown(x):
+    print(x)
+    if x > 0:
+        countdown(x - 1)
+    if x == 0:
+        print("x reached 0")
+countdown(10)
+```
+
+### map function
+The `map()` function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
+**Syntax**
+`map(function, iterables)`
+**arguments**
+- function: a function
+- iterable: sets, lists, tuples etc..
+
+**Examples**
+So let's say you have a list of items and you want to count the number of strings each item on that list has:
+```python
+def func1(x):
+    return len(x)
+x = map(func1, ['apples', 'oranges', 'bananas'])
+print(list(x))
+```
+The above example uses `map` to map each of the items on list and sends it as a parameter to get the length of each item
+
+We can do the same for the above without using `map` by using a loop:
+```python
+x = ['apples', 'oranges', 'bananas']
+b = []
+for i in x:
+    b.append(len(i))
+print(b)
+```
+
+Now lets say you have two lists and want to add them together:
+```python
+def func1(a, b):
+    return a + b
+x = map(func1, ['John',  'Jenny', 'Jason'], ['A', 'B', 'C'])
+print(list(x))
+```
+
+Try doing the above without `map`
+This would be much harder..
+
+### Lambda functions
+Small anonymous functions can be created with the `lambda` keyword. 
+**Syntax**
+`lambda arguments : expression`
 
 
+**Example:**
+```python
+x =  lambda a : a + 5
+print(x(2))
+```
+The above example adds 5 to the argument and prints the result 
+
+Lambda functions can also take multiple arguments:
+```python
+x = lambda a,b : a * b
+print(x(4,5))
+```
+The above example multiplies `a` with `b` and prints the result
+
+Lets take a look at a use case for lambda
+
+Lets say you have a list of peoples ages and you want to find people who are above the age of 20
+```python
+
+ages = [11, 13, 17, 22, 23, 60, 90, 55, 88, 21]
+over20 = list(filter(lambda age: age > 20, ages))
+print(over20)
+```
+
+### Comment Strings
+In python there are two ways to create a comment for strings. You can use the `#` for a single line comment
+**Example**
+
+```python
+#this is a comment
+print("hello person")
+```
+If you use three double quotes `"` it will create a multi-line comment.  Followed with another three double quotes at the end of the comments.
+**Example**
+```python
+""" Do not do anything here
+really do not do anything
+this is a comment
+This is multi-line comment
+
+"""
+print("Hello Multi-line comment")
+```
 
 ## Data Structures
-
+Data structures are code structures for storing and organizing data that make it easier to modify, navigate and access information in python. As mentioned earlier, the most common data structures are the following: `lists - []` `tuple - ()` `set - {}` `dictionary - dict { "a": "b"}` This section goes into more details of data structures 
 ### More on Lists
+The list data type has more options:
+
+
+`list.append(x)`
+Add an item to the end of the list. 
+
+`list.extend(iterable)`
+
+Extend the list by appending all the items from the iterable.
+
+`list.insert(i, x)`
+
+Insert an item at a given position. The first argument is the index of the element before which to insert, so `a.insert(0, x)` inserts at the front of the list.
+
+`list.remove(x)`
+
+Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+
+`list.pop([i])`
+
+Remove the item at the given position in the list, and return it. If no index is specified, `a.pop()` removes and returns the last item in the list.
+
+`list.clear()`
+
+Remove all items from the list. 
+
+`list.index(x[, start[, end]])`
+
+Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.
+
+The optional arguments start and end are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the start argument.
+
+`list.count(x)`
+
+Return the number of times x appears in the list.
+
+list.sort(*, key=None, reverse=False)
+
+Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
+
+`list.reverse()`
+
+Reverse the elements of the list in place.
+
+`list.copy()`
+
+Return a shallow copy of the list. Equivalent to a[:].
 
 ### Using Lists as Stacks
 
