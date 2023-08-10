@@ -1203,53 +1203,298 @@ Reverse the elements of the list in place.
 
 Return a shallow copy of the list. Equivalent to a[:].
 
-### Using Lists as Stacks
 
 ### Using Lists as Queues
+It's possible to use a list as a queue where the first element added is the first element retrieved. Use `collections.deque`:
 
+```
+from collections import deque
+queue = deque(["1", "2", "3"])
+queue.append("4") # Append 4
+queue.append("5") # Append 5
+print(queue.popleft()) # First to arrive now leaves
+print(queue.popleft()) # Second arrive now leaves
+print(queue) # Remaining queue in order of arrival 
+```
 ### List Comprehensions
+List comprehensions help shorten syntax when you need to create  a new list based on values of existing lists.
 
-###  Nested List Comprehensions
+**Syntax**
+`newlist = [expression for item in iterable if condition == True]`
+
+The `expression` is the current item in the iteration but also the outcome, which you can manipulate before it ends up in a list item in the new list:
+`newlist = [x.lower() for x in fruits]`
+`newlist = ['hello' for x in fruits]`
+The `expression` can also contain conditions to manipulate the outcome:
+`newlist = [x if x !="mango" else "apple" for x in fruits]`
+
+The `condition` is like a filter that only accepts the items that valuate to `True`
+
+Only accept items that are not "apple":
+`newlist = [x for x in fruits if x != "apple"]`
+
+The `condition` is optional and can be omitted:
+`newlist =[x for x in fruits]`
+
+The `iterable` can be any iterable object like a tuple,set,list,range etc.
+`newlist = [x for x in range(5)]`
+`newlist = [x for x in range(5) if x < 3]`
+
+**Example**
+```
+fruits = ["green_apple", "red_apple", "banana", "mango"]
+newlist = [x for x in fruits if "apple" in x]
+print(newlist)
+```
+
+Without list comprehension you would need a `for statement`
+
+```
+fruits = ["green_apple", "red_apple", "banana", "mango"]
+newlist = []
+for x in fruits:
+  if "apple" in x:
+    newlist.append(x)
+
+print(newlist)
+```
 
 ### The del statement
+The `del` statement can be used to delete objects. The `del` statement can be used to delete variables, lists, or parts of a list.
 
-### Tuples and Sequences
+```
+list = [1,2,3,4,5]
+del list[0]
+print(list)
+del list[2:4]
+print(list)
+del list
+print(list)
+```
 
+### Tuples
+A tuple consists of a number of values separated by commas
+```
+t = 123, 456, 'ello'
+print(t[0])
+# You can also nest tuples
+n = a, (1,2,3,4,5)
+print(n)
+# Tuples are immutable they cannot be changed
+n[0]= 12345
+# But they can contain mutable objects
+x = ([1,2,3], [3,2,1])
+print(x)
+```
+
+To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
+```
+tup = ("apple",)
+print(type(tup))
+
+# Not a tuple
+tup = ("apple")
+print(type(tup))
+
+```
 ### Sets
+A set is a collection which is unordered, unchangeable, and unindexed
+Sets cannot have two items with the same value they will not repeat
 
+Sets are written with curly braces `{}`
+```
+set = {"apple", "oranges", "banana"}
+print(set)
+```
+
+The value of `True` and `1` are considered the same value in sets and are treated as duplicates
+
+```
+set = {"apple", "oranges", "banana", True, 1, 2}
+print(set)
+```
+It is also possible to use `set()` constructor to create a set without using curly braces`{}`
+```
+set1= set(("apple", "orange", "banana")) #note the double brackets
+print(set1)
+```
 ### Dictionaries
+Dictionaries are used to store data values in `key:value` pairs
 
+A dictionary is a collection which is ordered, changeable and do not allow duplicates
+(As of Python >= 3.7 dictionaries are ordered and  < 3.7 are unordered)
+
+Dictionaries are written in curly braces `{}` and have key and values
+
+```
+dict1 = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 1989
+}
+print(dict1)
+```
+You can print specific values in a dictionary
+
+```
+dict1 = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 1989
+}
+print(dict1["brand"])
+```
+
+Duplicates are not allowed:
+
+```
+dict1 = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 1989,
+    "year": 2023
+}
+print(dict1)
+```
+
+The values in a dictionary can be any data type
+```
+dict1 = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 1989,
+    "colors": ["red", "white", "blue"]
+}
+print(dict1)
+```
+
+It is also possible use the `dict()` constructor to make a dictionary without the curly braces `{}`
+```
+dict1 = dict(brand = "Honda", model = "Civic", year = 1989)
+print(dict1)
+```
 ### Looping Techniques
+When looping through dictionaries, the key and corresponding values can be retrieved at the same time when using the `items()` method
 
-### More on Conditions
+```
+dict1 = dict(brand = "Honda", model = "Civic", year = 1989)
+for k,v in dict1.items():
+    print(k, v)
+```
 
-### Comparing Sequences and Other Types
+When lopping through a sequence, the position index and corresponding value can be  retrieved at the same time using the `enumerate()` function
 
+```
+for i, v in enumerate(['a', 'b', 'c']):
+    print(i, v)
+```
 
+To loop over 2 or more sequences at the same time, the entries can be paired with the `zip()` function
+
+```python
+questions = ['name', 'age', 'favorite color']
+answer  = ['John', '89', 'red']
+for q,a in zip(questions, answer):
+    print('What is your {0}? It is {1}.'.format(q,a))
+```
+
+To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the `reversed()` function
+
+```python
+for i in reversed(range(1,100,2)):
+    print(i)
+```
+
+To loop over a sequence in sorted order, use the `sorted()` function which returns a new sorted list while leaving the source unaltered:
+```python
+fruits = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+
+for i in sorted(fruits):
+    print(i)
+```
 
 ## Modules
+Consider a module to be the same as a code library.
+A file containing a set of functions you want to include in your application.
 
-### More on Modules
+To create a  module just save the code you want in a file extension `.py`
+```python
+# save code as mymod.py
+def greeting(name):
+    print("Hello, " + name)
+```
 
-### Executing modules as scripts
+Now use the module we created by using the `import` statement:
 
-### The Module Search Path
+```
+import mymod
 
-### “Compiled” Python files
+mymod.greeting("John")
+```
 
-### Standard Modules
+You can also create an alias when you import a module, by using the `as` keyword
+
+```
+import mymod as mod1
+
+a =  mod1.greeting("Sally")
+```
+
+There are several built in modules for python, which you can import whenever you like
+
+```
+import sys
+sys.ps1
+```
 
 ### The dir() Function
+The `dir()` function is used to find out which names a module defines. 
+
+```
+class Person:
+  name = "John"
+  age = 18
+  country = "USA"
+
+print(dir(Person))
+```
 
 ### Packages
+Python modules may contain several classes, functions, variables etc. Whereas Python packages contain several modules. In simple terms, Package in Python is a directory that contains multiple modules as files
+
+Example:
+
+```
+car/    # Top level
+    __init__.py
+    honda
+        __init__.py
+        a.py
+        b.py
+        c.py
+    bmw
+        __init__.py
+        c.py
+        d.py
+        e.py
+    porche
+        __init__.py
+        f.py
+        g.py
+        h.py
+```
+
+The `__init__.py` files are required to make Python treat directories containing the file as a package. In the simplest cases the files can be an empty file, but it can also execute initialization code for the package or set the `__all__` variable.
+
+Users of the package can import individual modules from the package
+`import car.honda.a`
+An alternative way of importing the submodule:
+`from car.honda import a`
+This makes it so you can use the package without the prefix.
 
 ### Importing * From a Package
-
-### Intra-package References
-
-### Packages in Multiple Directories
-
-
+One can import all modules by using `from car.honda import *` but this could take a long time to import all sub modules and have side effects. Instead what that does if `__all__` is not defined, it only ensures that the packages `car.honda` has been imported and then imports whatever names are defined in the package. If the package owner defines a list of named `__all__` it will take the list of module names and using `from package import *` it will use the listed modules.
+`__all__ = ["a", "b", "c"]`
 
 ## Input and Output
 
