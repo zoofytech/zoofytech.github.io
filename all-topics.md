@@ -145,6 +145,13 @@ Below are some examples of different flavours of Linux:</p>
 - [SQL vs. NoSQL Database: When to Use, How to Choose](https://towardsdatascience.com/datastore-choices-sql-vs-nosql-database-ebec24d56106)
 - [How do database indexes work?](https://planetscale.com/blog/how-do-database-indexes-work)
 
+## Containers
+- Docker
+  
+## Container orchestration
+- Docker Swarm
+- Kubernetes
+
 ## Interview Prep
 
 ### Big O Notation, Algorithms and Data Structures
