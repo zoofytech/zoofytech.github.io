@@ -1499,45 +1499,526 @@ One can import all modules by using `from car.honda import *` but this could tak
 ## Input and Output
 
 ### Fancier Output Formatting
+To use formatted string literals you can begin a string with the `f` or `F` before opening quotes or triple quotes `"""`. You can then write an expression between curly braces `{}` and characters can be referred to variables or literal values 
+```python
+name = 'John'
+year = 2023
+f '{name} was born in {year}'
+```
 
-###  Formatted String Literals
+### The format() Method
+The `format()` method formats the specified values and inserts them inside the string's placeholder  
+The placeholder is defined using curly braces `{}`
+**Syntax**
+`string.format(value1, value2, ...)`
 
-### The String format() Method
+The values are either a list of values separated by a comma, a key=value list, or a combination of both
 
-### Manual String Formatting
+THe placeholders can be identified using named indexes `{namehere}`, numbered indexes `{0}`, or even empty placeholders `{}`
 
-###  Old string formatting
+```python
+#named indexes:
+a = "My name is {fname}, I'm {age}".format(fname = "Josh", age = 15)
+#numbered indexes:
+b = "My name is {0}, I'm {1}".format("Josh",15)
+#empty placeholders:
+c = "My name is {}, I'm {}".format("Josh",15)
 
-### Reading and Writing Files
+print(a)
+print(b)
+print(c)
 
-###  Methods of File Objects
+```
 
-### Saving structured data with json
+## File Handling
+Python can create,read,update,delete files
+The key function for files is the `open()` function
 
+There are four different methods for opening a file
+```python
+"r" - Default- Read - Opens a file for reading
+"a" - Appends - Opens a file for appending, creates a file if it does not exist
+"w" - Write - Opens a file for writing, creates a file if it does not exist
+"x" - Create - Creates the specified file
+```
+
+You can also specify if the file should be handled as binary or text mode
+```python
+"t" - Text - Default. Text mode
+"b" - Binary - Binary mode (images)
+```
+
+### Reading
+To read a file
+```python
+f = open("file.txt")
+```
+Also to read a file
+```
+f = open("file.txt", "rt")
+```
+Because `r` is to read, and `t` is for text.
+
+Let's say you only want to read parts of a file
+```python
+#file.txt
+Hello! This is file.txt
+Test1
+Test2
+```
+
+```python
+f = open("file.txt", "r")
+print(f.read(5))
+```
+The above example will only print the first 5 characters
+
+**Reading Lines**
+You can return one line by using the `readline()` method:
+
+```python
+f = open("file.txt", "r")
+print(f.readline())
+```
+
+If you using `readline()` twice it will read the first two lines
+
+```python
+f = open("file.txt", "r")
+print(f.readline())
+print(f.readline())
+```
+
+You can read the entire file by looping:
+```python
+f = open("file.txt", "r")
+for x in f:
+  print(x) 
+```
+
+**Closing files**
+It is always good practice to close a file when you are done with it for things such as garbage collection or even having multiple files opened at once
+
+```
+f = open("file.txt", "r")
+print(f.readline())
+f.close()
+```
+
+### Write and Create
+As mentioned earlier you can use `a` for append or `w` for write.
+
+**Append:**
+```python
+f = open("file.txt", "a")
+f.write("Here is a new line")
+f.close()
+#open and read
+f = open("file.txt", "r")
+print(f.read())
+f.close()
+```
+
+**Write:**
+```python
+f = open("file.txt", "w")
+f.write("New file with new content")
+f.close()
+
+#open and read the file after the overwriting:
+f = open("file.txt", "r")
+print(f.read())
+f.close()
+```
+
+**New file**
+To create a new file as mentioned earlier you can using either `x`, `a`, `w` if the file does not exist.  `x` will throw an error if file already exists
+
+`f = open("file.txt", "x")`
+```python
+# create file if does not exit, overwrite if does exist
+f = open("file.txt", "w")
+# create file if does not exist, append if does exist
+f = open("file.txt", "a")
+```
+
+### Delete
+To delete a file, you must use the os module using the `os.remove()` method
+
+```python
+import os
+os.remove("file.txt")
+```
+**Check if file exists**
+To avoid errors, you might want to check if the file exists first
+```
+import os
+if os.path.exists("file.txt"):
+  os.remove("file.txt")
+else:
+  print("file.txt does not exist") 
+```
+
+**Delete directory**
+To delete an entire directory, us the `os.rmdir()` method
+```
+import os
+os.rmdir("textdir") 
+```
+
+## Python JSON
+JSON is a popular data interchange format which makes it easy to store and exchange data.
+Python has a built in package called `json` to use it just import the module
+`import json`
+
+**Parse JSON**
+If you have a JSON string, you can parse it by using `json.loads()` method
+
+```python
+import json
+
+# JSON:
+x =  '{ "name":"Jenny", "age":18, "city":"San Francisco"}'
+
+# parse x:
+y = json.loads(x)
+
+# the result is a Python dictionary:
+print(y["age"]) 
+```
+
+**Convert from Python to JSON**
+If you have a Python object, you can convert it into a JSON string by using the `json.dumps()` method
+
+```python
+import json
+
+# a Python object dictionary:
+x = {
+  "name": "Jenny",
+  "age": 18,
+  "city": "San Francisco"
+}
+
+# convert into JSON:
+y = json.dumps(x)
+
+# the result is a JSON string:
+print(y) 
+```
+You can convert all types of objects:
+```
+    string
+    integer
+    list
+    dictionary
+    tuple
+    float
+    True
+    False
+    None
+
+```
+
+When you convert from Python to JSON, Python objects are converted into the Javascript equivalent. The following is a table for the conversion
+
+|Python 	|JSON|
+| ----------- | ----------- |
+|string |String|
+|integer |Number|
+|list |Array|
+|dictionary |Object|
+|tuple |Array|
+|float |Number|
+|True |	true|
+|False| false|
+|None|null|
+
+Lets convert all types
+
+```python
+import json
+
+x = {
+  "name": "Jenny",
+  "age": 18,
+  "married": True,
+  "divorced": False,
+  "children": ("John","Annie"),
+  "pets": None,
+  "cars": [
+    {"model": "Honda Accord", "mpg": 25.5},
+    {"model": "Ford F150", "mpg": 18}
+  ]
+}
+print(json.dumps(x))
+```
+
+**Formatting Results**
+The above example prints in JSON string but it is not easy to read. The `json.dumps()` method has parameters to make it easier to read
+
+```python
+import json
+
+x = {
+  "name": "Jenny",
+  "age": 18,
+  "married": True,
+  "divorced": False,
+  "children": ("John","Annie"),
+  "pets": None,
+  "cars": [
+    {"model": "Honda Accord", "mpg": 25.5},
+    {"model": "Ford F150", "mpg": 18}
+  ]
+}
+# Indent by 4 to make it easier to read
+print(json.dumps(x, indent=4))
+```
+
+You can also use separators default value is `(", ", ": ")` command and space to separate each object and a colon and space to separate keys from values. You can use `separators` to change the default separators
+```python
+import json
+
+x = {
+  "name": "Jenny",
+  "age": 18,
+  "married": True,
+  "divorced": False,
+  "children": ("John","Annie"),
+  "pets": None,
+  "cars": [
+    {"model": "Honda Accord", "mpg": 25.5},
+    {"model": "Ford F150", "mpg": 18}
+  ]
+}
+# use . and a space to separate objects, and a space, a = and a space to separate keys from their values: 
+print(json.dumps(x, indent=4, separators=(". ", " = ")))
+```
+
+**Order Results**
+The `json.dumps()` method also has a way to order keys form key value to sort by alphabetical by using `sort_keys`
+
+```python
+import json
+
+x = {
+  "name": "Jenny",
+  "age": 18,
+  "married": True,
+  "divorced": False,
+  "children": ("John","Annie"),
+  "pets": None,
+  "cars": [
+    {"model": "Honda Accord", "mpg": 25.5},
+    {"model": "Ford F150", "mpg": 18}
+  ]
+}
+# Indent by 4 to make it easier to read
+print(json.dumps(x, indent=4, sort_keys=True))
+```
 
 
 ## Errors and Exceptions
 
 ### Syntax Errors
+Syntax errors are also known as parsing errors. The parser repeats the offending line and displays a arrow pointing at the earliest point in the line where the error was detected. 
+
+Example:
+
+```python
+while True print('hello world')
+```
+The above example will show an error because the `:` is missing before the arrow
 
 ### Exceptions
+Errors detected during an execution is called an exception and are not unconditionally fatal. 
+
+There are several different types of exceptions the built in exceptions will always print the exception during the error. This will not always be true for user-defined exceptions. 
+
+```python
+10 * (1/10)
+5 + hello*3
+'10' + 10
+```
+The above example shows 3 different types of built in exceptions 
 
 ### Handling Exceptions
+It is possible to write programs to handle selected exceptions. 
+
+The `try` block lets you test a block of code for errors
+
+The `except` block lets you handle the error
+
+The `else` block lets you execute code when there is no error.
+
+The `finally` block lets you execute code, regardless of the result of the try- and except blocks.
+
+```python
+try:
+    print(x)
+except:
+    print("An exception occurred")
+```
+The above example `try` block raises an error, the `except` block will be executed. If you use the `try` block by itself, it will raise an error.
+
+You can have as many exception blocks as you want. The above example was a `NameError` so we can raise an exception when that happens.
+
+```python
+try:
+  print(x)
+except NameError:
+  print("Variable x is not defined")
+except:
+  print("Not a NameError but another error") 
+```
+
+You can use the `else` keyword in the block if there are no errors raised:
+
+```python
+try:
+  print("Hello World")
+except:
+  print("Error occurred")
+else:
+  print("Nothing went wrong! :)") 
+```
+
+The `finally` block will be executed if the try block raises an error or not.
+
+```python
+try:
+  print(x)
+except:
+  print("Error occurred")
+finally:
+  print("The 'try except' has finished")
+```
+
+Let's say we want to write to a file that is not writable:
+
+```python
+try:
+  f = open("file.txt")
+  try:
+    f.write("World Hello")
+  except:
+    print("Cannot write to file")
+  finally:
+    f.close()
+except:
+  print("Error with opening file") 
+```
 
 ### Raising Exceptions
+To raise or throw an exception use the `raise` keyword
 
+```python
+x = -1
+if x < 0:
+    raise Exception("No numbers below zero")
+```
+
+If you need to determine whether an exception was raised or not but do not intend to handle it, simply re-raise the exception
+
+```python
+try:
+    raise NameError('World Hello')
+except NameError:
+    print('NameError said World Hello')
+    raise
+
+```
 ### Exception Chaining
+If an unhandled exception inside of an except block, it will have the exception being handled attached to it and included in the error message:
 
+```python
+try:
+    open("elloworld")
+except OSError:
+    raise RuntimeError("unable to handle error")
+```
+
+To indicate that an exception is a direct consequence of another, the raise statement allows an optional `from` clause
+
+```python
+def func():
+    raise ConnectionError
+try:
+    func()
+except ConnectionError as theexception:
+    raise RuntimeError('Failed to open') from theexception
+```
+
+It also allows disabling automatic exception using `from None`
+
+
+```python
+try:
+    open('elloworld')
+except OSError:
+    raise RuntimeError from None
+```
 ### User-defined Exceptions
+One can create a custom defined exception by creating a class which is talked about later. 
+```python
+class CustomError(Exception):
+    pass
+raise CustomError("Example of Custom Exception")
 
-### Defining Clean-up Actions
-
-### Predefined Clean-up Actions
+```
 
 ### Raising and Handling Multiple Unrelated Exceptions
+Sometimes there are situations where it is necessary to report several exceptions that have occurred. The builtin `ExceptionGroup` wraps a list of exceptions so that they can be raised together.
+
+```python
+
+def f():
+    excs = [OSError('error 1'), SystemError('error 2')]
+    raise ExceptionGroup('Problems have occurred', excs)
+try:
+    f()
+except Exception as e:
+    print(f'caught {type(e)}: e')
+```
+
+You can also use `except*` instead of `except` to handle only exceptions within that group to match a certain type.
+
+```python
+def f():
+    raise ExceptionGroup(
+        "group1",
+        [
+            OSError(1),
+            SystemError(2),
+            ExceptionGroup(
+                "group2",
+                [
+                    OSError(3),
+                    RecursionError(4)
+                ]
+            )
+        ]
+    )
+try:
+    f()
+except* OSError as x:
+    print("There were OSErrors")
+except* SystemError as x:
+    print("There were SystemErrors")
+```
 
 ### Enriching Exceptions with Notes
+You can also add notes to exceptions by using  `add_note()`
 
+```python
+try:
+    raise TypeError('Error')
+except Exception as x:
+    x.add_note('Note1')
+    x.add_note('Note2')
+    raise
+```
 ## Classes
 
 ### A Word About Names and Objects
