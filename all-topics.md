@@ -25,7 +25,7 @@ The following are some useful examples:</p>
 </details>
 
 ### Python
-- [Python Basics](https://pythonbasics.org/)
+- [Python Basics](https://zoofytech.github.io/python-basics)
 - [Python For Everyone](https://www.py4e.com/)
 - [Complete Python Tutorial](https://www.scaler.com/topics/python/)
 - [Automate The Boring Stuff with Python](https://automatetheboringstuff.com)
