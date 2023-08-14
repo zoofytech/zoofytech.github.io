@@ -1,3 +1,8 @@
+---
+layout: table
+title: AWS
+---
+
 # AWS
 This page will go over all of the core services within AWS.
 
