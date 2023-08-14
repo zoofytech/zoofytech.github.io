@@ -2020,124 +2020,552 @@ except Exception as x:
     raise
 ```
 ## Classes
+Python is an object oriented language; almost everything in Python is an object. Classes encapsulate data (attributes) and behavior (methods) into a single unit, allowing you to create reusable and organized code.
 
-### A Word About Names and Objects
+### Create Class
+To create a class use the keyword `class`
 
-### Python Scopes and Namespaces
+```python
+class ExampleClass:
+    x = 10
+```
 
-### Scopes and Namespaces Example
+### Creating Attributes
+Attributes are variables that hold data associated with the class. They define the characteristics or properties of objects created from the class. Attributes can be defined within the class and accessed using the dot notation.
 
-### A First Look at Classes
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+```
 
-### Class Definition Syntax
+In the example above, the `name` and `age` attributes are defined within the `Person` class.
+The `__init__()` method is a special method called the constructor, used to initialize the attributes when an object is created.
 
-###  Class Objects
+### Methods
+Methods are functions defined within a class that define the behavior of the objects created from the class.
 
-### Instance Objects
+```python
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+```
+In the above example, the `Circle` class has an `area` method that calculates the area of a circle based on its radius
 
-### Method Objects
+### Constructor
+As mentioned earlier, the constructor`__init__()` is a special method that gets called when an object is created from the class. t's used to initialize attributes and set their initial values.  The first parameter of `__init__` is typically `self`, which refers to the `instance` being created
 
-### Class and Instance Variables
+### Instance
+An `instance` is an object created from a class. Each instance has its own set of attributes and can call the methods defined within the class.
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def greet(self):
+        return f"Hello, my name is {self.name} and I'm {self.age} years old."
 
-### Random Remarks
+# Creating instances of the Person class
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+
+# Accessing attributes and calling methods on instances
+print(person1.name)
+print(person2.age)   
+
+# Calling the greet method
+print(person1.greet()) 
+print(person2.greet()) 
+```
+
+In the above example, the `Person` class is defined with an `__init__` constructor method that initializes the `name` and `age` attributes. It also has a `greet` method that returns a greeting message using the attributes. Instances of the `Person` class, `person1` and `person2`, are created and then attributes are accessed and methods are called on these instances.
 
 ### Inheritance
+Inheritance allows you to create a new class that inherits attributes and methods of existing classes(calling a class from another class). The new class is called a subclass or derived class, and the original class is called the superclass or base class. Subclasses can override or extend the behavior of the superclass.
 
-### Multiple Inheritance
+```python
+class Address:
+    def __init__(self, street, city, state, zip_code):
+        self.street = street
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
+    
+    def display(self):
+        return f"{self.street}, {self.city}, {self.state} {self.zip_code}"
 
-### Private Variables
+class Person:
+    def __init__(self, name, age, address):
+        self.name = name
+        self.age = age
+        self.address = address  # Here, we're storing an Address object
+        
+    def greet(self):
+        return f"Hello, my name is {self.name} and I live at {self.address.display()}."
 
-### Odds and Ends
+# Creating an Address instance
+home_address = Address("123 Main St", "Cityville", "CA", "12345")
 
-### Iterators
+# Creating a Person instance and passing the Address instance as an argument
+person = Person("Alice", 30, home_address)
 
-### Generators
+# Calling methods on the Person instance and its associated Address instance
+print(person.greet())
+# Output: Hello, my name is Alice and I live at 123 Main St, Cityville, CA 12345.
+```
 
-### Generator Expressions
-
+In the above example, we have two classes: `Address` and `Person`. The `Person` class defines a person with their name,age, and an `Address` instance passed as an argument during initialization. The `greet` method in the `Person` class then calls the `display` method from the `Address` instance associated with that person
 
 
 ## Brief Tour of the Standard Library
+Below we will go over some standard libraries within python which can be useful
 
 ### Operating System Interface
+The `os` module provides several functions for interacting with the operating system.
+
+Here are some of the commonly used functionalities provided by the os module:
+
+```
+    Working with Files and Directories:
+        os.getcwd(): Get the current working directory.
+        os.chdir(path): Change the current working directory.
+        os.listdir(path): Get a list of files and directories in a given path.
+        os.mkdir(path): Create a new directory.
+        os.rmdir(path): Remove an empty directory.
+        os.remove(path): Delete a file.
+
+    Path Manipulation:
+        os.path.join(path, *paths): Join multiple path components to create a full path.
+        os.path.exists(path): Check if a path exists.
+        os.path.isfile(path): Check if a path points to a file.
+        os.path.isdir(path): Check if a path points to a directory.
+
+    Process Management:
+        os.system(command): Run a command in the system's shell.
+        os.spawn* and os.exec*: Lower-level process control functions.
+        os.kill(pid, signal): Send a signal to a process.
+
+    Environment Variables:
+        os.environ: A dictionary containing the environment variables.
+        os.getenv(varname): Get the value of a specific environment variable.
+        os.putenv(varname, value): Set the value of an environment variable.
+
+    File Permissions:
+        os.chmod(path, mode): Change the permissions of a file.
+        os.stat(path): Get information about a file (size, timestamps, permissions).
+
+    Platform Information:
+        os.name: A string indicating the name of the operating system ("posix", "nt", etc.).
+        os.uname(): Get system-dependent version information.
+```
+
+
+1. Working with Files and Directories
+
+```python
+import os
+
+# Get current working directory
+current_dir = os.getcwd()
+print("Current directory:", current_dir)
+
+# Create a new directory
+new_dir = os.path.join(current_dir, "new_folder")
+os.mkdir(new_dir)
+
+# List files and directories in the current directory
+contents = os.listdir(current_dir)
+print("Contents of current directory:", contents)
+
+# Remove a directory
+os.rmdir(new_dir)
+
+```
+2. Path Manipulation
+```python
+import os
+
+path1 = "/path/to"
+path2 = "file.txt"
+
+full_path = os.path.join(path1, path2)
+print("Full path:", full_path)
+
+print("Does the path exist?", os.path.exists(full_path))
+print("Is it a file?", os.path.isfile(full_path))
+print("Is it a directory?", os.path.isdir(full_path))
+
+```
+3. Running Shell Commands:
+
+```python
+import os
+
+# Run a command using the system's shell
+os.system("ls -l")
+
+# Use subprocess module for more control
+import subprocess
+result = subprocess.run(["ls", "-l"], capture_output=True, text=True)
+print(result.stdout)
+
+```
+4. Environment Variables
+```python
+import os
+
+# Get specific environment variable
+home_dir = os.getenv("HOME")
+print("Home directory:", home_dir)
+
+# Set an environment variable (note: this doesn't persist)
+os.environ["MY_VARIABLE"] = "my_value"
+print("MY_VARIABLE:", os.getenv("MY_VARIABLE"))
+
+```
+
+5. File permissions
+```python
+import os
+
+file_path = "example_file.txt"
+
+# Change file permissions
+os.chmod(file_path, 0o644)  # Change to read/write for owner, read for others
+
+# Get information about a file
+file_info = os.stat(file_path)
+print("File size:", file_info.st_size, "bytes")
+
+```
+
 
 ### File Wildcards
+The `glob` module has a function for making file lists form directory wildcard searches
 
+```python
+import glob
+glob.glob('*.py')
+```
+The above example searches for `*.py` in directory
 ### Command Line Arguments
+Often in Python you might want to create a script that takes command line arguments. To do this it involves the `sys` module or the built in `argparse` module.
+
+1. The `sys` module provides a `argv` attribute where `sys.argv[0]` is the script name and the following are other arguments
+
+```python
+# script_name.py
+import sys
+
+def main():
+    script_name = sys.argv[0]
+    arguments = sys.argv[1:]
+
+    print("Script name:", script_name)
+    print("Arguments:", arguments)
+
+if __name__ == "__main__":
+    main()
+
+```
+You can then run the script with command line arguments:
+
+```
+python script_name.py arg1 arg2 arg3
+```
+
+2. The `argparse`module provides a mode structured way to handle command-line arguments and offers features like argument validation and help messages
+
+```python
+#script_name.py
+import argparse
+
+def main(args):
+    print("Arguments:", args.arg1, args.arg2)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="A script with command-line arguments.")
+    parser.add_argument("arg1", help="Description for arg1")
+    parser.add_argument("arg2", help="Description for arg2")
+    
+    args = parser.parse_args()
+    main(args)
+
+```
+
+You can then run the script with command line arguments using the `-h` for help or `--help` flag.
+
+```python
+
+python script_name.py -h
+python script_name.py --help
+python script_name.py value1 value2
+```
+
 
 ###  Error Output Redirection and Program Termination
+The `sys` module also has attributes for stdin, stdout, and stderr. 
+
+1. The `stdin` stream is used to read input from the user or from a file
+
+```python
+import sys
+
+def main():
+    print("Enter your name:")
+    name = sys.stdin.readline().strip()
+    print(f"Hello, {name}!")
+
+if __name__ == "__main__":
+    main()
+
+```
+The above example, the script reads a line from the standard input (keyboard or piped input) using `sys.stdin.readline()`. The `strip()` method is used to remove the newline character from the input.
+
+2. The `stdout` stream is used to write output to the console or to a file.
+```python
+import sys
+
+def main():
+    print("This is a message on stdout.")
+
+if __name__ == "__main__":
+    main()
+
+```
+
+The above example, the script uses `print()` to write a message to the standard output.
+
+3. The `stderr` stream is used to write error messages or diagnostic information separately from regular output.
+
+```python
+import sys
+
+def main():
+    try:
+        x = 10 / 0
+    except ZeroDivisionError:
+        print("An error occurred!", file=sys.stderr)
+
+if __name__ == "__main__":
+    main()
+
+```
+The above example, an error message is printed to the standard error stream using the `file=sys.stderr` argument with the `print()` function.
+
 
 ### String Pattern Matching
+The `re` module provides regular expression tools for advanced string processing. 
 
-### Mathematics
+```python
+import re
+re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
+re.sub(r'(\b[a-z]+) \1', r'\1', 'cat in the the hat')
 
-### Internet Access
+```
 
 ### Dates and Times
+The `datetime` module in Python is a built-in module that provides classes for working with dates, times, and time intervals. It's a powerful tool for handling various time-related operations, including date arithmetic, formatting, parsing, and more. The module offers a range of classes and functions that make it easier to work with dates and times in a consistent and reliable manner.
 
+1. `datetime` Class: This class represents a combination of date and time, including year, month, day, hour, minute, second, and microsecond.
+
+```python
+from datetime import datetime
+
+current_datetime = datetime.now()
+print("Current datetime:", current_datetime)
+
+```
+
+2. `date` Class: Represents a date (year, month, and day) without time.
+
+```python
+from datetime import date
+
+current_date = date.today()
+print("Current date:", current_date)
+
+```
+3. `time` Class: Represents a time of day, including hours, minutes, seconds, and microseconds.
+
+```python
+from datetime import time
+
+specific_time = time(12, 30, 0)
+print("Specific time:", specific_time)
+
+```
+
+4. `timedelta` Class: Represents the difference between two dates or times.
+
+```python
+
+from datetime import timedelta
+
+one_day = timedelta(days=1)
+tomorrow = current_date + one_day
+print("Tomorrow:", tomorrow)
+
+```
+
+5. Formatting and Parsing: The `strftime` method is used to format `datetime` objects as strings, and the `strptime` function is used to parse strings into `datetime` objects.
+```python
+
+formatted_date = current_date.strftime("%Y-%m-%d")
+parsed_date = datetime.strptime("2023-08-13", "%Y-%m-%d")
+
+```
+
+6. Timezones: The `timezone` class allows you to work with time zones. The `pytz` library is commonly used to handle time zones effectively.
+
+```python
+import pytz
+from datetime import datetime
+
+tz = pytz.timezone("America/New_York")
+localized_time = datetime.now(tz)
+print("Localized time:", localized_time)
+
+
+```
 ### Data Compression
+You can compress files using both `tarfile` and `zipfile` modules 
+
+Using `tarfile`:
+
+```python
+import tarfile
+
+# Creating a Tar archive
+with tarfile.open("archive.tar", "w") as tar:
+    tar.add("file1.txt")
+    tar.add("file2.txt")
+
+# Extracting files from a Tar archive
+with tarfile.open("archive.tar", "r") as tar:
+    tar.extractall("extracted_folder")
+
+```
+
+Using `zipfile`:
+
+```python
+import zipfile
+
+# Creating a Zip archive
+with zipfile.ZipFile("archive.zip", "w") as zipf:
+    zipf.write("file1.txt")
+    zipf.write("file2.txt")
+
+# Extracting files from a Zip archive
+with zipfile.ZipFile("archive.zip", "r") as zipf:
+    zipf.extractall("extracted_folder")
+
+```
 
 ### Performance Measurement
-
+One can measure time it takes to run code.
+```python
+from timeit import Timer
+print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())
+```
 ### Quality Control
+`unittest` is a built-in testing framework in Python that allows you to write and execute test cases for your code. It provides a structured and organized way to automate the testing process, ensuring that your code behaves as expected and remains stable as you make changes. Automated testing helps catch bugs and regressions early in the development cycle.
 
-### Batteries Included
+Here are the key concepts and components of the unittest framework:
 
+1. Test Case Class: You create test cases by subclassing the unittest.TestCase class. Each test case is a class that contains methods representing individual test scenarios.
 
+2. Test Methods: Test methods are named with a "test_" prefix. They contain assertions that verify the behavior of the code under test.
 
-## Brief Tour of the Standard Library — Part II
+3. Assertions: Assertions are methods provided by the unittest.TestCase class to check whether the expected conditions are met. Common assertions include assertEqual, assertTrue, assertFalse, assertRaises, and more.
 
+4. Test Discovery: The unittest framework can automatically discover and run test cases in your codebase. Test discovery is usually initiated using the unittest command-line interface or test runners like unittest.TextTestRunner.
 
+```python
+#add.py
+import unittest
 
-### Output Formatting
+def add(a, b):
+    return a + b
 
-### Templating
+class TestAddFunction(unittest.TestCase):
+    def test_add_positive_numbers(self):
+        result = add(2, 3)
+        self.assertEqual(result, 5)
+    
+    def test_add_negative_numbers(self):
+        result = add(-2, -3)
+        self.assertEqual(result, -5)
 
-### Working with Binary Data Record Layouts
+if __name__ == '__main__':
+    unittest.main()
 
-### Multi-threading
+```
+
+In the above example:
+- We have a f unction `add` that adds two numbers
+- We create a test cases class `TestAddFunction` that subclasses `unittest.TestCase`
+- Inside the test cases class, we define methods with the `test_` prefix. These methods use assertions to verify the behavior of the `add` function.
+- We use the `unittest.main()` function to discover and run the test cases when the script is executed
+
+Run the script:
+`python add.py`
+
+It is common practice to have `unittest` in your code espeically for very long lines of code. Getting used to having unit tests in your code can take some time to learn but will help you as a developer along the way.
 
 ### Logging
+Logging in Python is a built-in module that provides a flexible and structured way to manage and record log messages during the execution of a program. Logging is essential for debugging, monitoring, and understanding the behavior of your application. It allows you to control the verbosity of messages and easily direct them to various outputs, such as console, files, or external services.
 
-### Weak References
+Here are the key components and concepts related to logging in Python:
 
-### Tools for Working with Lists
+  
+**Log Levels:** Log messages are categorized into different levels, indicating their importance and severity. The standard log levels, in increasing order of severity, are: DEBUG, INFO, WARNING, ERROR, and CRITICAL.
 
-### Decimal Floating Point Arithmetic
+**Loggers:** Loggers are used to emit log messages. You create a logger object to represent different parts of your application. Loggers allow you to categorize and organize your log messages.
+
+**Handlers:** Handlers determine where log messages are sent. They define the output destinations for the log messages, such as the console or log files. You can attach one or more handlers to a logger.
+
+**Formatters:** Formatters define the layout and structure of log messages. They format log records to include information like the timestamp, log level, module name, and the actual log message.
+
+```Python
+import logging
+
+# Configure the logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Create a logger
+logger = logging.getLogger('my_logger')
+
+# Log messages at different levels
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
+
+```
+- We configure the logging using basicConfig, setting the minimum log level to DEBUG and specifying a log message format.
+- We create a logger named 'my_logger'.
+- We use the logger to emit log messages at different levels.
+
+By default, log messages with a severity level equal to or higher than the specified level will be recorded. You can customize the log level, format, and handlers to suit your needs. For instance, you might configure different loggers for different parts of your application, each with its own set of handlers and formats.
 
 
+## What now?
+While this guide has gone through some of the basics of python there is much to learn. 
+If you have some more interest please check out the following:
 
-## Virtual Environments and Packages
+- Working with APIs
+- Leetcode
 
-### Introduction
-
-### Creating Virtual Environments
-
-### Managing Packages with pip
-
-
-
-## What Now?
-
-
-## Interactive Input Editing and History Substitution
-
-### Tab Completion and History Editing
-
-### Alternatives to the Interactive Interpreter
-
-## Floating Point Arithmetic: Issues and Limitations
-
-### Representation Error
-
-## Appendix
-
-### Interactive Mode
-
-### Error Handling
-
-### Executable Python Scripts
-
-### The Interactive Startup File
-
-### The Customization Modules
+To get better at python one must pratice. The following are some suggestions on how to pratice:
+- Work on a new project
+- Coding Challenges
+- Create a game 
