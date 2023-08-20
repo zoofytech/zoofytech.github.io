@@ -233,6 +233,7 @@ You can also run `curl localhost:8080` to view it in terminal.
     The default working directory for containers is `/`. To change the default working directory you can use `--workdir` or `-w=` option.
     `docker run -w /hello/world -it ubuntu`
     The above example will run the container `ubuntu` with the working dir of `/hello/world`
+
 ### Docker images
 
 #### docker commit
