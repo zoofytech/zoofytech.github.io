@@ -226,12 +226,12 @@ p code, li code {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 6px;
+  width: 250px;
   overflow-y: auto;
 }
 
 #toc {
-  margin: 6px;
+  margin: 20px;
 }
 
 #toc ul {
@@ -313,7 +313,7 @@ p code, li code {
 /* Reset padding and margin for ul and li elements */
 ul, li {
   margin: 1px;
-  padding: 16px;
+  padding: 6px;
 }
 
 /* Adjust left position of the dropdown content to align with parent li element */
