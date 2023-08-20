@@ -4,9 +4,9 @@ navbar_entries:
 
   - title: all-topics
     url: all-topics
-    
+
   - title: topics
-    url: false
+    url: #
     entries:
       - title: python-basics
         url: python-basics
