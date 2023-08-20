@@ -284,8 +284,8 @@ p code, li code {
 .dropdown-content {
   display: none;
   position: absolute;
-  z-index: 1;
-  min-width: 100%;
+  z-index: 0;
+  min-width: 50%;
   background-color: #323945;
   // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   left: 0;
