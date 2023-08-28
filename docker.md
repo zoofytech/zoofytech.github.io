@@ -275,7 +275,7 @@ Personally, I don't think that `docker commit` is the best because it is not reu
 ##### Syntax
 `docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]`
 
-##### OPTIONS
+##### Options
 
 | Name                                   | Type     | Description                                                |
 |:---------------------------------------|:---------|:-----------------------------------------------------------|
@@ -329,10 +329,56 @@ docker push testrepository/testimage:latest
 ```
 
 ### Cleanup
-#### docker kill
+Below we will go over some of the docker commands to cleanup containers and images.
+
+
 #### docker stop
+`docker stop` allows you to stop one or more containers. The main process inside the container will receive `SIGTERM`, and after a grace period, `SIGKILL`. The first signal can be changed with the `STOPSIGNAL`
+instruction in the container's Dockerfile, or the `--stop-signal` option to
+`docker run`.
+
+##### Options
+
+| Name             | Type     | Default | Description                                  |
+|:-----------------|:---------|:--------|:---------------------------------------------|
+| `-s`, `--signal` | `string` |         | Signal to send to the container              |
+| `-t`, `--time`   | `int`    | `0`     | Seconds to wait before killing the container |
+
+
+#### docker kill
+`docker kill` will allow you to kill one or more running containers. The main process
+inside the container is sent `SIGKILL` signal (default), or the signal that is
+specified with the `--signal` option. You can reference a container by its
+ID, ID-prefix, or name.
+
+##### Options
+
+| Name                                   | Type     |Description                     |
+|:---------------------------------------|:---------|:--------------------------------|
+| [`-s`](#signal), [`--signal`](#signal) | `string` |Signal to send to the container |
+
 #### docker rm
+`docker rm` allows you to remove one or more containers
+
+##### Options
+
+| Name                                      |  Description                                             |
+|:------------------------------------------|:--------------------------------------------------------|
+| [`-f`](#force), [`--force`](#force)       |  Force the removal of a running container (uses SIGKILL) |
+| [`-l`](#link), [`--link`](#link)          |  Remove the specified link                               |
+| [`-v`](#volumes), [`--volumes`](#volumes) |  Remove anonymous volumes associated with the container  |
+
 #### docker rmi
+`docker rmi` allows you to remove one or more images. It also un-tags images attached to the image mentioned as well.
+
+
+### Options
+
+| Name            |  Description                   |
+|:----------------|:-------------------------------|
+| `-f`, `--force` | Force removal of the image     |
+| `--no-prune`    | Do not delete untagged parents |
+
 
 ### Docker Registry
  By default, docker uses docker hub - https://hub.docker.com/ as a registry to pull and push images.
@@ -755,7 +801,7 @@ The above example removes volume `new_volume01`
 | [`--format`](#format)                  | `string` | Format output using a custom template:<br>'table':            Print output in table format with column headers (default)<br>'table TEMPLATE':   Print output in table format using the given Go template<br>'json':             Print in JSON format<br>'TEMPLATE':         Print output using the given Go template.<br>Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates |
 | `-q`, `--quiet`                        |  | Only display volume names                  
 
-**Filter options**
+##### Filter options
 | Placeholder   | Description                                                                           |
 |---------------|---------------------------------------------------------------------------------------|
 | `.Name`       | Volume name                                                                           |
