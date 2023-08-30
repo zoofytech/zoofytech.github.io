@@ -1145,7 +1145,8 @@ Although primarily a dynamic programming problem, this relates to designing algo
 <details>
 <summary>Solution</summary>
 </details>
-
+</ol>
+</details>
 
 <li><a href="https://leetcode.com/problems/next-greater-element-i/">Next Greater Element I</a> - Problem #496</li>
 <details>
@@ -1157,7 +1158,6 @@ This problem reinforces the concept of designing a queue using stacks, further i
 </details>
 <details>
 <summary>Solution</summary>
-</details>
 </details>
 
 ### Medium
