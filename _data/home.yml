@@ -10,18 +10,20 @@ navbar_entries:
     entries:
       - title: python-basics
         url: python-basics
-      - title: AWS
-        url: AWS
       - title: docker
         url: docker
-      - title: CI/CD
-        url: cicd
       - title: Container orchestration
         url: container-orchestration
+      - title: CI/CD
+        url: cicd
       - title: databases
         url: databases
+      - title: AWS
+        url: AWS
       - title: Infrastructure as code
         url: iac
+      - title: leetcode
+        url: leetcode
   - title: blog
     url: blog
 
