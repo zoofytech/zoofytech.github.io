@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  /* Style for the expand all button */
-  #expand-button {
-    margin-bottom: 10px;
-  }
-</style>
-</head>
-<body>
-<script>
-  // JavaScript to handle the expand all button
-  const expandButton = document.getElementById("expand-button");
-  const detailsElements = document.querySelectorAll("details");
-
-  expandButton.addEventListener("click", () => {
-    detailsElements.forEach(details => {
-      details.open = true;
-    });
-  });
-</script>
-
 # leetcode
 Below we will go over some [leetcode](https://leetcode.com/problemset/all/) problems that will help with coding specifically for SRE/DevOps/Platform Engineers.
 
-<!-- Expand All Button -->
-<button id="expand-button">Expand All</button>
 
 ## System Design and Architecture
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/min-stack/">Min Stack</a> - Problem #155</li>
 <li><a href="https://leetcode.com/problems/implement-queue-using-stacks/">Implement Queue using Stacks</a> - Problem #232</li>
@@ -47,7 +22,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/lru-cache/">LRU Cache</a> - Problem #146</li>
 <li><a href="https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/">Reorder Routes to Make All Paths Lead to the City Zero</a> - Problem #1466</li>
@@ -64,7 +39,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/number-of-islands/">Number of Islands</a> - Problem #200</li>
 <li><a href="https://leetcode.com/problems/nim-game/">Nim Game</a> - Problem #292</li>
@@ -80,7 +55,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/network-delay-time/">Network Delay Time</a> - Problem #743</li>
 <li><a href="https://leetcode.com/problems/redundant-connection-ii/">Redundant Connection II</a> - Problem #685</li>
@@ -97,7 +72,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/first-unique-character-in-a-string/">First Unique Character in a String</a> - Problem #387</li>
 <li><a href="https://leetcode.com/problems/implement-strstr/">Implement strStr()</a> - Problem #28</li>
@@ -112,7 +87,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/3sum/">3Sum</a> - Problem #15</li>
 <li><a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a> - Problem #5</li>
@@ -129,7 +104,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/3sum/">3Sum</a> - Problem #15</li>
 <li><a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a> - Problem #5</li>
@@ -145,7 +120,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/3sum/">3Sum</a> - Problem #15</li>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a> - Problem #3</li>
@@ -162,7 +137,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/two-sum/">Two Sum</a> - Problem #1</li>
 <li><a href="https://leetcode.com/problems/palindrome-number/">Palindrome Number</a> - Problem #9</li>
@@ -178,7 +153,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a> - Problem #3</li>
 <li><a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a> - Problem #49</li>
@@ -196,7 +171,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/length-of-last-word/">Length of Last Word</a> - Problem #58</li>
 <li><a href="https://leetcode.com/problems/add-binary/">Add Binary</a> - Problem #67</li>
@@ -212,7 +187,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/word-break-ii/">Word Break II</a> - Problem #140</li>
 <li><a href="https://leetcode.com/problems/reverse-words-in-a-string-ii/">Reverse Words in a String II</a> - Problem #186</li>
@@ -230,7 +205,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Easy
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/rising-temperature/">Rising Temperature</a></li>
 <li><a href="https://leetcode.com/problems/combine-two-tables/">Combine Two Tables</a></li>
@@ -246,7 +221,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 
 ### Medium
 <details>
-<summary>Problems</summary>
+#<summary>Click for problems</summary>
 <ol>
 <li><a href="https://leetcode.com/problems/department-top-three-salaries/">Department Top Three Salaries</a></li>
 <li><a href="https://leetcode.com/problems/consecutive-numbers/">Consecutive Numbers</a></li>
@@ -258,5 +233,3 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 <li><a href="https://leetcode.com/problems/find-cumulative-salary-of-an-employee/">Find Cumulative Salary of an Employee</a></li>
 </ol>
 </details>
-</body>
-</html>
