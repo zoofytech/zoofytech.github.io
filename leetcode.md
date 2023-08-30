@@ -1,3 +1,7 @@
+---
+layout: table
+title: leetcode
+---
 # leetcode
 Below we will go over some [leetcode](https://leetcode.com/problemset/all/) problems that will help with coding specifically for SRE/DevOps/Platform Engineers.
 
