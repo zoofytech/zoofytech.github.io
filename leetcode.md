@@ -1158,8 +1158,6 @@ This problem reinforces the concept of designing a queue using stacks, further i
 <details>
 <summary>Solution</summary>
 </details>
-
-
 </details>
 
 ### Medium
