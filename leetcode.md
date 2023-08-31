@@ -5,9 +5,11 @@ title: leetcode
 # leetcode
 Below we will go over some [leetcode](https://leetcode.com/problemset/all/) problems that will help with coding specifically for SRE/DevOps/Platform Engineers. We will be using python3 for all the solutions on this page. If your coding skills are not the best please just start with all the easy problems then move onto medium once you get enough confidence. 
 
-## Scripting and Automation
+# Problems (75)
 
-### Easy
+## Scripting and Automation (11)
+
+### Easy (7)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -77,7 +79,7 @@ This problem involves finding a single number in an array where all other number
 
 </details>
 
-### Medium
+### Medium (4)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -121,9 +123,9 @@ Automating the process of grouping anagrams from a given list of words is applic
 </details>
 
 
-## Networking
+## Networking (13)
 
-### Easy
+### Easy (7)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -192,7 +194,7 @@ String manipulation and transformation are important in many text-based networki
 </ol>
 </details>
 
-### Medium
+### Medium (6)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -253,9 +255,9 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 </details>
 
 
-## Performance Optimization
+## Performance Optimization (7)
 
-### Easy
+### Easy (2)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -279,7 +281,7 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 </ol>
 </details>
 
-### Medium
+### Medium (5)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -330,9 +332,9 @@ Optimization of pattern searching tasks, which is similar to optimizing data pro
 </ol>
 </details>
 
-## Troubleshooting and Debugging
+## Troubleshooting and Debugging (9)
 
-### Easy
+### Easy (5)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -385,7 +387,7 @@ Debugging and testing string matching algorithms is essential in identifying and
 
 </details>
 
-### Medium
+### Medium (4)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -430,9 +432,9 @@ Debugging and optimizing string multiplication algorithms, crucial in identifyin
 </details>
 
 
-## Database Design and Querying
+## Database Design and Querying (14)
 
-### Easy
+### Easy (6)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -494,7 +496,7 @@ The task here is to find duplicate email addresses from a <code>Person</code> ta
 
 </details>
 
-### Medium
+### Medium (8)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -577,9 +579,9 @@ In this problem, you are tasked with ranking scores in a database table. You nee
 </details>
 
 
-## Distributed Systems
+## Distributed Systems (11)
 
-### Easy
+### Easy (5)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -632,7 +634,7 @@ Balancing a binary tree is essential in distributed databases for optimizing dat
 
 </details>
 
-### Medium
+### Medium (6)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -693,9 +695,9 @@ This problem resembles graph traversal and calculations, which are often seen in
 </ol>
 </details>
 
-## System Design and Architecture
+## System Design and Architecture (10)
 
-### Easy
+### Easy (4)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -758,7 +760,6 @@ This problem resembles graph traversal and calculations, which are often seen in
 <summary>Summary</summary>
 This problem involves designing a queue using stacks. It tests your ability to create a data structure that emulates a queue's behavior using another data structure. Such design considerations are important when implementing efficient data processing pipelines.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -767,7 +768,6 @@ This problem involves designing a queue using stacks. It tests your ability to c
 <summary>Summary</summary>
 Reinforces the concept of designing a queue using stacks, further illustrating the relationship between different data structures.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -776,12 +776,12 @@ Reinforces the concept of designing a queue using stacks, further illustrating t
 <summary>Summary</summary>
 This problem reinforces the concept of designing a queue using stacks, further illustrating the relationship between different data structures.
 </details>
-
 <details>
 <summary>Solution</summary>
+</ol>
 </details>
 
-### Medium
+### Medium (6)
 <details>
 <summary>Click for problems</summary>
 <ol>
@@ -790,7 +790,6 @@ This problem reinforces the concept of designing a queue using stacks, further i
 <summary>Summary</summary>
 Designing a least recently used (LRU) cache involves managing data eviction strategies efficiently, which is crucial in system design where memory management and caching play a role.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -799,7 +798,6 @@ Designing a least recently used (LRU) cache involves managing data eviction stra
 <summary>Summary</summary>
 This problem simulates reordering routes in a directed graph to centralize paths. In system design, centralized data processing and communication can improve efficiency and reduce latency.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -808,7 +806,6 @@ This problem simulates reordering routes in a directed graph to centralize paths
 <summary>Summary</summary>
 This problem requires designing a stack that supports constant-time retrieval of the minimum element. It relates to designing data structures that optimize for certain operations, which is a fundamental aspect of system design and architecture.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -817,7 +814,6 @@ This problem requires designing a stack that supports constant-time retrieval of
 <summary>Summary</summary>
 This problem requires designing a mechanism to count unhappy friends based on their preferences. This concept is similar to data analysis and pattern recognition in larger-scale systems.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -826,7 +822,6 @@ This problem requires designing a mechanism to count unhappy friends based on th
 <summary>Summary</summary>
 In system design, constructing complex data structures efficiently from partial information can be crucial for optimization.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -835,7 +830,6 @@ In system design, constructing complex data structures efficiently from partial 
 <summary>Summary</summary>
 This problem involves designing a mechanism to merge user accounts, which is analogous to merging data and records in a larger system.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
