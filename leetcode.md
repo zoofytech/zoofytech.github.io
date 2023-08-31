@@ -3,7 +3,7 @@ layout: table
 title: leetcode
 ---
 # leetcode
-Below we will go over some [leetcode](https://leetcode.com/problemset/all/) problems that will help with coding specifically for SRE/DevOps/Platform Engineers.
+Below we will go over some [leetcode](https://leetcode.com/problemset/all/) problems that will help with coding specifically for SRE/DevOps/Platform Engineers. We will be using python3 for all the solutions on this page. If your coding skills are not the best please just start with all the easy problems then move onto medium once you get enough confidence. 
 
 ## Scripting and Automation
 
@@ -16,9 +16,7 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 <summary>Summary</summary>
 This problem involves manipulating strings, which is a common task in scripting. You need to find the length of the last word in a string.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -27,9 +25,7 @@ This problem involves manipulating strings, which is a common task in scripting.
 <summary>Summary</summary>
 This problem simulates binary addition. In scripting, you might encounter scenarios where you need to perform calculations on binary data.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -38,9 +34,7 @@ This problem simulates binary addition. In scripting, you might encounter scenar
 <summary>Summary</summary>
 This problem deals with generating rows of Pascal's Triangle, which can be used in various automated data generation scenarios.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -49,9 +43,7 @@ This problem deals with generating rows of Pascal's Triangle, which can be used 
 <summary>Summary</summary>
 This problem is about merging arrays, a common task in scripting when you're working with data from various sources.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -60,9 +52,7 @@ This problem is about merging arrays, a common task in scripting when you're wor
 <summary>Summary</summary>
 In this problem, you convert a column number into the corresponding Excel column title. Such conversions are often encountered in automated data processing.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -70,9 +60,7 @@ In this problem, you convert a column number into the corresponding Excel column
 <details>
 <summary>Summary</summary>
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -81,9 +69,7 @@ In this problem, you convert a column number into the corresponding Excel column
 <summary>Summary</summary>
 This problem involves finding a single number in an array where all other numbers appear twice. It's a common task in automated data analysis.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -100,20 +86,7 @@ This problem involves finding a single number in an array where all other number
 <summary>Summary</summary>
 This problem involves generating sequences based on previous values, which can be useful for generating automated sequences of data.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/reverse-words-in-a-string-ii/">Reverse Words in a String II</a> - Problem #186</li>
-<details>
-<summary>Summary</summary>
- In this problem, you're asked to reverse the order of words in a string, which can be useful for automating text transformations.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -122,9 +95,7 @@ This problem involves generating sequences based on previous values, which can b
 <summary>Summary</summary>
 Similar to the previous problem, this asks you to reverse the words in a string but not in-place. Scripting can help automate this process.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -133,20 +104,7 @@ Similar to the previous problem, this asks you to reverse the words in a string 
 <summary>Summary</summary>
 In this problem, you're asked to reverse the order of words in a string, which can be useful for automating text transformations.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/dungeon-game/">Dungeon Game</a> - Problem #174</li>
-<details>
-<summary>Summary</summary>
-In this problem, you need to determine the minimum initial health to start from the top-left corner and reach the bottom-right corner of a dungeon grid. Automation can help compute this value.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -155,36 +113,11 @@ In this problem, you need to determine the minimum initial health to start from 
 <summary>Summary</summary>
 Automating the process of grouping anagrams from a given list of words is applicable to this problem, aligning with scripting and automation concepts.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/compare-version-numbers/">Compare Version Numbers</a> - Problem #165</li>
-<details>
-<summary>Summary</summary>
-This problem involves comparing two version numbers. Scripting can help automate the version comparison process, handling different parts of the version numbers.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/longest-common-prefix/">Longest Common Prefix</a> - Problem #14</li>
-<details>
-<summary>Summary</summary>
-Automating the process of finding the longest common prefix among a list of strings can be applied to this problem, highlighting the role of scripting and automation.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
 </ol>
-
 </details>
 
 
@@ -199,9 +132,7 @@ Automating the process of finding the longest common prefix among a list of stri
 <summary>Summary</summary>
 Relates to processing strings, which is fundamental in networking protocols for parsing and validation.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -211,9 +142,6 @@ Relates to processing strings, which is fundamental in networking protocols for 
 In networking, substring matching is used in various applications, from pattern matching to searching for headers in network packets.
 </details>
 <details>
-<summary>Problem</summary>
-</details>
-<details>
 <summary>Solution</summary>
 </details>
 <li><a href="https://leetcode.com/problems/valid-anagram/">Valid Anagram</a> - Problem #242</li>
@@ -221,9 +149,7 @@ In networking, substring matching is used in various applications, from pattern 
 <summary>Summary</summary>
 String manipulation, such as character sorting, is used in various networking applications, such as checksum calculations.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -232,9 +158,7 @@ String manipulation, such as character sorting, is used in various networking ap
 <summary>Summary</summary>
 Understanding character mappings is important in networking tasks like encoding and decoding.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -243,9 +167,7 @@ Understanding character mappings is important in networking tasks like encoding 
 <summary>Summary</summary>
 While not a direct analogy, data organization and computation are crucial in networking protocols and data transmission.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -254,20 +176,7 @@ While not a direct analogy, data organization and computation are crucial in net
 <summary>Summary</summary>
 In networking, data reorganization may be necessary for efficient data transmission.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/length-of-last-word/">Length of Last Word</a> - Problem #58</li>
-<details>
-<summary>Summary</summary>
-String manipulation, often used in networking tasks like text processing.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -276,9 +185,7 @@ String manipulation, often used in networking tasks like text processing.
 <summary>Summary</summary>
 String manipulation and transformation are important in many text-based networking applications.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -294,9 +201,7 @@ String manipulation and transformation are important in many text-based networki
 <summary>Summary</summary>
 In networking, searching for patterns or matches within data streams is a common task.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -305,9 +210,7 @@ In networking, searching for patterns or matches within data streams is a common
 <summary>Summary</summary>
 String processing is essential in networking, such as when parsing and validating URLs or extracting specific data.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -316,20 +219,7 @@ String processing is essential in networking, such as when parsing and validatin
 <summary>Summary</summary>
 Resembles data reformatting tasks seen in networking, such as transforming data for compatibility.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a> - Problem #33</li>
-<details>
-<summary>Summary</summary>
-Searching algorithms are vital for efficient data retrieval in networking databases.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -338,20 +228,7 @@ Searching algorithms are vital for efficient data retrieval in networking databa
 <summary>Summary</summary>
 Transforming data, as in rotating an image, is analogous to data transformation in networking tasks.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/word-search/">Word Search</a> - Problem #79</li>
-<details>
-<summary>Summary</summary>
-Reflects pattern searching tasks, which are akin to data processing in networking for finding specific patterns.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -359,9 +236,7 @@ Reflects pattern searching tasks, which are akin to data processing in networkin
 <details>
 <summary>Summary</summary>
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -370,9 +245,7 @@ Reflects pattern searching tasks, which are akin to data processing in networkin
 <summary>Summary</summary>
 Relates to analyzing sequences of data, important in networking for detecting patterns and trends.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -390,19 +263,7 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 <details>
 <summary>Summary</summary>
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a> - Problem #20</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -410,78 +271,32 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 <details>
 <summary>Summary</summary>
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/climbing-stairs/">Climbing Stairs</a> - Problem #70</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/min-stack/">Min Stack</a> - Problem #155</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/count-and-say/">Count and Say</a> - Problem #38</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a> - Problem #53</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a> - Problem #88</li>
-<details>
-<summary>Summary</summary>
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-</ol>
 
+<details>
+<summary>Solution</summary>
+</details>
+
+</ol>
 </details>
 
 ### Medium
 <details>
 <summary>Click for problems</summary>
 <ol>
+<li><a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a> - Problem #53</li>
+<details>
+<summary>Summary</summary>
+</details>
+
+<details>
+<summary>Solution</summary>
+</details>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a> - Problem #3</li>
 <details>
 <summary>Summary</summary>
 Optimizing substring calculations, similar to optimizing data processing tasks.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -490,20 +305,7 @@ Optimizing substring calculations, similar to optimizing data processing tasks.
 <summary>Summary</summary>
 Optimization of container volume calculations, similar to optimizing data allocation in a system.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a> - Problem #20</li>
-<details>
-<summary>Summary</summary>
-Efficient stack usage, relevant in optimizing algorithms and ensuring memory efficiency.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -512,9 +314,7 @@ Efficient stack usage, relevant in optimizing algorithms and ensuring memory eff
 <summary>Summary</summary>
  Optimization of search algorithms, crucial in optimizing data retrieval processes.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -523,27 +323,12 @@ Efficient stack usage, relevant in optimizing algorithms and ensuring memory eff
 <summary>Summary</summary>
 Optimization of pattern searching tasks, which is similar to optimizing data processing for finding specific patterns.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/valid-number/">Valid Number</a> - Problem #65</li>
-<details>
-<summary>Summary</summary>
-Efficient number validation, important in optimizing data processing and input validation.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
 </ol>
 </details>
-
-
 
 ## Troubleshooting and Debugging
 
@@ -556,9 +341,7 @@ Efficient number validation, important in optimizing data processing and input v
 <summary>Summary</summary>
 This problem requires problem-solving and debugging skills, similar to identifying issues and bugs in distributed systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -567,9 +350,7 @@ This problem requires problem-solving and debugging skills, similar to identifyi
 <summary>Summary</summary>
 Involves checking for palindromes, akin to debugging and validating data correctness.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -578,9 +359,7 @@ Involves checking for palindromes, akin to debugging and validating data correct
 <summary>Summary</summary>
 Similar to identifying common patterns, a crucial skill in debugging distributed systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -589,9 +368,7 @@ Similar to identifying common patterns, a crucial skill in debugging distributed
 <summary>Summary</summary>
 Debugging skills are important in verifying the correctness of algorithms, a key aspect of troubleshooting.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -600,20 +377,7 @@ Debugging skills are important in verifying the correctness of algorithms, a key
 <summary>Summary</summary>
 Debugging and testing string matching algorithms is essential in identifying and fixing errors.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/longest-common-prefix/">Longest Common Prefix</a> - Problem #14</li>
-<details>
-<summary>Summary</summary>
-Debugging and problem-solving for identifying common patterns, akin to troubleshooting issues related to data analysis and processing.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -625,25 +389,12 @@ Debugging and problem-solving for identifying common patterns, akin to troublesh
 <details>
 <summary>Click for problems</summary>
 <ol>
-<li><a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a> - Problem #49</li>
-<details>
-<summary>Summary</summary>
-Problem-solving and debugging related to string manipulation, similar to identifying and fixing errors in data transformations.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
 <li><a href="https://leetcode.com/problems/compare-version-numbers/">Compare Version Numbers</a> - Problem #165</li>
 <details>
 <summary>Summary</summary>
 Debugging and problem-solving for version comparison, similar to identifying compatibility issues in distributed systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -652,9 +403,7 @@ Debugging and problem-solving for version comparison, similar to identifying com
 <summary>Summary</summary>
 Debugging and problem-solving for decoding tasks, similar to fixing issues with data transformations.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -663,9 +412,7 @@ Debugging and problem-solving for decoding tasks, similar to fixing issues with 
 <summary>Summary</summary>
 Debugging and problem-solving related to frequent item calculations, similar to identifying and fixing issues with data analysis.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -674,9 +421,7 @@ Debugging and problem-solving related to frequent item calculations, similar to 
 <summary>Summary</summary>
 Debugging and optimizing string multiplication algorithms, crucial in identifying and fixing performance bottlenecks
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -696,20 +441,16 @@ Debugging and optimizing string multiplication algorithms, crucial in identifyin
 <summary>Summary</summary>
 This problem involves using SQL <code>JOIN</code> to combine information from two different tables based on a common key.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-<li><a href="https://leetcode.com/problems/rising-temperature/">Rising Temperature</a></li>
+<li><a href="https://leetcode.com/problems/rising-temperature/">Rising Temperature</a> - Problem #197</li>
 <details>
 <summary>Summary</summary>
 This problem focuses on querying a <code>Weather</code> table to find days where the temperature was higher than the previous day.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -718,53 +459,34 @@ This problem focuses on querying a <code>Weather</code> table to find days where
 <summary>Summary</summary>
 This problem involves selecting countries with a population greater than 250 million or an area greater than 3 million square kilometers using SQL.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-<li><a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Employees Earning More Than Their Managers</a></li>
+<li><a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Employees Earning More Than Their Managers</a> - Problem #181</li>
 <details>
 <summary>Summary</summary>
 In this problem, you need to compare salaries between employees and their managers using SQL queries.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-<li><a href="https://leetcode.com/problems/customers-who-never-order/">Customers Who Never Order</a></li>
+<li><a href="https://leetcode.com/problems/customers-who-never-order/">Customers Who Never Order</a> - Problem #183</li>
 <details>
 <summary>Summary</summary>
 This problem requires identifying customers who have never placed an order by using a combination of SQL <code>JOIN</code> and <code>NOT EXISTS</code>.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-<li><a href="https://leetcode.com/problems/second-highest-salary/">Second Highest Salary</a></li>
-<details>
-<summary>Summary</summary>
-In this problem, you need to retrieve the second highest salary from an <code>Employee</code> table using SQL queries.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/duplicate-emails/">Duplicate Emails</a></li>
+<li><a href="https://leetcode.com/problems/duplicate-emails/">Duplicate Emails</a> - Problem #182</li>
 <details>
 <summary>Summary</summary>
 The task here is to find duplicate email addresses from a <code>Person</code> table using SQL queries.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -781,9 +503,7 @@ The task here is to find duplicate email addresses from a <code>Person</code> ta
 <summary>Summary</summary>
 This problem involves finding the Nth highest salary using SQL.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -792,9 +512,7 @@ This problem involves finding the Nth highest salary using SQL.
 <summary>Summary</summary>
 The task is to find numbers that appear at least three times consecutively in a table using SQL queries.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -807,9 +525,7 @@ This problem demonstrates the use of SQL queries to manipulate and update data i
 
 In a real-world scenario, this problem reflects how database queries can be used to manage seating arrangements, perform data updates, and ensure data consistency. It showcases your skills in writing efficient and effective SQL queries to perform specific tasks within a database environment.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -818,20 +534,15 @@ In a real-world scenario, this problem reflects how database queries can be used
 <summary>Summary</summary>
 This problem involves querying a database to find the price of a product at a given date. It requires crafting SQL queries to filter products based on their price history and the provided date. The problem tests your ability to retrieve historical data from a database and filter it based on specific conditions.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-<li><a href="https://leetcode.com/problems/second-highest-salary/">Second Highest Salary</a>  - Problem #180</li>
+<li><a href="https://leetcode.com/problems/second-highest-salary/">Second Highest Salary</a>  - Problem #176</li>
 <details>
 <summary>Summary</summary>
-This problem asks you to find all numbers that appear at least three times consecutively in a table. You need to design a query that identifies consecutive occurrences of numbers and returns the desired result. This problem tests your understanding of querying and identifying patterns in data.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -840,9 +551,7 @@ This problem asks you to find all numbers that appear at least three times conse
 <summary>Summary</summary>
 This problem is about simulating elevator trips for a building. You need to design a query to determine who was the last person to fit in the elevator after a certain time. It involves joining tables, filtering data based on specific conditions, and finding the maximum value. The problem mirrors real-world scenarios where database queries are used to manage and analyze data about people and events.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -851,9 +560,7 @@ This problem is about simulating elevator trips for a building. You need to desi
 <summary>Summary</summary>
 This problem involves working with a database table representing a tree structure. You need to design a query to retrieve information about parent and child relationships within the tree. It's an example of how databases can be used to model hierarchical structures and retrieve data based on those relationships.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -861,12 +568,8 @@ This problem involves working with a database table representing a tree structur
 <details>
 <summary>Summary</summary>
 In this problem, you are tasked with ranking scores in a database table. You need to design a query that assigns ranks to scores while handling cases of ties. This problem is a classic example of using SQL to generate rankings and order data based on certain criteria.
-
-
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -885,9 +588,7 @@ In this problem, you are tasked with ranking scores in a database table. You nee
 <summary>Summary</summary>
 This problem illustrates game strategy in a distributed context, akin to making decisions in a distributed environment.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -896,9 +597,7 @@ This problem illustrates game strategy in a distributed context, akin to making 
 <summary>Summary</summary>
 This problem simulates the spread of information through cells, similar to data propagation in distributed systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -907,9 +606,7 @@ This problem simulates the spread of information through cells, similar to data 
 <summary>Summary</summary>
 This problem demonstrates converting strings to lowercase, which is crucial in distributed systems for standardizing data formats.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -918,9 +615,7 @@ This problem demonstrates converting strings to lowercase, which is crucial in d
 <summary>Summary</summary>
 This problem compares to distributed problems with multiple paths, where optimizing traversal becomes essential.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -929,20 +624,7 @@ This problem compares to distributed problems with multiple paths, where optimiz
 <summary>Summary</summary>
 Balancing a binary tree is essential in distributed databases for optimizing data storage and retrieval.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/the-maze-ii/">The Maze II</a> - Problem #505</li>
-<details>
-<summary>Summary</summary>
-This problem involves finding paths in a maze, similar to navigation and pathfinding in distributed networks.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -959,9 +641,7 @@ This problem involves finding paths in a maze, similar to navigation and pathfin
 <summary>Summary</summary>
 This problem mimics the propagation of information through a distributed network, similar to data transmission delays.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -970,9 +650,7 @@ This problem mimics the propagation of information through a distributed network
 <summary>Summary</summary>
 This problem relates to distributed computation by simulating the spread of information through connected components in a grid.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -981,9 +659,7 @@ This problem relates to distributed computation by simulating the spread of info
 <summary>Summary</summary>
 This problem reflects dependencies in distributed task scheduling, which is crucial for resource allocation
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -992,9 +668,7 @@ This problem reflects dependencies in distributed task scheduling, which is cruc
 <summary>Summary</summary>
 This problem involves measuring distances between nodes, similar to distance calculations in a distributed spatial context.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1003,9 +677,7 @@ This problem involves measuring distances between nodes, similar to distance cal
 <summary>Summary</summary>
 This problem simulates distributed state changes and their propagation, similar to message passing in distributed systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1014,20 +686,7 @@ This problem simulates distributed state changes and their propagation, similar 
 <summary>Summary</summary>
 This problem resembles graph traversal and calculations, which are often seen in distributed systems' computations.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/evaluate-division/">Evaluate Division</a> - Problem #399</li>
-<details>
-<summary>Summary</summary>
-This problem continues the analogy of graph traversal and distributed calculations.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1061,7 +720,6 @@ This problem continues the analogy of graph traversal and distributed calculatio
 <p>While this problem isn&#39;t a full-blown system design challenge, it provides a microcosm of considerations that come into play when designing and implementing data structures in a larger system. It&#39;s about making design choices that optimize for performance, reliability, and scalability—core tenets of system design and architecture.</p>
 </details>
 <details>
-
 <summary>Problem</summary>
 <p>Design a HashSet without using any built-in hash table libraries.</p>
 <p>Implement <code>MyHashSet</code> class:</p>
@@ -1094,68 +752,31 @@ This problem continues the analogy of graph traversal and distributed calculatio
 </details>
 <details>
 <summary>Solution</summary>
-
-
 </details>
-
 <li><a href="https://leetcode.com/problems/implement-queue-using-stacks/">Implement Queue using Stacks</a> - Problem #232</li>
 <details>
 <summary>Summary</summary>
 This problem involves designing a queue using stacks. It tests your ability to create a data structure that emulates a queue's behavior using another data structure. Such design considerations are important when implementing efficient data processing pipelines.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-
-<li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a> - Problem #20</li>
-<details>
-<summary>Summary</summary>
-This problem focuses on using stacks to validate the ordering of parentheses. While it may seem small-scale, the idea of using stacks to track and manage data is crucial in larger-scale system designs.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-
 <li><a href="https://leetcode.com/problems/implement-queue-using-stacks/">Implement Queue using Stacks</a> - Problem #225</li>
 <details>
 <summary>Summary</summary>
 Reinforces the concept of designing a queue using stacks, further illustrating the relationship between different data structures.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
-
-<li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a> - Problem #121</li>
-<details>
-<summary>Summary</summary>
-Although primarily a dynamic programming problem, this relates to designing algorithms to optimize certain objectives, which is a core skill in system design. This could be analogous to optimizing resource usage or task scheduling in a larger system.
-</details>
-<details>
-<summary>Problem</summary>
-</details>
-<details>
-<summary>Solution</summary>
-</details>
-</ol>
-</details>
-
 <li><a href="https://leetcode.com/problems/next-greater-element-i/">Next Greater Element I</a> - Problem #496</li>
 <details>
 <summary>Summary</summary>
 This problem reinforces the concept of designing a queue using stacks, further illustrating the relationship between different data structures.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1169,9 +790,7 @@ This problem reinforces the concept of designing a queue using stacks, further i
 <summary>Summary</summary>
 Designing a least recently used (LRU) cache involves managing data eviction strategies efficiently, which is crucial in system design where memory management and caching play a role.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1180,9 +799,7 @@ Designing a least recently used (LRU) cache involves managing data eviction stra
 <summary>Summary</summary>
 This problem simulates reordering routes in a directed graph to centralize paths. In system design, centralized data processing and communication can improve efficiency and reduce latency.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1191,9 +808,7 @@ This problem simulates reordering routes in a directed graph to centralize paths
 <summary>Summary</summary>
 This problem requires designing a stack that supports constant-time retrieval of the minimum element. It relates to designing data structures that optimize for certain operations, which is a fundamental aspect of system design and architecture.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1202,9 +817,7 @@ This problem requires designing a stack that supports constant-time retrieval of
 <summary>Summary</summary>
 This problem requires designing a mechanism to count unhappy friends based on their preferences. This concept is similar to data analysis and pattern recognition in larger-scale systems.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1213,9 +826,7 @@ This problem requires designing a mechanism to count unhappy friends based on th
 <summary>Summary</summary>
 In system design, constructing complex data structures efficiently from partial information can be crucial for optimization.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
@@ -1224,9 +835,7 @@ In system design, constructing complex data structures efficiently from partial 
 <summary>Summary</summary>
 This problem involves designing a mechanism to merge user accounts, which is analogous to merging data and records in a larger system.
 </details>
-<details>
-<summary>Problem</summary>
-</details>
+
 <details>
 <summary>Solution</summary>
 </details>
