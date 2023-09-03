@@ -88,8 +88,9 @@ This problem deals with generating rows of Pascal's Triangle, which can be used 
 <div class ="blockquote">
 <pre>
 <code class="language-python line-numbers">
-class Solution:
-    def addBinary(self, a: str, b: str) -> str:
+    class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        
 </code>
 </pre>
 </div>
