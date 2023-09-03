@@ -18,34 +18,90 @@ Below we will go over some [leetcode](https://leetcode.com/problemset/all/) prob
 <summary>Summary</summary>
 This problem involves manipulating strings, which is a common task in scripting. You need to find the length of the last word in a string.
 </details>
-
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+<pre>
+<code class="language-python line-numbers">
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        word_list = s.split()
+        last_word = word_list[-1]
+        lw_count = len(last_word)
+        return(lw_count)
+</code>
+</pre>
+</div>
+<b>Explanation:</b><br>
+- First we split the words by using <code>split</code>. This will remove all of the spaces if there are any in <code>s</code> <br>
+- We then grab the last word by indexing the last word <code>word_list[-1]</code> <br>
+- We then get the count of the last word by using <code>len</code> and return the count of it. <br>
+<br> This is just a simple solution to the problem. We can actually trim the answer if needed to the following:
+<div class ="blockquote">
+<pre>
+<code class="language-python line-numbers">
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        s = s.rstrip()  #or strip
+        return len(s.split()[-1])
+</code>
+</pre>
+</div>
 </details>
 <li><a href="https://leetcode.com/problems/add-binary/">Add Binary</a> - Problem #67</li>
 <details>
 <summary>Summary</summary>
 This problem simulates binary addition. In scripting, you might encounter scenarios where you need to perform calculations on binary data.
 </details>
-
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+<pre>
+<code class="language-python line-numbers">
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+</code>
+</pre>
+</div>
+<b>Explanation:</b><br>
+- We use <code>int</code> to convert the string to an integer and use base 2 <br>
+- We use <code>format</code> to convert the integer back into binary without the "0b"<br>
+Another way that we can solve this is by using <code>bin</code>
+Similarly we just remove the first 2 strings.
+<div class ="blockquote">
+<pre>
+<code class="language-python line-numbers">
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a , 2) + int(b,2))[2:]
+</code>
+</pre>
+</div>
 </details>
 <li><a href="https://leetcode.com/problems/pascals-triangle-ii/">Pascal&#39;s Triangle II</a> - Problem #119</li>
 <details>
 <summary>Summary</summary>
 This problem deals with generating rows of Pascal's Triangle, which can be used in various automated data generation scenarios.
 </details>
-
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+<pre>
+<code class="language-python line-numbers">
+    class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        
+</code>
+</pre>
+</div>
+<b>Explanation:</b><br>
+
 </details>
 <li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a> - Problem #88</li>
 <details>
 <summary>Summary</summary>
 This problem is about merging arrays, a common task in scripting when you're working with data from various sources.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
@@ -54,7 +110,6 @@ This problem is about merging arrays, a common task in scripting when you're wor
 <summary>Summary</summary>
 In this problem, you convert a column number into the corresponding Excel column title. Such conversions are often encountered in automated data processing.
 </details>
-
 <details>
 <summary>Solution</summary>
 </details>
