@@ -88,14 +88,58 @@ This problem deals with generating rows of Pascal's Triangle, which can be used 
 <div class ="blockquote">
 <pre>
 <code class="language-python line-numbers">
-    class Solution:
+class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
-        
+        result = []
+        for i in range(0, rowIndex+1):
+            result.append([])
+
+            for x in range(0, i + 1):
+                if x == 0:
+                    result[i].append(1)
+                elif i == x:
+                    result[i].append(1)
+                else:
+                    result[i].append((result[i-1][x-1]) + (result[i-1][x]))
+        return result[rowIndex]
 </code>
 </pre>
 </div>
 <b>Explanation:</b><br>
-
+This problem asks you to return the rowIndex-th (0-based index) row of Pascal's Triangle as a list of integers. Pascal's Triangle is a triangular array of binomial coefficients, where each number is the sum of the two numbers directly above it. The first few rows of Pascal's Triangle look like this:
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+Row 0: [1]
+Row 1: [1, 1]
+Row 2: [1, 2, 1]
+Row 3: [1, 3, 3, 1]
+    </code>
+</pre>
+</div>
+<br>
+1. We create an empty list called result to store the rows of Pascal's Triangle.
+Create an empty list called result to store the rows of Pascal's Triangle.
+<br>
+2. We then iterate over the rows from 0 to rowIndex, inclusive, using the variable i to represent the current row index.
+<br>
+3. For each row, append an empty list to the result list. This empty list will be used to store the elements of the current row.
+<br>
+4. Inside the inner loop, iterate over the elements in the current row from 0 to i, using the variable x to represent the current column index.
+<br>
+5. For each element, check if it is the first element in the row (i.e., x == 0) or the last element in the row (i.e., i == x). 
+If it is either the first or last element, append a 1 to the current row because the first and last elements of each row in Pascal's Triangle are always 1.
+<br>
+6. If the element is not the first or last element, calculate its value by adding the element from the previous row in the same column (result[i-1][x-1]) and the element from the previous row in the next column (result[i-1][x]). 
+This follows the rule of Pascal's Triangle where each element is the sum of the two elements above it.
+<br>
+7. Append the calculated value to the current row.
+<br>
+8. Repeat steps 5-7 for all elements in the current row.
+<br>
+9. Once the inner loop finishes, the current row is complete, and you move on to the next row.
+<br>
+10. Finally, return the row at the rowIndex index from the result list. 
 </details>
 <li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a> - Problem #88</li>
 <details>
@@ -104,6 +148,54 @@ This problem is about merging arrays, a common task in scripting when you're wor
 </details>
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+            while m > 0 and n > 0:
+                if nums1[m-1] > nums2[n-1]:
+                    nums1[m+n-1] = nums1[m-1]
+                    m -= 1
+                else:
+                    nums1[m+n-1] = nums2[n-1]
+                    n -= 1
+            for i in range(n):
+                nums1[i] = nums2[i]
+    </code>
+</pre>
+</div>
+<b>Explanation:</b><br>
+To go through this solution, we will go through line by line.<br>
+1. starting with the while loop. It will continue as long as both m and n are greater than 0. This will help merge the two arrays.
+<br>
+2. Inside the loop, we then compare the last element of nums1 at a index of m-1 with the last element of nums2 at index n-1. 
+These are the largest elements of each array. 
+<br>
+3. If the element in nums1 is greater, 
+it means that this element should be placed at the end of the merged array, 
+which is at index m+n-1 in nums1. So, it assigns the value of nums1[m-1] to nums1[m+n-1]. 
+This merges the element from nums1 into the array.
+<br>
+4. After merging an element from nums1 it decreases m by 1 to move the m pointer to the previous element in nums1 
+<br>
+5. If the element in nums2 is greater or equal to nums1 then that means that this element should be placed at the end of the merged array.
+<br>
+6. From the line aboves if statement , we then assign the value of  <code>nums2[n-1] to nums1[m+n-1]</code> to merge the elements from nums2 to nums1
+<br>
+7. After merging an element from nums2 it decrements n by 1 to move the n pointer to the previous element in nums2
+<code>n -= 1</code>
+<br>
+8. After the while loop exits, there might be remaining elements in <code>nums2</code> that were not merged. This for loop iterates over the remaining elements of nums2 from index 0 to n-1
+<code>for i in range(n)</code>
+<br>
+9. In the for loop, it copies the remaining elements from nums2 into nums1 by merging the remaining elements from nums2 to into nums1 
+<code>nums1[i] = nums2[i]</code>
+<br>
+The key idea here is to work from the end of the arrays towards the beginning,
+ which avoids overwriting elements in nums1 before they are compared and merged.
+This approach ensures that the merged array is sorted without the need for extra space or creating a new array.
+
 </details>
 <li><a href="https://leetcode.com/problems/excel-sheet-column-title/">Excel Sheet Column Title</a> - Problem #168</li>
 <details>
@@ -112,6 +204,55 @@ In this problem, you convert a column number into the corresponding Excel column
 </details>
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def convertToTitle(self, columnNumber: int) -> str:
+            alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            result=""
+            while columnNumber:
+                columnNumber=columnNumber-1
+                result=alphabet[columnNumber%26]+result
+                columnNumber=columnNumber//26
+            return result
+    </code>
+    </pre>
+    </div>
+<b>Explanation:</b><br>
+This problem asks you to convert a positive integer,  columnNumber,
+ into an Excel sheet column title. Excel column titles are represented using
+uppercase English letters, and they follow a pattern similar to base 26 numbering, 
+where the digits are represented by the English alphabet (A=1, B=2, ..., Z=26), 
+and when the column number exceeds 26, it starts using two-letter combinations (AA=27, AB=28,
+ ..., ZZ=702, AAA=703, and so on).
+ <br>
+ 1. We first define alphabet that contains all uppercase letters from A-Z. These strings will be used to map column numbers to titles.
+ <br>
+ 2. We then initializes an empty string result to store the Excel column title 
+ <br>
+ 3. We start a while loop that continues as long as columnNumber is not zero. The loop will gradually convert the column number to column title.
+ <br>
+ 4. Inside of the loop, it subtracts 1 from the columnNumber. This is done to handle the fact that the Excel column numbering starts from 1, but our algorithm will work with 0-based indexing.
+ <br>
+ 5. <code> result = alphabet[columnNumber % 26] + result</code> 
+<br>
+This calculates the remainder when columnNumber is divided by 26. The remainder corresponds to a letter in the alphabet.
+It then takes that letter at the position in the alphabet string and appends it to the beginning of the result string. This builds the Excel column title from right to left.
+<br> 
+6. <code>columnNumber = columnNumber // 26</code>
+<br>
+It updates columnNumber by performing an integer division by 26 (columnNumber // 26). 
+This reduces columnNumber to the next lower place value.
+<br>
+The loop will continue with the reduced columnNumber and the next letter is added to the result string.
+<br>
+This process continues until columnNumber becomes zero, at which point we have constructed the complete Excel column title in the result string.
+<br>
+7. We finally return the result string which contains the Excel column title corresponding to the input columnNumber.
+<br>
+This algorithm effectively converts a decimal number into a base 26 representation using the English alphabet letters and builds the Excel column title accordingly.
+
 </details>
 <li><a href="https://leetcode.com/problems/excel-sheet-column-number/">Excel Sheet Column Number</a> - Problem #171</li>
 <details>
