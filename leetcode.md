@@ -261,6 +261,16 @@ This algorithm effectively converts a decimal number into a base 26 representati
 
 <details>
 <summary>Solution</summary>
+class Solution:
+    def titleToNumber(self, columnTitle: str) -> int:
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        nums = range(1,27)
+        alpha_to_nums = {alphabet[i]: nums[i] for i in range(len(alphabet))}
+        column_number = 0
+        for position, letter in enumerate (reversed(columnTitle)):
+            column_number +=  26**(position) * alpha_to_nums[letter] 
+			
+        return column_number
 </details>
 <li><a href="https://leetcode.com/problems/single-number/">Single Number</a> - Problem #136</li>
 <details>
@@ -272,7 +282,11 @@ This problem involves finding a single number in an array where all other number
 <summary>Solution</summary>
 </details>
 </ol>
-
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        for i in nums:
+            if nums.count(i) == 1:
+                return(i)
 </details>
 
 ### Medium (4)
