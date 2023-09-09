@@ -11,14 +11,19 @@ After those topics we will go over some tools such as K9s, sealed secrets, & Kub
 
 ## CKA
 ### 01-Introduction
+
 #### 01-Course-Introduction
+
 #### 02-Certification
   
 ### 02-Core-Concepts
 
 #### 01-Core-Concepts-Section-Introduction
+
 #### 02-Cluster-Architecture
+
 #### 03-ETCD-For-Beginners
+
 #### 04-ETCD-in-Kubernetes
 #### 05-Kube-API-Server
 #### 06-Kube-Controller-Manager

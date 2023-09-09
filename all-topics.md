@@ -154,6 +154,8 @@ Below are some examples of different flavours of Linux:</p>
 - Kubernetes
 
 ## Interview Prep
+### Tech interview handbook
+- [Tech interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
 
 ### Big O Notation, Algorithms and Data Structures
 

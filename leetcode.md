@@ -250,7 +250,7 @@ The loop will continue with the reduced columnNumber and the next letter is adde
 This process continues until columnNumber becomes zero, at which point we have constructed the complete Excel column title in the result string.
 <br>
 7. We finally return the result string which contains the Excel column title corresponding to the input columnNumber.
-<br>
+<br
 This algorithm effectively converts a decimal number into a base 26 representation using the English alphabet letters and builds the Excel column title accordingly.
 
 </details>
@@ -261,16 +261,6 @@ This algorithm effectively converts a decimal number into a base 26 representati
 
 <details>
 <summary>Solution</summary>
-class Solution:
-    def titleToNumber(self, columnTitle: str) -> int:
-        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        nums = range(1,27)
-        alpha_to_nums = {alphabet[i]: nums[i] for i in range(len(alphabet))}
-        column_number = 0
-        for position, letter in enumerate (reversed(columnTitle)):
-            column_number +=  26**(position) * alpha_to_nums[letter] 
-			
-        return column_number
 </details>
 <li><a href="https://leetcode.com/problems/single-number/">Single Number</a> - Problem #136</li>
 <details>
@@ -282,11 +272,7 @@ This problem involves finding a single number in an array where all other number
 <summary>Solution</summary>
 </details>
 </ol>
-class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
-        for i in nums:
-            if nums.count(i) == 1:
-                return(i)
+
 </details>
 
 ### Medium (4)
@@ -347,6 +333,16 @@ Relates to processing strings, which is fundamental in networking protocols for 
 
 <details>
 <summary>Solution</summary>
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        while needle in haystack:
+            res = haystack.index(needle)
+            return res
+        else:
+            return -1
+        </code>
+    </pre>
+    </div>
 </details>
 <li><a href="https://leetcode.com/problems/implement-strstr/">Implement strStr()</a> - Problem #28</li>
 <details>
@@ -355,6 +351,22 @@ In networking, substring matching is used in various applications, from pattern 
 </details>
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def strStr(self, haystack: str, needle: str) -> int:
+            while needle in haystack:
+                res = haystack.index(needle)
+                return res
+            else:
+                return -1
+    
+        </code>
+    </pre>
+**Explanation**
+
+</div>
 </details>
 <li><a href="https://leetcode.com/problems/valid-anagram/">Valid Anagram</a> - Problem #242</li>
 <details>
@@ -364,6 +376,20 @@ String manipulation, such as character sorting, is used in various networking ap
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if sorted(s) == sorted(t):
+            return True
+        else:
+            return False
+        </code>
+    </pre>
+**Explanation**
+
+</div>
 </details>
 <li><a href="https://leetcode.com/problems/isomorphic-strings/">Isomorphic Strings</a> - Problem #205</li>
 <details>
@@ -373,6 +399,31 @@ Understanding character mappings is important in networking tasks like encoding 
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        else:
+            d1, d2 = {}, {}
+            for i in range(len(s)):
+                str1, str2 = s[i], t[i]
+                if str1 not in d1:
+                    d1[str1] = str2
+                if str2 not in d2:
+                    d2[str2] = str1
+                if d1[str1] != str2 or d2[str2] != str1:
+                    return False
+        return True
+    </code>
+</pre>
+
+**Explanation**
+
+</div>
+
 </details>
 <li><a href="https://leetcode.com/problems/pascals-triangle/">Pascal&#39;s Triangle</a> - Problem #118</li>
 <details>
@@ -382,6 +433,30 @@ While not a direct analogy, data organization and computation are crucial in net
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def generate(self, numRows: int) -> List[List[int]]:
+            result = []
+            for i in range(0, numRows):
+                result.append([])
+    
+                for x in range(0, i + 1):
+                    if x == 0:
+                        result[i].append(1)
+                    elif i == x:
+                        result[i].append(1)
+                    else:
+                        result[i].append((result[i-1][x-1]) + (result[i-1][x]))
+            return result
+    </code>
+</pre>
+
+**Explanation**
+
+</div>
+
 </details>
 <li><a href="https://leetcode.com/problems/move-zeroes/">Move Zeroes</a> - Problem #283</li>
 <details>
@@ -391,6 +466,23 @@ In networking, data reorganization may be necessary for efficient data transmiss
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def moveZeroes(self, nums: List[int]) -> None:
+            """
+            Do not return anything, modify nums in-place instead.
+            """
+            for i in nums:
+                if i == 0:
+                    nums.remove(i)
+                    nums.append(0)
+    </code>
+</pre>
+
+**Explanation**
+
 </details>
 <li><a href="https://leetcode.com/problems/reverse-vowels-of-a-string/">Reverse Vowels of a String</a> - Problem #345</li>
 <details>
@@ -400,6 +492,18 @@ String manipulation and transformation are important in many text-based networki
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        def reverseVowels(self, s: str) -> str:
+        vowels = re.findall('[aeiouAEIOU]', s)
+        return re.sub('[aeiouAEIOU]', lambda _ : vowels.pop(), s)
+
+    </code>
+</pre>
+
+**Explanation**
+
 </details>
 </ol>
 </details>
@@ -478,6 +582,25 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def maxProfit(self, prices: List[int]) -> int:
+            if not prices:
+                return 0
+    
+            maxProfit = 0
+            minPurchase = prices[0]
+            for i in range(1, len(prices)):		
+                maxProfit = max(maxProfit, prices[i] - minPurchase)
+                minPurchase = min(minPurchase, prices[i])
+            return maxProfit
+
+    </code>
+</pre>
+
+**Explanation**
 </details>
 <li><a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a> - Problem #21</li>
 <details>
@@ -486,6 +609,50 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+            
+            merged = ListNode() # Create an empty ListNode to serve as the dummy node for the merged list.
+            current = merged # Initialize a pointer 'current' to the dummy node.
+            # The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists
+            while list1 and list2: 
+                if list1.val <= list2.val:  # Append the smaller value from list1.
+                    current.next = list1  # Move the pointer in list1 to the next node.
+                    list1 = list1.next # Move the pointer in list1 to the next node.
+                else:
+                    current.next = list2 # # Append the smaller value from list2.
+                    list2 = list2.next # Move the pointer in list2 to the next node.
+                current = current.next  # Move the 'current' pointer to the newly appended node.
+            # Append any remaining elements from list1 or list2
+            if list1:
+                current.next = list1 
+            elif list2:
+                current.next = list2
+            return merged.next  # Return the merged list starting from the first node.
+    
+
+    </code>
+</pre>
+</div>
+**Explanation**
+merged = ListNode(): We create an empty ListNode named merged to serve as the dummy node for the merged list. This dummy node helps simplify the merging process by providing a starting point for the merged list.
+
+current = merged: We initialize a pointer current to the dummy node merged. This pointer will be used to traverse and build the merged list.
+
+The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists and append the node with the smaller value to the merged list.
+
+current.next = list1 or current.next = list2: We update the next attribute of the current node to point to the smaller node between list1 and list2. This effectively appends the smaller node to the merged list.
+
+list1 = list1.next or list2 = list2.next: We move the pointer in the corresponding input list (list1 or list2) to the next node, as we've already appended the current node to the merged list.
+
+current = current.next: We move the current pointer to the newly appended node in the merged list so that the next iteration appends the next smallest node.
+
+After the loop completes, we check if there are any remaining elements in list1 or list2 and append them to the merged list if necessary.
+
+Finally, we return the merged list starting from the node after the dummy node (merged.next) to exclude the dummy node from the final result.
 </details>
 
 </ol>
@@ -556,6 +723,25 @@ This problem requires problem-solving and debugging skills, similar to identifyi
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote">
+    <pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def twoSum(self, nums: List[int], target: int) -> List[int]:
+            res=[]
+            for i in range(len(nums)):
+                for a in range(i+1,len(nums)):
+                    if (nums[i]+nums[a]==target):
+                        res.append(i)
+                        res.append(a)
+                        break     
+            return res
+
+    </code>
+</pre>
+
+**Explanation**
+
 </details>
 <li><a href="https://leetcode.com/problems/palindrome-number/">Palindrome Number</a> - Problem #9</li>
 <details>
@@ -565,6 +751,20 @@ Involves checking for palindromes, akin to debugging and validating data correct
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote"><pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def isPalindrome(self, x: int) -> bool:
+            a = ''.join(reversed(str(x)))
+            if a == str(x):
+                return True
+            else:
+                return False
+
+    </code>
+</pre>
+</div>
+
 </details>
 <li><a href="https://leetcode.com/problems/longest-common-prefix/">Longest Common Prefix</a> - Problem #14</li>
 <details>
@@ -574,6 +774,18 @@ Similar to identifying common patterns, a crucial skill in debugging distributed
 
 <details>
 <summary>Solution</summary>
+<div class ="blockquote"><pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def isPalindrome(self, x: int) -> bool:
+            a = ''.join(reversed(str(x)))
+            if a == str(x):
+                return True
+            else:
+                return False
+
+    </code>
+</pre></div>
 </details>
 <li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a> - Problem #20</li>
 <details>
@@ -583,18 +795,20 @@ Debugging skills are important in verifying the correctness of algorithms, a key
 
 <details>
 <summary>Solution</summary>
-</details>
-<li><a href="https://leetcode.com/problems/implement-strstr/">Implement strStr()</a> - Problem #28</li>
-<details>
-<summary>Summary</summary>
-Debugging and testing string matching algorithms is essential in identifying and fixing errors.
-</details>
+<div><pre>
+    <code class="language-python line-numbers">
+        class Solution:
+        def isValid(self, s: str) -> bool:
+            while '()' in s or '[]'in s or '{}' in s:
+                s = s.replace('()','').replace('[]','').replace('{}','')
+            if len(s) !=0:
+                return False
+            else:
+                return True
 
-<details>
-<summary>Solution</summary>
-</details>
-</ol>
-
+    </code>
+</pre>
+</div>
 </details>
 
 ### Medium (4)
@@ -964,6 +1178,8 @@ This problem resembles graph traversal and calculations, which are often seen in
 </details>
 <details>
 <summary>Solution</summary>
+
+
 </details>
 <li><a href="https://leetcode.com/problems/implement-queue-using-stacks/">Implement Queue using Stacks</a> - Problem #232</li>
 <details>
