@@ -1026,6 +1026,45 @@ This problem simulates the spread of information through cells, similar to data 
 
 <details>
 <summary>Solution</summary>
+<pre><code class="lang-python">class Solution:
+    def floodFill(self, <span class="hljs-built_in">image</span>: List[List[int]], sr: int, sc: int, <span class="hljs-built_in">color</span>: int) -&gt; List[List[int]]:
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">image</span>[sr][sc] == <span class="hljs-built_in">color</span>:
+            <span class="hljs-built_in">return</span> <span class="hljs-built_in">image</span>
+        def dfs(<span class="hljs-built_in">row</span>, <span class="hljs-built_in">col</span>, startColor):
+            <span class="hljs-keyword">if</span> <span class="hljs-built_in">row</span> &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">row</span> &gt;= len(<span class="hljs-built_in">image</span>) <span class="hljs-keyword">or</span> <span class="hljs-built_in">col</span> &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">col</span> &gt;= len(<span class="hljs-built_in">image</span>[<span class="hljs-number">0</span>]) <span class="hljs-keyword">or</span> <span class="hljs-built_in">image</span>[<span class="hljs-built_in">row</span>][<span class="hljs-built_in">col</span>] != startColor:
+                <span class="hljs-built_in">return</span>
+            <span class="hljs-built_in">image</span>[<span class="hljs-built_in">row</span>][<span class="hljs-built_in">col</span>] = <span class="hljs-built_in">color</span>
+
+            dfs(<span class="hljs-built_in">row</span> + <span class="hljs-number">1</span> , <span class="hljs-built_in">col</span>, startColor)
+            dfs(<span class="hljs-built_in">row</span> - <span class="hljs-number">1</span>, <span class="hljs-built_in">col</span>, startColor)
+            dfs(<span class="hljs-built_in">row</span>, <span class="hljs-built_in">col</span> + <span class="hljs-number">1</span>, startColor)
+            dfs(<span class="hljs-built_in">row</span>, <span class="hljs-built_in">col</span> - <span class="hljs-number">1</span>, startColor)
+        startColor = <span class="hljs-built_in">image</span>[sr][sc]
+        dfs(sr, sc, startColor)
+        <span class="hljs-built_in">return</span> <span class="hljs-built_in">image</span>
+</code></pre>
+
+<p><strong>Explanation</strong></p>
+<ol>
+<li><p>Check if the <code>newColor</code> is the same as the color at the starting point <code>(sr, sc)</code>. If they are the same, there&#39;s no need to perform the flood fill, so return the original <code>image</code>.</p>
+</li>
+<li><p>Define a depth-first search (DFS) function, <code>dfs</code>, which takes the current row and column and the starting color as parameters. This function recursively explores neighboring pixels and changes their color to the <code>newColor</code>.</p>
+</li>
+<li><p>Inside the <code>dfs</code> function:</p>
+<ul>
+<li>Check if the current pixel is out of bounds or if it doesn&#39;t have the same color as the starting color. If any of these conditions are met, return, as there&#39;s no need to visit or change the color of this pixel.</li>
+<li>Change the color of the current pixel to the <code>newColor</code>.</li>
+<li>Recursively call <code>dfs</code> on the neighboring pixels in all four directions (up, down, left, right).</li>
+</ul>
+</li>
+<li><p>Set the <code>startColor</code> variable to the color of the starting pixel <code>(sr, sc)</code>.</p>
+</li>
+<li><p>Call the <code>dfs</code> function to start the flood fill operation from the <code>(sr, sc)</code> point.</p>
+</li>
+<li><p>Return the modified <code>image</code> after the flood fill is complete.</p>
+</li>
+</ol>
+
 </details>
 <li><a href="https://leetcode.com/problems/to-lower-case/">To Lower Case</a> - Problem #709</li>
 <details>

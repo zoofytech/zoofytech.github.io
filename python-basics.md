@@ -2557,6 +2557,372 @@ logger.critical('This is a critical message')
 
 By default, log messages with a severity level equal to or higher than the specified level will be recorded. You can customize the log level, format, and handlers to suit your needs. For instance, you might configure different loggers for different parts of your application, each with its own set of handlers and formats.
 
+## Stacks & Queues 
+**Stacks:**
+Image you have a stack of books. You can only add or remove books from the top of the stack, one at a time. It's like a big tower of books, and you can only work with the book on top. When you want to add a book, you put it on top. When you want to take a book away, you always take the one on the top first. Stacks work likea  pile of things where you can only touch the top item.
+
+Let's see an example of stacks. Let's say you have a stack of plates where you can only add a plate on top of the stack or remove the top plate. This is called `Last in, First-Out (LIFO)`
+
+```python
+# Create a stack using a list
+stack = []
+
+# Pushing (adding) items onto the stack
+stack.append("plate1")
+stack.append("plate2")
+stack.append("plate3")
+
+# Popping (remove) items from the stack
+removed_plate = stack.pop()
+print("Removed plate:", removed_plate)
+```
+**Queues**
+Now, think about a line of people waiting for ice cream. The first person who arrives is the first person to get ice cream. It's like when you're waiting for your turn to play a game or get a treat. In a queue, you go in order, one person after another. No one can jump ahead; you have to wait your turn.
+
+So now let's say there's a line of people waiting for a bus. The first person who arrives first gets on the bus first. THis is called `First in, First-Out(FIFO)`.
+
+```python
+# import the queue class from the queue module
+from queue import Queue
+
+# Creating a qeuue
+queue = Queue()
+
+# Add items to the queue
+queue.put("Person1")
+queue.put("Person2")
+queue.put("Person3")
+
+# Remove items from queue
+removed_person = queue.get()
+print("Removed person:", removed_person)
+```
+
+
+You can also do this without using the queue class:
+
+```python
+# Create an empty list representing the queue
+queue = []
+# Add items to the queue by appending them to the end of the list
+ueue.append("person1")
+queue.append("person2")
+queue.append("person3")
+
+# Remove items from the queue by popping them from the front of the list
+removed_person = queue.pop(0)
+print("Removed person:", removed_person)
+```
+
+Notice how this is similar to the stack example but instead of removing the last person, we remove the first person using `queue.pop(0)`.
+
+
+## Binary Tree & Tree Nodes
+**Binary Trees:**
+Imagine you have a family tree, like a chart that shows how your family members are related. In a binary tree, it's a bit like that, but with some rules:
+
+- Each person (or node) has only two children. You can think of them as left and right.
+- Just like you have a family tree starting with your grandparents, then your parents, and so on, in a binary tree, there's one special person at the very top called the "root."
+
+A binary tree is a data structure where each element is called a "node", and each node can have up to two children. The top node is called the "root", and it branches out into child nodes, which can further branch out into their own child nodes, forming a tree-like structure.
+
+**Example:**
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None  # The left child
+        self.right = None  # The right child
+
+# Create a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+```
+
+In this code:
+
+- We define a `TreeNode` class to represent each node in the binary tree. Each node has a value and can have a `left` child and a `right` child.
+- We create a binary tree by creating nodes and connecting them to form the tree structure.
+
+
+**Tree Nodes**
+A tree node is like a card with some information on it. In a family tree, it might have the name of a family member. In a binary tree, each node has some information(like a number) and can have two children.
+
+A tree node, is a building block of a binary tree. It contains some data in a form of value and can have references to its left and right children. Each node is like a part of a puzzle, and when you put all the puzzle peices(nodes) together, you get the whole binary tree.
+
+So using the binary tree example you can access the nodes in the following example:
+
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None  # The left child
+        self.right = None  # The right child
+
+# Create a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+# Accessing values of nodes
+print("Root value:", root.value)  # Output: Root value: 1
+print("Left child of root:", root.left.value)  # Output: Left child of root: 2
+print("Right child of root:", root.right.value)  # Output: Right child of root: 3
+
+
+```
+
+## Binary tree height balance
+The height balance of a binary tree refers to how balanced or skewed the tree is in terms of the heights of its subtrees. In a balanced binary tree, the difference in the height between the left and right sub trees of any node is lmited, typically to a small value like 1.
+
+There are several types of balanced binary trees, but one of the most commonly discussed is the "height-balanced binary tree." In a height-balanced binary tree:
+
+- The left and right subtrees of the root node (the top node of the tree) have heights that differ by at most 1.
+
+- This height balance property is recursively maintained for all nodes in the tree. That is, for every node, the heights of its left and right subtrees differ by at most 1, and this property holds true for all nodes in the tree.
+
+Height-balanced binary trees are desirable in various data structures and algorithms because they ensure that the tree remains relatively balanced, which helps in maintaining efficient operations like searching, inserting, and deleting elements.
+
+
+**Examples**
+1. A balanced binary tree
+```python
+    1
+   / \
+  2   3
+ / \
+4   5
+
+```
+In this tree, the left and right subtrees of the root (node 1) both have heights of 2, and the difference in height is 0. This tree is balanced.
+
+
+2. Another balanced binary tree
+```python
+    1
+   / \
+  2   3
+ /     \
+4       5
+
+```
+In this tree, the left subtree of the root (node 1) has a height of 2, and the right subtree also has a height of 2. The difference in height is 0. This tree is balanced.
+
+3. An unbalanced binary tree
+```
+    1
+   / \
+  2   3
+   \
+    4
+```
+In this tree, the left subtree of the root (node 1) has a height of 2, while the right subtree has a height of 1. The difference in height is 1, which exceeds the typical limit for height-balanced trees (usually 1). This tree is unbalanced.
+
+
+4. A skewed binary tree ( completely unbalanced)
+```
+  1
+   \
+    2
+     \
+      3
+
+```
+In this tree, each node has only a right child, making it a completely skewed tree. The height difference between the left and right subtrees of any node is more than 1. This tree is unbalanced and is often referred to as "degenerate" or "unbalanced."
+
+You can determine if a binary tree is unbalanced based on the heights of its left and right subtrees. Specifically, if the absolute difference in heights between the left and right subtrees of any node exceeds 1, the tree is considered unbalanced. Here's how you can check for balance in a binary tree:
+
+```python
+
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def is_balanced(node):
+    if node is None:
+        return True  # An empty tree is balanced by definition
+    
+    # Calculate the height of the left and right subtrees
+    left_height = tree_height(node.left)
+    right_height = tree_height(node.right)
+    
+    # Check if the absolute difference in heights is greater than 1
+    if abs(left_height - right_height) > 1:
+        return False
+    
+    # Recursively check balance for left and right subtrees
+    return is_balanced(node.left) and is_balanced(node.right)
+
+def tree_height(node):
+    if node is None:
+        return 0  # Height of an empty tree is 0
+    else:
+        # Calculate the height of the left and right subtrees
+        left_height = tree_height(node.left)
+        right_height = tree_height(node.right)
+        
+        # Return the maximum height among the left and right subtrees
+        return max(left_height, right_height) + 1  # Add 1 for the current level
+
+# Create an unbalanced binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.left.left = TreeNode(3)
+root.left.left.left = TreeNode(4)
+
+# Check if the tree is balanced
+balanced = is_balanced(root)
+print("Is the tree balanced?", balanced)  # Output: Is the tree balanced? False
+
+```
+- We define a TreeNode class to represent nodes in the binary tree.
+
+- The tree_height function calculates the height of a tree, as explained in a previous response.
+
+- The is_balanced function checks if a binary tree is balanced. It calculates the heights of the left and right subtrees and checks if the absolute difference in heights is greater than 1. If the difference is greater than 1 at any node or its subtrees, the tree is considered unbalanced, and the function returns False. Otherwise, it recursively checks the balance of the left and right subtrees.
+
+- We create an unbalanced binary tree for demonstration purposes and check if it's balanced using the is_balanced function. In this example, the tree is unbalanced, so the result is False.
+
+
+Let's say the tree is a list and the numbers inside the list represent the values of each node with the first index(0) being the root value. We can determine if the tree is balanced or unbalanced with the following:
+
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def is_balanced(root):
+    def tree_height(node):
+        if not node:
+            return 0
+        left_height = tree_height(node.left)
+        right_height = tree_height(node.right)
+        if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
+            return -1
+        return max(left_height, right_height) + 1
+
+    def list_to_tree(node_list, index):
+        if index < len(node_list) and node_list[index] is not None:
+            node = TreeNode(node_list[index])
+            node.left = list_to_tree(node_list, 2 * index + 1)
+            node.right = list_to_tree(node_list, 2 * index + 2)
+            return node
+        return None
+
+    tree_root = list_to_tree(root, 0)
+    return tree_height(tree_root) != -1
+
+# Given list representation of the tree
+tree_list = [1, 2, 2, 3, 3, None, None, 4, 4]
+
+# Check if the tree is balanced
+balanced = is_balanced(tree_list)
+print("Is the tree balanced?", balanced)
+```
+- We define the `TreeNode` class to represent nodes in the binary tree.
+- The `tree_height` function calculates the height of a binary tree. If it detects any subtree that is unbalanced (where the height difference is more than 1), it returns -1.
+- The `list_to_tree` function converts the list representation of the tree into an actual binary tree structure.
+- We use these functions to check if the given list representation of the tree is balanced. In the example you provided, the tree is unbalanced, so the result is `False`.
+
+
+
+## Depth first search (DFS)
+Imagine you have a big maze, like a puzzle with lots of paths and dead ends. Your goal is to find a hidden treasure in the maze.
+
+DFS is like when you start at one spot in the maze and follow a path as far as you can until you reach a dead end. Then, you go back to the last spot where you had other paths to explore and try a different path. You keep doing this until you find the treasure or check all the paths.
+
+So, instead of checking every path at once, you focus on one path at a time, going deeper and deeper into the maze until you find what you're looking for or make sure there's nothing left to discover.
+
+DFS is like an adventurous journey, one step at a time, through a maze to find something special.
+
+Depth-First Search (DFS) is a fundamental algorithm used for exploring and navigating through graphs or tree-like structures. It's called "depth-first" because it explores as far as possible along a branch before backtracking. Let's explain DFS more conventionally:
+
+1. **Start at a Node**: DFS begins at a starting node, often called the "root" node in a tree or the "source" node in a graph.
+
+2. **Explore Depth**: From the starting node, DFS explores as deeply as possible along each branch before backtracking. It means it goes as far down a path as it can before it turns back.
+
+3. **Backtrack**: When it reaches a node where there are no unexplored branches or neighbors left, it goes back to the previous node and continues exploring other unexplored branches.
+
+4. **Repeat**: DFS keeps repeating this process until it has visited all the nodes it can reach from the starting node. It ensures that it explores every part of the graph or tree.
+
+5. **Stack or Recursion**: DFS can be implemented using a stack or through recursive function calls. When using a stack, it explicitly keeps track of the nodes to visit next. In the recursive approach, the function calls themselves act like a stack.
+
+**Example**
+
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+# Function to perform DFS traversal
+def dfs(node):
+    if node is None:
+        return
+    
+    # Visit the current node (in this case, we'll print its value)
+    print(node.value)
+    
+    # Recursively visit the left subtree
+    dfs(node.left)
+    
+    # Recursively visit the right subtree
+    dfs(node.right)
+
+# Create a binary tree
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+# Perform DFS traversal starting from the root
+print("DFS Traversal:")
+dfs(root)
+```
+
+In this code:
+
+1. We define a `TreeNode` class to represent nodes in the binary tree. Each node has a `value`, `left` child, and `right` child.
+
+2. The `dfs` function takes a `node` as its parameter and performs DFS traversal.
+
+3. In the `dfs` function:
+   - We check if the `node` is `None` (a base case to handle leaf nodes).
+   - We visit the current node by printing its value.
+   - We recursively call `dfs` on the left subtree.
+   - We recursively call `dfs` on the right subtree.
+
+4. We create a sample binary tree and then perform DFS traversal starting from the root node. The order in which nodes are printed depends on the specific traversal strategy. In this example, it's a pre-order traversal, which means we visit the current node before its children.
+
+When you run this code, you'll see the DFS traversal of the binary tree:
+
+```
+DFS Traversal:
+1
+2
+4
+5
+3
+```
+## Linked List
 
 ## What now?
 While this guide has gone through some of the basics of python there is much to learn. 
