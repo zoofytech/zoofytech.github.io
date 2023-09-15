@@ -151,3 +151,4 @@ After those topics we will go over some tools such as K9s, sealed secrets, & Kub
 ## K9s
 ## Sealed secrets
 ## Kubeshark
+## K3s
