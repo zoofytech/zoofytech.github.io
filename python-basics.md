@@ -683,7 +683,7 @@ raise ValueError("Wrong value")
 
 ### built in exceptions
 
-```
+```python
 Exception 	Cause of Error
 
 AssertionError 	if assert statement fails.
@@ -1010,7 +1010,7 @@ As seen earlier there are built in functions for python such as a the `range` fu
 If you need to iterate over a sequence of numbers this function comes in handy.
 The syntax for range function works as the following:
 `range(start,stop,[step])`
-```
+```python
 
 start
     The value of the start parameter (or 0 if the parameter was not supplied)
@@ -1207,7 +1207,7 @@ Return a shallow copy of the list. Equivalent to a[:].
 ### Using Lists as Queues
 It's possible to use a list as a queue where the first element added is the first element retrieved. Use `collections.deque`:
 
-```
+```python
 from collections import deque
 queue = deque(["1", "2", "3"])
 queue.append("4") # Append 4
@@ -1241,7 +1241,7 @@ The `iterable` can be any iterable object like a tuple,set,list,range etc.
 `newlist = [x for x in range(5) if x < 3]`
 
 **Example**
-```
+```python
 fruits = ["green_apple", "red_apple", "banana", "mango"]
 newlist = [x for x in fruits if "apple" in x]
 print(newlist)
@@ -1249,7 +1249,7 @@ print(newlist)
 
 Without list comprehension you would need a `for statement`
 
-```
+```python
 fruits = ["green_apple", "red_apple", "banana", "mango"]
 newlist = []
 for x in fruits:
@@ -1262,7 +1262,7 @@ print(newlist)
 ### The del statement
 The `del` statement can be used to delete objects. The `del` statement can be used to delete variables, lists, or parts of a list.
 
-```
+```python
 list = [1,2,3,4,5]
 del list[0]
 print(list)
@@ -1274,7 +1274,7 @@ print(list)
 
 ### Tuples
 A tuple consists of a number of values separated by commas
-```
+```python
 t = 123, 456, 'ello'
 print(t[0])
 # You can also nest tuples
@@ -1288,7 +1288,7 @@ print(x)
 ```
 
 To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
-```
+```python
 tup = ("apple",)
 print(type(tup))
 
@@ -1302,14 +1302,15 @@ A set is a collection which is unordered, unchangeable, and unindexed
 Sets cannot have two items with the same value they will not repeat
 
 Sets are written with curly braces `{}`
-```
+
+```python
 set = {"apple", "oranges", "banana"}
 print(set)
 ```
 
 The value of `True` and `1` are considered the same value in sets and are treated as duplicates
 
-```
+```python
 set = {"apple", "oranges", "banana", True, 1, 2}
 print(set)
 ```
@@ -1326,7 +1327,7 @@ A dictionary is a collection which is ordered, changeable and do not allow dupli
 
 Dictionaries are written in curly braces `{}` and have key and values
 
-```
+```python
 dict1 = {
     "brand": "Honda",
     "model": "Civic",
@@ -1336,7 +1337,7 @@ print(dict1)
 ```
 You can print specific values in a dictionary
 
-```
+```python
 dict1 = {
     "brand": "Honda",
     "model": "Civic",
@@ -1347,7 +1348,7 @@ print(dict1["brand"])
 
 Duplicates are not allowed:
 
-```
+```python
 dict1 = {
     "brand": "Honda",
     "model": "Civic",
@@ -1358,7 +1359,7 @@ print(dict1)
 ```
 
 The values in a dictionary can be any data type
-```
+```python
 dict1 = {
     "brand": "Honda",
     "model": "Civic",
@@ -1369,14 +1370,14 @@ print(dict1)
 ```
 
 It is also possible use the `dict()` constructor to make a dictionary without the curly braces `{}`
-```
+```python
 dict1 = dict(brand = "Honda", model = "Civic", year = 1989)
 print(dict1)
 ```
 ### Looping Techniques
 When looping through dictionaries, the key and corresponding values can be retrieved at the same time when using the `items()` method
 
-```
+```python
 dict1 = dict(brand = "Honda", model = "Civic", year = 1989)
 for k,v in dict1.items():
     print(k, v)
@@ -1384,7 +1385,7 @@ for k,v in dict1.items():
 
 When lopping through a sequence, the position index and corresponding value can be  retrieved at the same time using the `enumerate()` function
 
-```
+```python
 for i, v in enumerate(['a', 'b', 'c']):
     print(i, v)
 ```
@@ -1426,7 +1427,7 @@ def greeting(name):
 
 Now use the module we created by using the `import` statement:
 
-```
+```python
 import mymod
 
 mymod.greeting("John")
@@ -1434,7 +1435,7 @@ mymod.greeting("John")
 
 You can also create an alias when you import a module, by using the `as` keyword
 
-```
+```python
 import mymod as mod1
 
 a =  mod1.greeting("Sally")
@@ -1442,7 +1443,7 @@ a =  mod1.greeting("Sally")
 
 There are several built in modules for python, which you can import whenever you like
 
-```
+```python
 import sys
 sys.ps1
 ```
@@ -1450,7 +1451,7 @@ sys.ps1
 ### The dir() Function
 The `dir()` function is used to find out which names a module defines. 
 
-```
+```python
 class Person:
   name = "John"
   age = 18
@@ -1462,9 +1463,9 @@ print(dir(Person))
 ### Packages
 Python modules may contain several classes, functions, variables etc. Whereas Python packages contain several modules. In simple terms, Package in Python is a directory that contains multiple modules as files
 
-Example:
+**Example:**
 
-```
+```python
 car/    # Top level
     __init__.py
     honda
@@ -1599,7 +1600,7 @@ for x in f:
 **Closing files**
 It is always good practice to close a file when you are done with it for things such as garbage collection or even having multiple files opened at once
 
-```
+```python
 f = open("file.txt", "r")
 print(f.readline())
 f.close()
@@ -1651,7 +1652,7 @@ os.remove("file.txt")
 ```
 **Check if file exists**
 To avoid errors, you might want to check if the file exists first
-```
+```python
 import os
 if os.path.exists("file.txt"):
   os.remove("file.txt")
@@ -1661,7 +1662,7 @@ else:
 
 **Delete directory**
 To delete an entire directory, us the `os.rmdir()` method
-```
+```python
 import os
 os.rmdir("textdir") 
 ```
@@ -1707,7 +1708,7 @@ y = json.dumps(x)
 print(y) 
 ```
 You can convert all types of objects:
-```
+```python
     string
     integer
     list
@@ -2130,7 +2131,7 @@ The `os` module provides several functions for interacting with the operating sy
 
 Here are some of the commonly used functionalities provided by the os module:
 
-```
+```python
     Working with Files and Directories:
         os.getcwd(): Get the current working directory.
         os.chdir(path): Change the current working directory.
@@ -2184,8 +2185,8 @@ print("Contents of current directory:", contents)
 
 # Remove a directory
 os.rmdir(new_dir)
-
 ```
+
 2. Path Manipulation
 ```python
 import os
@@ -2241,7 +2242,6 @@ os.chmod(file_path, 0o644)  # Change to read/write for owner, read for others
 # Get information about a file
 file_info = os.stat(file_path)
 print("File size:", file_info.st_size, "bytes")
-
 ```
 
 
@@ -2295,7 +2295,6 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     main(args)
-
 ```
 
 You can then run the script with command line arguments using the `-h` for help or `--help` flag.
@@ -2430,9 +2429,8 @@ from datetime import datetime
 tz = pytz.timezone("America/New_York")
 localized_time = datetime.now(tz)
 print("Localized time:", localized_time)
-
-
 ```
+
 ### Data Compression
 You can compress files using both `tarfile` and `zipfile` modules 
 
@@ -2449,7 +2447,6 @@ with tarfile.open("archive.tar", "w") as tar:
 # Extracting files from a Tar archive
 with tarfile.open("archive.tar", "r") as tar:
     tar.extractall("extracted_folder")
-
 ```
 
 Using `zipfile`:
@@ -2726,7 +2723,7 @@ In this tree, the left subtree of the root (node 1) has a height of 2, while the
 
 
 4. A skewed binary tree ( completely unbalanced)
-```
+```python
   1
    \
     2
@@ -2914,7 +2911,7 @@ In this code:
 
 When you run this code, you'll see the DFS traversal of the binary tree:
 
-```
+```python
 DFS Traversal:
 1
 2
