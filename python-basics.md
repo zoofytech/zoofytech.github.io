@@ -2922,7 +2922,308 @@ DFS Traversal:
 5
 3
 ```
+### Key points
+Depth-First Search (DFS) is a fundamental graph traversal algorithm used to explore and analyze graphs and trees. Here are some key points to know about DFS in Python:
+
+1. **Definition**: DFS is an algorithm used to traverse or search through data structures like graphs and trees by exploring as far as possible along each branch before backtracking.
+
+2. **Stack**: DFS can be implemented using a stack data structure or, more commonly, through recursion. In Python, the call stack itself serves as the implicit stack for recursive DFS.
+
+3. **Recursive Approach**: In the recursive approach, you start at a specific node (usually the root in a tree or a chosen starting point in a graph) and recursively explore deeper and deeper into the structure until you can't go any further. Then, you backtrack to explore other branches.
+
+4. **Visited Nodes**: DFS keeps track of visited nodes to avoid revisiting the same node, preventing infinite loops.
+
+5. **Use Cases**: DFS is used in various applications, such as:
+   - Traversing tree structures.
+   - Finding connected components in a graph.
+   - Solving problems involving recursion, such as pathfinding and certain search problems.
+
+6. **Preorder and Postorder Traversal**: In the context of binary trees, DFS can be used for both preorder (visit the current node before its children) and postorder (visit the current node after its children) traversals.
+
+7. **Time Complexity**: The time complexity of DFS is typically O(V + E), where V is the number of vertices (nodes) and E is the number of edges in the graph or tree.
+
+8. **Space Complexity**: The space complexity of the recursive DFS implementation depends on the maximum depth of the recursion. In the worst case, it can be O(V), where V is the number of vertices.
+
+9. **Applications**: DFS is widely used in various algorithms and problem-solving scenarios, including depth-limited search, topological sorting, cycle detection, and more.
+
+10. **Stack-Based DFS**: If you implement DFS using an explicit stack data structure, you can convert the recursive approach into an iterative one, which can be useful when dealing with graphs or trees with deep levels to avoid hitting the recursion depth limit.
+
+11. **Backtracking**: DFS is the foundation for many backtracking algorithms, where you explore multiple possibilities, backtrack when necessary, and continue the search.
+
+12. **Completeness**: DFS may not guarantee finding the shortest path in graphs or the most efficient solution to certain problems, as it tends to explore deep branches before shallow ones.
+
+13. **Termination**: DFS is guaranteed to terminate on finite graphs or trees, but it may not terminate on graphs with cycles if proper cycle detection mechanisms are not in place.
+
+DFS is a versatile algorithm used in various domains, including graph theory, tree traversal, pathfinding, and more. Understanding how to implement and apply DFS is essential for solving a wide range of algorithmic and data structure problems.
+
+## Breadth-First Search (BFS)
+BFS is like finding your way through a maze with lots of rooms. Imagine you're in a big strange house, and you want to find your favorite toy, which could be in any of the rooms.
+
+Here's how BFS works:
+1. You start in the first room, the one you're in right now. This is like the starting point of your adventure.
+2. You look around the room and see if your favorite toy is there. If it's now, you make a list of all the doors you see in that room.
+3. Next, you open one door and go into the next room. You repeat the process: You look around, check if your toy is there, and make a list of all the doors.
+4. But here's the important part: Instead of going deper into the house, you first finish looking in all  the rooms on this floor before going to the rooms on the next floor. It's like exploring one level of rooms at a time.
+5. You keep doing this, going room by room on each level, until you finally find your favorite toy. When you find it, you stop and celebrate!
+
+So, BFS is a way to explore all the rooms in a house, one level at a time, until you find what you're looking for. It's like going step by step and checking everywhere to find your favorite thing. 
+
+Let's look at some code now using a similar example to the above:
+
+**BFS in a Maze**
+Imagine you're in a maze, like a big puzzle with lots of corridors and doors. You want to find a special treasure hidden somewhere in the maze. 
+
+Here's how BFS works in this maze adventure:
+
+1. You start at the entrance of the maze, which is like your starting point.
+2. You look around the room you're in and check if the treasure is there. If you don't see it, you make a list of all the doors or corridors in that room.
+3. Next, you go through one of the doors to the next room and repeat the process: look around, check for the treasure, and make a list of all the doors in that room.
+4. But here's the trick: Instead of going deep into the maze right away, you want to explore all the rooms connected to the room you're currently in first. It's like checking all the rooms on this level before going to the rooms on the next level.
+5. You keep doing this, move from room to room, check for teasure and listing the doors. If you find the treasure, you stop and celebrate your discovery! 
+
+```python
+def bfs_maze(maze, start):
+    queue = []
+    visited = set()
+    
+    queue.append(start)
+    visited.add(start)
+    
+    while queue:
+        current_room = queue.pop(0)
+        treasure_found = check_for_treasure(current_room)
+        if treasure_found:
+            return "Treasure found!"
+        
+        neighboring_rooms = get_neighboring_rooms(current_room)
+        for room in neighboring_rooms:
+            if room not in visited:
+                queue.append(room)
+                visited.add(room)
+    
+    return "Treasure not found."
+
+def check_for_treasure(room):
+    # Check if the treasure is in the room
+    # Return True if found, False otherwise
+    pass
+
+def get_neighboring_rooms(room):
+    # Return a list of neighboring rooms connected to the current room
+    pass
+
+# Example usage:
+start_room = (0, 0)  # Starting room coordinates
+maze = [...]  # Define your maze structure here
+
+result = bfs_maze(maze, start_room)
+print(result)
+
+```
+Here's a step-by-step explanation of the code:
+
+1. We start by defining a function `bfs_maze` that takes two arguments: `maze` (representing the maze structure) and `start` (the starting room's coordinates).
+
+2. We create an empty list `queue` to serve as our "to-do list" for rooms to explore. We also create an empty set `visited` to keep track of rooms we've already visited.
+
+3. We add the `start` room to the `queue` and mark it as visited by adding it to the `visited` set. This room becomes our starting point.
+
+4. We enter a `while` loop that continues until our `queue` is empty. Inside the loop, we do the following:
+
+   - `current_room = queue.pop(0)`: We take the first room from the front of the `queue` (simulating a queue behavior). This room becomes the current room we're exploring.
+   
+   - `treasure_found = check_for_treasure(current_room)`: We check if there's treasure in the current room. If we find treasure, we immediately return "Treasure found!"
+
+   - `neighboring_rooms = get_neighboring_rooms(current_room)`: We identify the neighboring rooms connected to the current room.
+
+   - We loop through each neighboring room:
+
+     - `if room not in visited:`: We check if we haven't visited this room before.
+
+     - `queue.append(room)`: If the room is unvisited, we add it to the `queue` to explore it later.
+
+     - `visited.add(room)`: We mark this room as visited so that we won't visit it again.
+
+5. If we have explored all reachable rooms without finding the treasure, we exit the loop, and the function returns "Treasure not found."
+
+This code demonstrates a basic BFS traversal of a maze, starting from a given room and looking for treasure while systematically exploring neighboring rooms level by level.
+
+You can also do the same by importing the `collections` module and using `deque`.
+
+```python
+from collections import deque
+
+def bfs_maze(maze, start):
+    queue = deque()
+    visited = set()
+    
+    queue.append(start)
+    visited.add(start)
+    
+    while queue:
+        current_room = queue.popleft()
+        treasure_found = check_for_treasure(current_room)
+        if treasure_found:
+            return "Treasure found!"
+        
+        neighboring_rooms = get_neighboring_rooms(current_room)
+        for room in neighboring_rooms:
+            if room not in visited:
+                queue.append(room)
+                visited.add(room)
+    
+    return "Treasure not found."
+
+def check_for_treasure(room):
+    # Check if the treasure is in the room
+    # Return True if found, False otherwise
+    pass
+
+def get_neighboring_rooms(room):
+    # Return a list of neighboring rooms connected to the current room
+    pass
+
+# Example usage:
+start_room = (0, 0)  # Starting room coordinates
+maze = [...]  # Define your maze structure here
+
+result = bfs_maze(maze, start_room)
+print(result)
+```
+1. We use a queue to keep track of the rooms we need to explore.
+
+2. We use a visited set to remember which rooms we've already checked to avoid going in circles.
+
+3. The bfs_maze function performs the BFS traversal of the maze, starting from the given start room. It checks for treasure in each room and returns a message when the treasure is found or not found.
+
+4. The check_for_treasure function checks if the treasure is in the current room (you can customize this part for your maze).
+
+5. The get_neighboring_rooms function returns a list of neighboring rooms connected to the current room.
+
+### Key Points
+The following are some key points to know about Breadth-First Search (BFS):
+
+1. **Data Structure:** BFS uses a queue (FIFO - First-In-First-Out) data structure to keep track of nodes or elements to be processed. You can use Python's `deque` from the `collections` module for this purpose.
+
+2. **Visited Nodes:** BFS keeps track of visited nodes or elements to avoid revisiting them. You can use a set or a list to store visited items.
+
+3. **Exploration Order:** BFS explores elements in a breadth-first manner, meaning it first visits all the neighbors of the current element before moving on to their neighbors. It systematically covers all elements at a certain level before going deeper.
+
+4. **Shortest Path:** One of the common applications of BFS is finding the shortest path between two nodes in a graph or tree. When used for this purpose, BFS ensures you find the shortest path because it explores nodes level by level.
+
+5. **Complexity:** The time complexity of BFS is typically O(V + E), where V is the number of vertices (nodes) and E is the number of edges in the graph.
+
+6. **Queue Usage:** When implementing BFS, you enqueue nodes (add them to the queue) as you encounter them, and you dequeue nodes (remove them from the front of the queue) when processing them.
+
+7. **Graph Representation:** In graph problems, you often represent the graph as a dictionary or adjacency list, where each node maps to its neighboring nodes.
+
+8. **Termination Condition:** You should have a termination condition in place, which could be finding a target node, covering all nodes, or reaching a certain level in the traversal.
+
+9. **Path Reconstruction:** If you're using BFS to find a path between two nodes, you can reconstruct the path from the destination node back to the start node by keeping track of parent nodes as you traverse the graph.
+
+10. **Memory Usage:** BFS may use more memory compared to Depth-First Search (DFS) because it needs to keep track of all nodes at a certain level in the queue. However, it's generally more straightforward to implement for problems that require level-based exploration.
+
+Remember that BFS is a versatile algorithm used in various problem-solving scenarios, including graph traversal, shortest path finding, and more. Understanding these key points will help you use BFS effectively in Python.
+
 ## Linked List
+Imagine you have a chain of "boxes". Each box can hold something special, like a number or word. But these boxes are a bit magical because each box knows where the next box is.
+
+If you want to find something in your list, you start at the first box, and it tells you where the next box is. You go to that next box, and it tells you where the next one is, and so on until you find what you're looking for.
+
+The cool thing is that you can add or remove boxes easily. If you want to add a new toy car, you just put it in a box and connect it to the chain. If you want to take a car out, you just disconnect that box, and the chain stays unbroken.
+
+Linked lists are like a chain of magical boxes where each box knows where the next one is, and you can add or remove things easily.
+
+
+A linked lists is a linar data structure mode of nodes. Each node has two parts:
+
+- Data: This is where you can store information like numbers, words and other data.
+- Pointer/Reference: This points  to the next node in the list. It tells us where the next node is located in memory.
+
+Here's how a simple linked list might look like:
+
+```python
+Node 1     Node 2     Node 3
+[Data: 42] [Data: 23] [Data: 67]
+[Next] --> [Next] --> [Next] --> None
+
+```
+In the above example, we have 3 nodes in the linked list. Node 1 contains the data "42" and points to Node 2. Node 2 contains "23" and points to Node 3. Node 3 contains "67" and has a pointer that says "None", indicating the end of  the list.
+
+**Working with Linked Lists:**
+You can perform various operations on linked lists, like adding nodes, removing nodes, and transversing the list to access data. To transeverse a list means to go through each element or node in the list one by one, from the beginning to the end. 
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None  # The pointer initially points to nothing (None)
+
+class LinkedList:
+    def __init__(self):
+        self.head = None  # The head is the first node in the list
+
+    def append(self, data):
+        new_node = Node(data)  # Create a new node with the given data
+        if not self.head:
+            self.head = new_node  # If the list is empty, the new node becomes the head
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node  # Add the new node at the end of the list
+
+# Create an empty linked list
+my_list = LinkedList()
+
+# Add some data to the list
+my_list.append(42)
+my_list.append(23)
+my_list.append(67)
+```
+
+### Key Points
+Linked lists are an essential data structure in computer science and programming. Here are some key points to know about linked lists:
+
+1. **Definition**: A linked list is a linear data structure made up of nodes. Each node consists of two parts: data and a reference (or pointer) to the next node in the sequence.
+
+2. **Dynamic Structure**: Linked lists are dynamic data structures, meaning their size can change during program execution by adding or removing nodes.
+
+3. **Elements**: Elements (data) in a linked list are not stored in contiguous memory locations, unlike arrays. Instead, they are scattered throughout memory, connected by pointers.
+
+4. **Types of Linked Lists**:
+   - **Singly Linked List**: Each node points to the next node in the sequence.
+   - **Doubly Linked List**: Each node points to both the next and the previous node, allowing for backward traversal.
+   - **Circular Linked List**: In a singly or doubly linked list, the last node points back to the first node, forming a loop.
+
+5. **Traversal**: To access elements in a linked list, you start from the head (the first node) and follow the pointers to subsequent nodes. Traversal can be done iteratively or recursively.
+
+6. **Insertion and Deletion**: Linked lists excel at fast insertions and deletions, especially when you have a reference to the node where the operation needs to occur.
+
+7. **Random Access**: Unlike arrays, linked lists don't support direct random access to elements by index. You must traverse the list to find the desired element.
+
+8. **Memory Efficiency**: Linked lists use memory efficiently because they allocate memory for each node dynamically, only when needed. This makes them suitable for situations where memory allocation is unpredictable.
+
+9. **Implementation Complexity**: Implementing linked lists can be more complex than arrays due to the need to manage pointers and handle edge cases like inserting or deleting at the beginning or end of the list.
+
+10. **Use Cases**: Linked lists are used in various applications, including implementing other data structures (e.g., stacks, queues), managing data with dynamic sizes, and in certain algorithms like those used in graph theory.
+
+11. **Advantages**:
+    - Efficient insertions and deletions, especially when you have references to specific nodes.
+    - No need to preallocate a fixed amount of memory.
+
+12. **Disadvantages**:
+    - Lack of direct random access (higher time complexity for accessing elements).
+    - Extra memory overhead due to storing pointers.
+    - Not suitable for situations where frequent access to elements by index is required.
+
+13. **Time Complexities**:
+    - Access: O(n)
+    - Search: O(n)
+    - Insertion/Deletion (at a known position): O(1)
+    - Insertion/Deletion (at an unknown position): O(n)
+
+In summary, linked lists are versatile data structures with strengths in efficient insertions and deletions, dynamic memory management, and adaptability to varying data sizes. Understanding when and how to use linked lists is crucial for building efficient and scalable programs.
 
 ## What now?
 While this guide has gone through some of the basics of python there is much to learn. 
