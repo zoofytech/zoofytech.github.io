@@ -20,33 +20,26 @@ This problem involves manipulating strings, which is a common task in scripting.
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-<pre>
-<code class="language-python line-numbers">
-class Solution:
-    def lengthOfLastWord(self, s: str) -> int:
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lengthOfLastWord</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, <span class="hljs-symbol">s:</span> str)</span></span> -&gt; <span class="hljs-symbol">int:</span>
         word_list = s.split()
-        last_word = word_list[-1]
+        last_word = word_list[-<span class="hljs-number">1</span>]
         lw_count = len(last_word)
-        return(lw_count)
-</code>
-</pre>
-</div>
-<b>Explanation:</b><br>
-- First we split the words by using <code>split</code>. This will remove all of the spaces if there are any in <code>s</code> <br>
-- We then grab the last word by indexing the last word <code>word_list[-1]</code> <br>
-- We then get the count of the last word by using <code>len</code> and return the count of it. <br>
-<br> This is just a simple solution to the problem. We can actually trim the answer if needed to the following:
-<div class ="blockquote">
-<pre>
-<code class="language-python line-numbers">
-class Solution:
-    def lengthOfLastWord(self, s: str) -> int:
-        s = s.rstrip()  #or strip
-        return len(s.split()[-1])
-</code>
-</pre>
-</div>
+        <span class="hljs-keyword">return</span>(lw_count)
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>First we split the words by using <code>split</code>. This will remove all of the spaces if there are any in <code>s</code></li>
+<li>We then grab the last word by indexing the last word <code>word_list[-1]</code></li>
+<li>We then get the count of the last word by using <code>len</code> and return the count of it.
+This is just a simple solution to the problem. We can actually trim the answer if needed to the following:<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lengthOfLastWord</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, <span class="hljs-symbol">s:</span> str)</span></span> -&gt; <span class="hljs-symbol">int:</span>
+      s = s.rstrip()  <span class="hljs-comment">#or strip</span>
+      <span class="hljs-keyword">return</span> len(s.split()[-<span class="hljs-number">1</span>])
+</code></pre>
+</li>
+</ul>
+
 </details>
 <li><a href="https://leetcode.com/problems/add-binary/">Add Binary</a> - Problem #67</li>
 <details>
@@ -55,28 +48,21 @@ This problem simulates binary addition. In scripting, you might encounter scenar
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-<pre>
-<code class="language-python line-numbers">
-class Solution:
-    def addBinary(self, a: str, b: str) -> str:
-</code>
-</pre>
-</div>
-<b>Explanation:</b><br>
-- We use <code>int</code> to convert the string to an integer and use base 2 <br>
-- We use <code>format</code> to convert the integer back into binary without the "0b"<br>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addBinary</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, <span class="hljs-symbol">a:</span> str, <span class="hljs-symbol">b:</span> str)</span></span> -&gt; <span class="hljs-symbol">str:</span>
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>We use <code>int</code> to convert the string to an integer and use base 2 </li>
+<li>We use <code>format</code> to convert the integer back into binary without the &quot;0b&quot;
 Another way that we can solve this is by using <code>bin</code>
-Similarly we just remove the first 2 strings.
-<div class ="blockquote">
-<pre>
-<code class="language-python line-numbers">
-class Solution:
-    def addBinary(self, a: str, b: str) -> str:
-        return bin(int(a , 2) + int(b,2))[2:]
-</code>
-</pre>
-</div>
+Similarly we just remove the first 2 strings.</li>
+</ul>
+<pre><code class="lang-python">class Solution:
+    def addBinary(<span class="hljs-keyword">self</span>, a: <span class="hljs-keyword">str</span>, b: <span class="hljs-keyword">str</span>) -&gt; <span class="hljs-keyword">str</span>:
+        <span class="hljs-keyword">return</span> bin(<span class="hljs-keyword">int</span>(a , <span class="hljs-number">2</span>) + <span class="hljs-keyword">int</span>(b,<span class="hljs-number">2</span>))[<span class="hljs-number">2</span>:]
+</code></pre>
+
 </details>
 <li><a href="https://leetcode.com/problems/pascals-triangle-ii/">Pascal&#39;s Triangle II</a> - Problem #119</li>
 <details>
@@ -85,61 +71,54 @@ This problem deals with generating rows of Pascal's Triangle, which can be used 
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-<pre>
-<code class="language-python line-numbers">
-class Solution:
-    def getRow(self, rowIndex: int) -> List[int]:
-        result = []
-        for i in range(0, rowIndex+1):
-            result.append([])
+<pre><code class="lang-python">class <span class="hljs-type">Solution</span>:
+    def getRow(self, rowIndex: <span class="hljs-built_in">int</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:
+        <span class="hljs-literal">result</span> = []
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, rowIndex+<span class="hljs-number">1</span>):
+            <span class="hljs-literal">result</span>.append([])
 
-            for x in range(0, i + 1):
-                if x == 0:
-                    result[i].append(1)
-                elif i == x:
-                    result[i].append(1)
-                else:
-                    result[i].append((result[i-1][x-1]) + (result[i-1][x]))
-        return result[rowIndex]
-</code>
-</pre>
-</div>
-<b>Explanation:</b><br>
-This problem asks you to return the rowIndex-th (0-based index) row of Pascal's Triangle as a list of integers. Pascal's Triangle is a triangular array of binomial coefficients, where each number is the sum of the two numbers directly above it. The first few rows of Pascal's Triangle look like this:
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-Row 0: [1]
-Row 1: [1, 1]
-Row 2: [1, 2, 1]
-Row 3: [1, 3, 3, 1]
-    </code>
-</pre>
-</div>
-<br>
-1. We create an empty list called result to store the rows of Pascal's Triangle.
-Create an empty list called result to store the rows of Pascal's Triangle.
-<br>
-2. We then iterate over the rows from 0 to rowIndex, inclusive, using the variable i to represent the current row index.
-<br>
-3. For each row, append an empty list to the result list. This empty list will be used to store the elements of the current row.
-<br>
-4. Inside the inner loop, iterate over the elements in the current row from 0 to i, using the variable x to represent the current column index.
-<br>
-5. For each element, check if it is the first element in the row (i.e., x == 0) or the last element in the row (i.e., i == x). 
-If it is either the first or last element, append a 1 to the current row because the first and last elements of each row in Pascal's Triangle are always 1.
-<br>
-6. If the element is not the first or last element, calculate its value by adding the element from the previous row in the same column (result[i-1][x-1]) and the element from the previous row in the next column (result[i-1][x]). 
-This follows the rule of Pascal's Triangle where each element is the sum of the two elements above it.
-<br>
-7. Append the calculated value to the current row.
-<br>
-8. Repeat steps 5-7 for all elements in the current row.
-<br>
-9. Once the inner loop finishes, the current row is complete, and you move on to the next row.
-<br>
-10. Finally, return the row at the rowIndex index from the result list. 
+            <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, i + <span class="hljs-number">1</span>):
+                <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:
+                    <span class="hljs-literal">result</span>[i].append(<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">elif</span> i == x:
+                    <span class="hljs-literal">result</span>[i].append(<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">else</span>:
+                    <span class="hljs-literal">result</span>[i].append((<span class="hljs-literal">result</span>[i-<span class="hljs-number">1</span>][x-<span class="hljs-number">1</span>]) + (<span class="hljs-literal">result</span>[i-<span class="hljs-number">1</span>][x]))
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">result</span>[rowIndex]
+</code></pre>
+<p><strong>Explanation:</strong>
+This problem asks you to return the rowIndex-th (0-based index) row of Pascal&#39;s Triangle as a list of integers. Pascal&#39;s Triangle is a triangular array of binomial coefficients, where each number is the sum of the two numbers directly above it. The first few rows of Pascal&#39;s Triangle look like this:</p>
+<pre><code class="lang-python">Row <span class="hljs-number">0</span>: <span class="hljs-string">[1]</span>
+Row <span class="hljs-number">1</span>: <span class="hljs-string">[1, 1]</span>
+Row <span class="hljs-number">2</span>: <span class="hljs-string">[1, 2, 1]</span>
+Row <span class="hljs-number">3</span>: <span class="hljs-string">[1, 3, 3, 1]</span>
+</code></pre>
+<ol>
+<li><p>We create an empty list called result to store the rows of Pascal&#39;s Triangle.
+Create an empty list called result to store the rows of Pascal&#39;s Triangle.</p>
+</li>
+<li><p>We then iterate over the rows from 0 to rowIndex, inclusive, using the variable i to represent the current row index.</p>
+</li>
+<li><p>For each row, append an empty list to the result list. This empty list will be used to store the elements of the current row.</p>
+</li>
+<li><p>Inside the inner loop, iterate over the elements in the current row from 0 to i, using the variable x to represent the current column index.</p>
+</li>
+<li><p>For each element, check if it is the first element in the row (i.e., x == 0) or the last element in the row (i.e., i == x). 
+If it is either the first or last element, append a 1 to the current row because the first and last elements of each row in Pascal&#39;s Triangle are always 1.</p>
+</li>
+<li><p>If the element is not the first or last element, calculate its value by adding the element from the previous row in the same column (result[i-1][x-1]) and the element from the previous row in the next column (result[i-1][x]). 
+This follows the rule of Pascal&#39;s Triangle where each element is the sum of the two elements above it.</p>
+</li>
+<li><p>Append the calculated value to the current row.</p>
+</li>
+<li><p>Repeat steps 5-7 for all elements in the current row.</p>
+</li>
+<li><p>Once the inner loop finishes, the current row is complete, and you move on to the next row.</p>
+</li>
+<li><p>Finally, return the row at the rowIndex index from the result list. </p>
+</li>
+</ol>
+
 </details>
 <li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a> - Problem #88</li>
 <details>
@@ -148,53 +127,50 @@ This problem is about merging arrays, a common task in scripting when you're wor
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-            while m > 0 and n > 0:
-                if nums1[m-1] > nums2[n-1]:
-                    nums1[m+n-1] = nums1[m-1]
-                    m -= 1
-                else:
-                    nums1[m+n-1] = nums2[n-1]
-                    n -= 1
-            for i in range(n):
-                nums1[i] = nums2[i]
-    </code>
-</pre>
-</div>
-<b>Explanation:</b><br>
-To go through this solution, we will go through line by line.<br>
-1. starting with the while loop. It will continue as long as both m and n are greater than 0. This will help merge the two arrays.
-<br>
-2. Inside the loop, we then compare the last element of nums1 at a index of m-1 with the last element of nums2 at index n-1. 
-These are the largest elements of each array. 
-<br>
-3. If the element in nums1 is greater, 
+<pre><code class="lang-python">        class Solution:
+    def <span class="hljs-keyword">merge</span>(<span class="hljs-keyword">self</span>, nums1: <span class="hljs-keyword">List</span>[<span class="hljs-built_in">int</span>], m: <span class="hljs-built_in">int</span>, nums2: <span class="hljs-keyword">List</span>[<span class="hljs-built_in">int</span>], n: <span class="hljs-built_in">int</span>) -&gt; <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">while</span> m &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> n &gt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">if</span> nums1[m<span class="hljs-number">-1</span>] &gt; nums2[n<span class="hljs-number">-1</span>]:
+                nums1[m+n<span class="hljs-number">-1</span>] = nums1[m<span class="hljs-number">-1</span>]
+                m -= <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                nums1[m+n<span class="hljs-number">-1</span>] = nums2[n<span class="hljs-number">-1</span>]
+                n -= <span class="hljs-number">1</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-keyword">range</span>(n):
+            nums1[i] = nums2[i]
+</code></pre>
+<p><strong>Explanation:</strong>
+To go through this solution, we will go through line by line.</p>
+<ol>
+<li><p>starting with the while loop. It will continue as long as both m and n are greater than 0. This will help merge the two arrays.</p>
+</li>
+<li><p>Inside the loop, we then compare the last element of nums1 at a index of m-1 with the last element of nums2 at index n-1. 
+These are the largest elements of each array. </p>
+</li>
+<li><p>If the element in nums1 is greater, 
 it means that this element should be placed at the end of the merged array, 
 which is at index m+n-1 in nums1. So, it assigns the value of nums1[m-1] to nums1[m+n-1]. 
-This merges the element from nums1 into the array.
-<br>
-4. After merging an element from nums1 it decreases m by 1 to move the m pointer to the previous element in nums1 
-<br>
-5. If the element in nums2 is greater or equal to nums1 then that means that this element should be placed at the end of the merged array.
-<br>
-6. From the line aboves if statement , we then assign the value of  <code>nums2[n-1] to nums1[m+n-1]</code> to merge the elements from nums2 to nums1
-<br>
-7. After merging an element from nums2 it decrements n by 1 to move the n pointer to the previous element in nums2
-<code>n -= 1</code>
-<br>
-8. After the while loop exits, there might be remaining elements in <code>nums2</code> that were not merged. This for loop iterates over the remaining elements of nums2 from index 0 to n-1
-<code>for i in range(n)</code>
-<br>
-9. In the for loop, it copies the remaining elements from nums2 into nums1 by merging the remaining elements from nums2 to into nums1 
-<code>nums1[i] = nums2[i]</code>
-<br>
-The key idea here is to work from the end of the arrays towards the beginning,
- which avoids overwriting elements in nums1 before they are compared and merged.
-This approach ensures that the merged array is sorted without the need for extra space or creating a new array.
+This merges the element from nums1 into the array.</p>
+</li>
+<li><p>After merging an element from nums1 it decreases m by 1 to move the m pointer to the previous element in nums1 </p>
+</li>
+<li><p>If the element in nums2 is greater or equal to nums1 then that means that this element should be placed at the end of the merged array.</p>
+</li>
+<li><p>From the line aboves if statement , we then assign the value of  <code>nums2[n-1] to nums1[m+n-1]</code> to merge the elements from nums2 to nums1</p>
+</li>
+<li><p>After merging an element from nums2 it decrements n by 1 to move the n pointer to the previous element in nums2
+<code>n -= 1</code></p>
+</li>
+<li><p>After the while loop exits, there might be remaining elements in <code>nums2</code> that were not merged. This for loop iterates over the remaining elements of nums2 from index 0 to n-1
+<code>for i in range(n)</code></p>
+</li>
+<li><p>In the for loop, it copies the remaining elements from nums2 into nums1 by merging the remaining elements from nums2 to into nums1 
+<code>nums1[i] = nums2[i]</code></p>
+</li>
+</ol>
+<p>The key idea here is to work from the end of the arrays towards the beginning,
+which avoids overwriting elements in nums1 before they are compared and merged.
+This approach ensures that the merged array is sorted without the need for extra space or creating a new array.</p>
 
 </details>
 <li><a href="https://leetcode.com/problems/excel-sheet-column-title/">Excel Sheet Column Title</a> - Problem #168</li>
@@ -204,54 +180,47 @@ In this problem, you convert a column number into the corresponding Excel column
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def convertToTitle(self, columnNumber: int) -> str:
-            alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            result=""
-            while columnNumber:
-                columnNumber=columnNumber-1
-                result=alphabet[columnNumber%26]+result
-                columnNumber=columnNumber//26
-            return result
-    </code>
-    </pre>
-    </div>
-<b>Explanation:</b><br>
+<pre><code>        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">convertToTitle</span><span class="hljs-params">(self, columnNumber: int)</span> -&gt; str:</span>
+        alphabet=<span class="hljs-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+        result=<span class="hljs-string">""</span>
+        <span class="hljs-keyword">while</span> columnNumber:
+            columnNumber=columnNumber<span class="hljs-number">-1</span>
+            result=alphabet[columnNumber%<span class="hljs-number">26</span>]+result
+            columnNumber=columnNumber//<span class="hljs-number">26</span>
+        <span class="hljs-keyword">return</span> result
+</code></pre><p><strong>Explanation:</strong>
 This problem asks you to convert a positive integer,  columnNumber,
- into an Excel sheet column title. Excel column titles are represented using
+into an Excel sheet column title. Excel column titles are represented using
 uppercase English letters, and they follow a pattern similar to base 26 numbering, 
 where the digits are represented by the English alphabet (A=1, B=2, ..., Z=26), 
 and when the column number exceeds 26, it starts using two-letter combinations (AA=27, AB=28,
- ..., ZZ=702, AAA=703, and so on).
- <br>
- 1. We first define alphabet that contains all uppercase letters from A-Z. These strings will be used to map column numbers to titles.
- <br>
- 2. We then initializes an empty string result to store the Excel column title 
- <br>
- 3. We start a while loop that continues as long as columnNumber is not zero. The loop will gradually convert the column number to column title.
- <br>
- 4. Inside of the loop, it subtracts 1 from the columnNumber. This is done to handle the fact that the Excel column numbering starts from 1, but our algorithm will work with 0-based indexing.
- <br>
- 5. <code> result = alphabet[columnNumber % 26] + result</code> 
-<br>
-This calculates the remainder when columnNumber is divided by 26. The remainder corresponds to a letter in the alphabet.
-It then takes that letter at the position in the alphabet string and appends it to the beginning of the result string. This builds the Excel column title from right to left.
-<br> 
-6. <code>columnNumber = columnNumber // 26</code>
-<br>
-It updates columnNumber by performing an integer division by 26 (columnNumber // 26). 
-This reduces columnNumber to the next lower place value.
-<br>
-The loop will continue with the reduced columnNumber and the next letter is added to the result string.
-<br>
-This process continues until columnNumber becomes zero, at which point we have constructed the complete Excel column title in the result string.
-<br>
-7. We finally return the result string which contains the Excel column title corresponding to the input columnNumber.
-<br
-This algorithm effectively converts a decimal number into a base 26 representation using the English alphabet letters and builds the Excel column title accordingly.
+..., ZZ=702, AAA=703, and so on).</p>
+<ol>
+<li><p>We first define alphabet that contains all uppercase letters from A-Z. These strings will be used to map column numbers to titles.</p>
+</li>
+<li><p>We then initializes an empty string result to store the Excel column title </p>
+</li>
+<li><p>We start a while loop that continues as long as columnNumber is not zero. The loop will gradually convert the column number to column title.</p>
+</li>
+<li><p>Inside of the loop, it subtracts 1 from the columnNumber. This is done to handle the fact that the Excel column numbering starts from 1, but our algorithm will work with 0-based indexing.</p>
+</li>
+<li><p><code>result = alphabet[columnNumber % 26] + result</code></p>
+</li>
+</ol>
+<p>This calculates the remainder when columnNumber is divided by 26. The remainder corresponds to a letter in the alphabet.
+It then takes that letter at the position in the alphabet string and appends it to the beginning of the result string. This builds the Excel column title from right to left.</p>
+<ol>
+<li><code>columnNumber = columnNumber // 26</code></li>
+</ol>
+<p>It updates columnNumber by performing an integer division by 26 (columnNumber // 26). 
+This reduces columnNumber to the next lower place value.</p>
+<p>The loop will continue with the reduced columnNumber and the next letter is added to the result string.</p>
+<p>This process continues until columnNumber becomes zero, at which point we have constructed the complete Excel column title in the result string.</p>
+<ol>
+<li>We finally return the result string which contains the Excel column title corresponding to the input columnNumber.</li>
+</ol>
+<p>This algorithm effectively converts a decimal number into a base 26 representation using the English alphabet letters and builds the Excel column title accordingly.</p>
 
 </details>
 <li><a href="https://leetcode.com/problems/excel-sheet-column-number/">Excel Sheet Column Number</a> - Problem #171</li>
@@ -333,16 +302,16 @@ Relates to processing strings, which is fundamental in networking protocols for 
 
 <details>
 <summary>Solution</summary>
-class Solution:
-    def strStr(self, haystack: str, needle: str) -> int:
-        while needle in haystack:
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">strStr</span><span class="hljs-params">(self, haystack: str, needle: str)</span> -&gt; int:</span>
+        <span class="hljs-keyword">while</span> needle <span class="hljs-keyword">in</span> haystack:
             res = haystack.index(needle)
-            return res
-        else:
-            return -1
-        </code>
-    </pre>
-    </div>
+            <span class="hljs-keyword">return</span> res
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
+
 </details>
 <li><a href="https://leetcode.com/problems/implement-strstr/">Implement strStr()</a> - Problem #28</li>
 <details>
@@ -351,20 +320,16 @@ In networking, substring matching is used in various applications, from pattern 
 </details>
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def strStr(self, haystack: str, needle: str) -> int:
-            while needle in haystack:
-                res = haystack.index(needle)
-                return res
-            else:
-                return -1
-    
-        </code>
-    </pre>
-**Explanation**
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">strStr</span><span class="hljs-params">(self, haystack: str, needle: str)</span> -&gt; int:</span>
+        <span class="hljs-keyword">while</span> needle <span class="hljs-keyword">in</span> haystack:
+            res = haystack.index(needle)
+            <span class="hljs-keyword">return</span> res
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
+
 
 </div>
 </details>
@@ -376,18 +341,14 @@ String manipulation, such as character sorting, is used in various networking ap
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if sorted(s) == sorted(t):
-            return True
-        else:
-            return False
-        </code>
-    </pre>
-**Explanation**
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isAnagram</span><span class="hljs-params">(self, s: str, t: str)</span> -&gt; bool:</span>
+        <span class="hljs-keyword">if</span> sorted(s) == sorted(t):
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
 </div>
 </details>
@@ -399,30 +360,24 @@ Understanding character mappings is important in networking tasks like encoding 
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-class Solution:
-    def isIsomorphic(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
+<pre><code class="lang-python"><span class="hljs-symbol">class</span> Solution:
+    def isIsomorphic(<span class="hljs-keyword">self, </span>s: <span class="hljs-keyword">str, </span>t: <span class="hljs-keyword">str) </span>-&gt; <span class="hljs-keyword">bool:
+</span>        <span class="hljs-meta">if</span> len(s) != len(t):
             return False
-        else:
-            d1, d2 = {}, {}
+<span class="hljs-symbol">        else:</span>
+            <span class="hljs-built_in">d1</span>, <span class="hljs-built_in">d2</span> = {}, {}
             for i in range(len(s)):
-                str1, str2 = s[i], t[i]
-                if str1 not in d1:
-                    d1[str1] = str2
-                if str2 not in d2:
-                    d2[str2] = str1
-                if d1[str1] != str2 or d2[str2] != str1:
-                    return False
+                <span class="hljs-keyword">str1, </span><span class="hljs-keyword">str2 </span>= s[i], t[i]
+                <span class="hljs-meta">if</span> <span class="hljs-keyword">str1 </span>not in <span class="hljs-built_in">d1</span>:
+                    <span class="hljs-built_in">d1</span>[<span class="hljs-keyword">str1] </span>= <span class="hljs-keyword">str2
+</span>                <span class="hljs-meta">if</span> <span class="hljs-keyword">str2 </span>not in <span class="hljs-built_in">d2</span>:
+                    <span class="hljs-built_in">d2</span>[<span class="hljs-keyword">str2] </span>= <span class="hljs-keyword">str1
+</span>                <span class="hljs-meta">if</span> <span class="hljs-built_in">d1</span>[<span class="hljs-keyword">str1] </span>!= <span class="hljs-keyword">str2 </span>or <span class="hljs-built_in">d2</span>[<span class="hljs-keyword">str2] </span>!= <span class="hljs-keyword">str1:
+</span>                    return False
         return True
-    </code>
-</pre>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-**Explanation**
-
-</div>
 
 </details>
 <li><a href="https://leetcode.com/problems/pascals-triangle/">Pascal&#39;s Triangle</a> - Problem #118</li>
@@ -433,29 +388,23 @@ While not a direct analogy, data organization and computation are crucial in net
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def generate(self, numRows: int) -> List[List[int]]:
-            result = []
-            for i in range(0, numRows):
-                result.append([])
-    
-                for x in range(0, i + 1):
-                    if x == 0:
-                        result[i].append(1)
-                    elif i == x:
-                        result[i].append(1)
-                    else:
-                        result[i].append((result[i-1][x-1]) + (result[i-1][x]))
-            return result
-    </code>
-</pre>
+<pre><code class="lang-python">        class <span class="hljs-type">Solution</span>:
+    def generate(self, numRows: <span class="hljs-built_in">int</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]]:
+        <span class="hljs-literal">result</span> = []
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, numRows):
+            <span class="hljs-literal">result</span>.append([])
 
-**Explanation**
+            <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, i + <span class="hljs-number">1</span>):
+                <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:
+                    <span class="hljs-literal">result</span>[i].append(<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">elif</span> i == x:
+                    <span class="hljs-literal">result</span>[i].append(<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">else</span>:
+                    <span class="hljs-literal">result</span>[i].append((<span class="hljs-literal">result</span>[i-<span class="hljs-number">1</span>][x-<span class="hljs-number">1</span>]) + (<span class="hljs-literal">result</span>[i-<span class="hljs-number">1</span>][x]))
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">result</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-</div>
 
 </details>
 <li><a href="https://leetcode.com/problems/move-zeroes/">Move Zeroes</a> - Problem #283</li>
@@ -466,22 +415,17 @@ In networking, data reorganization may be necessary for efficient data transmiss
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def moveZeroes(self, nums: List[int]) -> None:
-            """
-            Do not return anything, modify nums in-place instead.
-            """
-            for i in nums:
-                if i == 0:
-                    nums.remove(i)
-                    nums.append(0)
-    </code>
-</pre>
-
-**Explanation**
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveZeroes</span><span class="hljs-params">(self, nums: List[int])</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        <span class="hljs-string">"""
+        Do not return anything, modify nums in-place instead.
+        """</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nums:
+            <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:
+                nums.remove(i)
+                nums.append(<span class="hljs-number">0</span>)
+</code></pre>
+<p><strong>Explanation</strong></p>
 
 </details>
 <li><a href="https://leetcode.com/problems/reverse-vowels-of-a-string/">Reverse Vowels of a String</a> - Problem #345</li>
@@ -492,17 +436,11 @@ String manipulation and transformation are important in many text-based networki
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        def reverseVowels(self, s: str) -> str:
-        vowels = re.findall('[aeiouAEIOU]', s)
-        return re.sub('[aeiouAEIOU]', lambda _ : vowels.pop(), s)
-
-    </code>
-</pre>
-
-**Explanation**
+<pre><code class="lang-python">        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reverseVowels</span><span class="hljs-params">(self, s: str)</span> -&gt; str:</span>
+    vowels = re.findall(<span class="hljs-string">'[aeiouAEIOU]'</span>, s)
+    <span class="hljs-keyword">return</span> re.sub(<span class="hljs-string">'[aeiouAEIOU]'</span>, <span class="hljs-keyword">lambda</span> _ : vowels.pop(), s)
+</code></pre>
+<p><strong>Explanation</strong></p>
 
 </details>
 </ol>
@@ -582,25 +520,20 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def maxProfit(self, prices: List[int]) -> int:
-            if not prices:
-                return 0
-    
-            maxProfit = 0
-            minPurchase = prices[0]
-            for i in range(1, len(prices)):		
-                maxProfit = max(maxProfit, prices[i] - minPurchase)
-                minPurchase = min(minPurchase, prices[i])
-            return maxProfit
+<pre><code class="lang-python">        class Solution:
+    def <span class="hljs-keyword">max</span>Profit(<span class="hljs-literal">self</span>, prices: List[int]) -&gt; int:
+        if not prices:
+            return <span class="hljs-number">0</span>
 
-    </code>
-</pre>
+        <span class="hljs-keyword">max</span>Profit = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">min</span>Purchase = prices[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(prices)):        
+            <span class="hljs-keyword">max</span>Profit = <span class="hljs-keyword">max</span>(<span class="hljs-keyword">max</span>Profit, prices[i] - <span class="hljs-keyword">min</span>Purchase)
+            <span class="hljs-keyword">min</span>Purchase = <span class="hljs-keyword">min</span>(<span class="hljs-keyword">min</span>Purchase, prices[i])
+        return <span class="hljs-keyword">max</span>Profit
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-**Explanation**
 </details>
 <li><a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a> - Problem #21</li>
 <details>
@@ -609,50 +542,37 @@ Relates to analyzing sequences of data, important in networking for detecting pa
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-            
-            merged = ListNode() # Create an empty ListNode to serve as the dummy node for the merged list.
-            current = merged # Initialize a pointer 'current' to the dummy node.
-            # The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists
-            while list1 and list2: 
-                if list1.val <= list2.val:  # Append the smaller value from list1.
-                    current.next = list1  # Move the pointer in list1 to the next node.
-                    list1 = list1.next # Move the pointer in list1 to the next node.
-                else:
-                    current.next = list2 # # Append the smaller value from list2.
-                    list2 = list2.next # Move the pointer in list2 to the next node.
-                current = current.next  # Move the 'current' pointer to the newly appended node.
-            # Append any remaining elements from list1 or list2
-            if list1:
-                current.next = list1 
-            elif list2:
-                current.next = list2
-            return merged.next  # Return the merged list starting from the first node.
-    
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mergeTwoLists</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, <span class="hljs-symbol">list1:</span> Optional[ListNode], <span class="hljs-symbol">list2:</span> Optional[ListNode])</span></span> -&gt; Optional[ListNode]:
 
-    </code>
-</pre>
-</div>
-**Explanation**
-merged = ListNode(): We create an empty ListNode named merged to serve as the dummy node for the merged list. This dummy node helps simplify the merging process by providing a starting point for the merged list.
+        merged = ListNode() <span class="hljs-comment"># Create an empty ListNode to serve as the dummy node for the merged list.</span>
+        current = merged <span class="hljs-comment"># Initialize a pointer 'current' to the dummy node.</span>
+        <span class="hljs-comment"># The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists</span>
+        <span class="hljs-keyword">while</span> list1 <span class="hljs-keyword">and</span> <span class="hljs-symbol">list2:</span> 
+            <span class="hljs-keyword">if</span> list1.val &lt;= list2.<span class="hljs-symbol">val:</span>  <span class="hljs-comment"># Append the smaller value from list1.</span>
+                current.<span class="hljs-keyword">next</span> = list1  <span class="hljs-comment"># Move the pointer in list1 to the next node.</span>
+                list1 = list1.<span class="hljs-keyword">next</span> <span class="hljs-comment"># Move the pointer in list1 to the next node.</span>
+            <span class="hljs-symbol">else:</span>
+                current.<span class="hljs-keyword">next</span> = list2 <span class="hljs-comment"># # Append the smaller value from list2.</span>
+                list2 = list2.<span class="hljs-keyword">next</span> <span class="hljs-comment"># Move the pointer in list2 to the next node.</span>
+            current = current.<span class="hljs-keyword">next</span>  <span class="hljs-comment"># Move the 'current' pointer to the newly appended node.</span>
+        <span class="hljs-comment"># Append any remaining elements from list1 or list2</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-symbol">list1:</span>
+            current.<span class="hljs-keyword">next</span> = list1 
+        elif <span class="hljs-symbol">list2:</span>
+            current.<span class="hljs-keyword">next</span> = list2
+        <span class="hljs-keyword">return</span> merged.<span class="hljs-keyword">next</span>  <span class="hljs-comment"># Return the merged list starting from the first node.</span>
+</code></pre>
+<p><strong>Explanation</strong>
+merged = ListNode(): We create an empty ListNode named merged to serve as the dummy node for the merged list. This dummy node helps simplify the merging process by providing a starting point for the merged list.</p>
+<p>current = merged: We initialize a pointer current to the dummy node merged. This pointer will be used to traverse and build the merged list.</p>
+<p>The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists and append the node with the smaller value to the merged list.</p>
+<p>current.next = list1 or current.next = list2: We update the next attribute of the current node to point to the smaller node between list1 and list2. This effectively appends the smaller node to the merged list.</p>
+<p>list1 = list1.next or list2 = list2.next: We move the pointer in the corresponding input list (list1 or list2) to the next node, as we&#39;ve already appended the current node to the merged list.</p>
+<p>current = current.next: We move the current pointer to the newly appended node in the merged list so that the next iteration appends the next smallest node.</p>
+<p>After the loop completes, we check if there are any remaining elements in list1 or list2 and append them to the merged list if necessary.</p>
+<p>Finally, we return the merged list starting from the node after the dummy node (merged.next) to exclude the dummy node from the final result.</p>
 
-current = merged: We initialize a pointer current to the dummy node merged. This pointer will be used to traverse and build the merged list.
-
-The while loop iterates as long as there are elements in both list1 and list2. Inside the loop, we compare the values of the current nodes in both lists and append the node with the smaller value to the merged list.
-
-current.next = list1 or current.next = list2: We update the next attribute of the current node to point to the smaller node between list1 and list2. This effectively appends the smaller node to the merged list.
-
-list1 = list1.next or list2 = list2.next: We move the pointer in the corresponding input list (list1 or list2) to the next node, as we've already appended the current node to the merged list.
-
-current = current.next: We move the current pointer to the newly appended node in the merged list so that the next iteration appends the next smallest node.
-
-After the loop completes, we check if there are any remaining elements in list1 or list2 and append them to the merged list if necessary.
-
-Finally, we return the merged list starting from the node after the dummy node (merged.next) to exclude the dummy node from the final result.
 </details>
 
 </ol>
@@ -723,24 +643,19 @@ This problem requires problem-solving and debugging skills, similar to identifyi
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote">
-    <pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def twoSum(self, nums: List[int], target: int) -> List[int]:
-            res=[]
-            for i in range(len(nums)):
-                for a in range(i+1,len(nums)):
-                    if (nums[i]+nums[a]==target):
-                        res.append(i)
-                        res.append(a)
-                        break     
-            return res
+<pre><code class="lang-python">        class Solution:
+    def twoSum(self, num<span class="hljs-variable">s:</span> List[<span class="hljs-keyword">int</span>], targe<span class="hljs-variable">t:</span> <span class="hljs-keyword">int</span>) -&gt; List[<span class="hljs-keyword">int</span>]:
+        <span class="hljs-keyword">res</span>=[]
+        <span class="hljs-keyword">for</span> i in <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(nums)):
+            <span class="hljs-keyword">for</span> <span class="hljs-keyword">a</span> in <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)):
+                <span class="hljs-keyword">if</span> (nums[i]+nums[<span class="hljs-keyword">a</span>]==target):
+                    <span class="hljs-keyword">res</span>.<span class="hljs-keyword">append</span>(i)
+                    <span class="hljs-keyword">res</span>.<span class="hljs-keyword">append</span>(<span class="hljs-keyword">a</span>)
+                    <span class="hljs-keyword">break</span>     
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">res</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-    </code>
-</pre>
-
-**Explanation**
 
 </details>
 <li><a href="https://leetcode.com/problems/palindrome-number/">Palindrome Number</a> - Problem #9</li>
@@ -751,19 +666,15 @@ Involves checking for palindromes, akin to debugging and validating data correct
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote"><pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def isPalindrome(self, x: int) -> bool:
-            a = ''.join(reversed(str(x)))
-            if a == str(x):
-                return True
-            else:
-                return False
-
-    </code>
-</pre>
-</div>
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(self, x: int)</span> -&gt; bool:</span>
+        a = <span class="hljs-string">''</span>.join(reversed(str(x)))
+        <span class="hljs-keyword">if</span> a == str(x):
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
 </details>
 <li><a href="https://leetcode.com/problems/longest-common-prefix/">Longest Common Prefix</a> - Problem #14</li>
@@ -774,18 +685,18 @@ Similar to identifying common patterns, a crucial skill in debugging distributed
 
 <details>
 <summary>Solution</summary>
-<div class ="blockquote"><pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def isPalindrome(self, x: int) -> bool:
-            a = ''.join(reversed(str(x)))
-            if a == str(x):
-                return True
-            else:
-                return False
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(self, x: int)</span> -&gt; bool:</span>
+        a = <span class="hljs-string">''</span>.join(reversed(str(x)))
+        <span class="hljs-keyword">if</span> a == str(x):
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-    </code>
-</pre></div>
+
+
 </details>
 <li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a> - Problem #20</li>
 <details>
@@ -795,20 +706,18 @@ Debugging skills are important in verifying the correctness of algorithms, a key
 
 <details>
 <summary>Solution</summary>
-<div><pre>
-    <code class="language-python line-numbers">
-        class Solution:
-        def isValid(self, s: str) -> bool:
-            while '()' in s or '[]'in s or '{}' in s:
-                s = s.replace('()','').replace('[]','').replace('{}','')
-            if len(s) !=0:
-                return False
-            else:
-                return True
+<pre><code class="lang-python">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isValid</span><span class="hljs-params">(self, s: str)</span> -&gt; bool:</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-string">'()'</span> <span class="hljs-keyword">in</span> s <span class="hljs-keyword">or</span> <span class="hljs-string">'[]'</span><span class="hljs-keyword">in</span> s <span class="hljs-keyword">or</span> <span class="hljs-string">'{}'</span> <span class="hljs-keyword">in</span> s:
+            s = s.replace(<span class="hljs-string">'()'</span>,<span class="hljs-string">''</span>).replace(<span class="hljs-string">'[]'</span>,<span class="hljs-string">''</span>).replace(<span class="hljs-string">'{}'</span>,<span class="hljs-string">''</span>)
+        <span class="hljs-keyword">if</span> len(s) !=<span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+</code></pre>
+<p><strong>Explanation</strong></p>
 
-    </code>
-</pre>
-</div>
+
 </details>
 
 ### Medium (4)
