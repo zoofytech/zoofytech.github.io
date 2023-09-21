@@ -629,9 +629,9 @@ Optimization of pattern searching tasks, which is similar to optimizing data pro
 </ol>
 </details>
 
-## Troubleshooting and Debugging (9)
+## Troubleshooting and Debugging (8)
 
-### Easy (5)
+### Easy (4)
 <details>
 <summary>Click for problems</summary>
 <ol>
