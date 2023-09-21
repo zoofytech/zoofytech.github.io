@@ -719,6 +719,8 @@ Debugging skills are important in verifying the correctness of algorithms, a key
 
 
 </details>
+</ol>
+</details>
 
 ### Medium (4)
 <details>
